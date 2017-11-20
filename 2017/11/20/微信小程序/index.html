@@ -3,16 +3,30 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Archiv: 2017 | LTT</title>
+  <title>微信小程序 | LTT</title>
   <meta name="author" content="LTT" />
 
+  
+  <meta name="description" content="微信小程序：
+app.js文件是属于全局的js文件。
+
+
+一个页面是由四个文件组成的：
+
+wxml文件：页面的结构 —– 相当于html文件
+wxss文件：页面的样式 —– 相当于css文件
+js文件：行为 / 逻辑
+json文件：页面的配置信息
+
+
+每一个页面需要单独写一个文件夹，放到pages文" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="微信小程序" />
   <meta property="og:site_name" content="LTT" />
 
   
@@ -55,73 +69,71 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">2017</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-20T01:31:56.000Z"><a href="/2017/11/20/微信小程序/">2017-11-20</a></time>
+      
+      
+  
+    <h1 class="title">微信小程序</h1>
+  
 
-
-  <div class="archive">
+    </header>
+    <div class="entry">
+      
+        <h1 id="微信小程序："><a href="#微信小程序：" class="headerlink" title="微信小程序："></a>微信小程序：</h1><ul>
+<li>app.js文件是属于全局的js文件。</li>
+</ul>
+<ol>
+<li><p>一个页面是由四个文件组成的：</p>
+<ul>
+<li>wxml文件：页面的结构 —– 相当于html文件</li>
+<li>wxss文件：页面的样式 —– 相当于css文件</li>
+<li>js文件：行为 / 逻辑</li>
+<li>json文件：页面的配置信息</li>
+</ul>
+</li>
+<li><p>每一个页面需要单独写一个文件夹，放到pages文件夹中，并且这个页面的的文件命名都是有要求的：</p>
+<ul>
+<li>假如你要创建一个index文件，那么首先要在pages文件里面创建一个index文件夹，并且这个文件夹下的文件都要叫index<br>  例如：index.wxml、index.wxss……..</li>
+</ul>
+</li>
+<li><p>添加一个页面：</p>
+<ul>
+<li>需要创建这个页面的文件夹；</li>
+<li>配置这个页面到小程序中：<ul>
+<li>在我们项目中的app.json文件中找到pages的字段，给这个字段添加内容，添加你要在小程序中添加的页面。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>app.json：是相当于小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部tab等。</li>
+</ol>
+<h5 id="当前页面的权限-gt-app-json的权限"><a href="#当前页面的权限-gt-app-json的权限" class="headerlink" title="当前页面的权限 &gt; app.json的权限"></a>当前页面的权限 &gt; app.json的权限</h5><h5 id="js文件中都需要有：Page-——-‘-’括号里面可以没有东西，但是必须要写"><a href="#js文件中都需要有：Page-——-‘-’括号里面可以没有东西，但是必须要写" class="headerlink" title=".js文件中都需要有：Page({})  ——- [‘{}’括号里面可以没有东西，但是必须要写]"></a>.js文件中都需要有：Page({})  ——- [‘{}’括号里面可以没有东西，但是必须要写]</h5>
+      
+    </div>
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-11-20T01:31:56.000Z"><a href="/2017/11/20/微信小程序/">2017-11-20</a></time>
-            
-              <h1 class="title"><a href="/2017/11/20/微信小程序/">微信小程序</a></h1>
-            
-          </header>
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-11-14T02:40:36.000Z"><a href="/2017/11/14/boke/">2017-11-14</a></time>
-            
-              <h1 class="title"><a href="/2017/11/14/boke/">博客更新，以及本地删除文件上传博客</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-11-13T08:50:33.000Z"><a href="/2017/11/13/juzhong/">2017-11-13</a></time>
-            
-              <h1 class="title"><a href="/2017/11/13/juzhong/">完美居中盒子以及文字</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-11-03T01:43:32.000Z"><a href="/2017/11/03/JS/">2017-11-03</a></time>
-            
-              <h1 class="title"><a href="/2017/11/03/JS/">JS</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-11-02T06:25:33.000Z"><a href="/2017/11/02/JavaScript/">2017-11-02</a></time>
-            
-              <h1 class="title"><a href="/2017/11/02/JavaScript/">JavaScript</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
   </div>
+</article>
+
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
