@@ -86,43 +86,35 @@
 <p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
 <p> C： 绘制矩形：</p>
 <pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
-
 b：ctx.strokeRect();           //空心矩形；
-
 c：ctx.clearRect(x,y,width,height);           //清空区域；
 </code></pre><p> D：路径绘制：</p>
 <pre><code>a：ctx.beginPath();      //开始绘画；
-
 b：ctx.moveTo(x,y);       //画笔的位置；
-
 c：ctx.lineTo(x,y);        //起始位置；
     .
     .
     .
 d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
-
 e：ctx.fill();           //填充颜色(默认为黑色)；
 </code></pre></li>
 </ol>
 <pre><code>自动闭合(没有终止位置时)：
 
     a：ctx.moveTo(x,y);
-
     b：ctx.lineTo(x,y);
         .
         .
         .
     c：ctx.closePath();       //自动闭合；
-
     d：ctx.stroke();
 
 E：绘制圆/圆弧：
 
     a：ctx.beginPath();
-
-    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径  /    start：开始位置，end：结束位置(以x轴为基准)      
+    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
+                        start：开始位置，end：结束位置(以x轴为基准)      
                                  方向：true逆时针，false顺时针(默认false)；
-
     c：ctx.fill();
 </code></pre><ol>
 <li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
@@ -484,7 +476,7 @@ E：绘制圆/圆弧：
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Поиск">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -493,7 +485,7 @@ E：绘制圆/圆弧：
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
     
       <li>
