@@ -62,6 +62,59 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-11-28T02:55:37.000Z"><a href="/2017/11/28/js语句/">2017-11-28</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/28/js语句/">js语句</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="三目运算符的多个判断："><a href="#三目运算符的多个判断：" class="headerlink" title="三目运算符的多个判断："></a>三目运算符的多个判断：</h3><pre><code>条件1?语句1:条件2?语句2:条件3?语句3.....:条件n?语句n:语句n+1;
+</code></pre><h3 id="在js里面："><a href="#在js里面：" class="headerlink" title="在js里面："></a>在js里面：</h3><pre><code>不赋值就是获取，赋值就是设置；
+</code></pre><h4 id="document-write："><a href="#document-write：" class="headerlink" title="document.write："></a>document.write：</h4><pre><code>会重新绘制整个页面；
+
+用来改变页面的内容；
+
+可以识别html标签；
+</code></pre><h3 id="innerHTML："><a href="#innerHTML：" class="headerlink" title="innerHTML："></a>innerHTML：</h3><pre><code>可以用来绘制局部页面；
+
+用来改变页面的内容；
+
+可以识别html标签；
+</code></pre><h3 id="while循环-注意事项："><a href="#while循环-注意事项：" class="headerlink" title="while循环 注意事项："></a>while循环 注意事项：</h3><pre><code>一定要在大括号中加入限制变量改变的方法；
+</code></pre><h3 id="do-while循环："><a href="#do-while循环：" class="headerlink" title="do while循环："></a>do while循环：</h3><pre><code>先执行，后判断；
+</code></pre><h3 id="break语句："><a href="#break语句：" class="headerlink" title="break语句："></a>break语句：</h3><pre><code>终止执行语句块（终止循环。。。。）；
+</code></pre><h3 id="continue语句："><a href="#continue语句：" class="headerlink" title="continue语句："></a>continue语句：</h3><pre><code>跳出当前循环，进入到下一次的循环
+</code></pre>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-11-25T11:39:04.000Z"><a href="/2017/11/25/html-css/">2017-11-25</a></time>
       
       
@@ -234,94 +287,6 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
-<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
-</li>
-<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
-</li>
-<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
-</li>
-<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
-</li>
-<li><p>步骤：</p>
-<p> A： 获取canvas标签 a；</p>
-<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
-<p> C： 绘制矩形：</p>
-<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
-b：ctx.strokeRect();           //空心矩形；
-c：ctx.clearRect(x,y,width,height);           //清空区域；
-</code></pre><p> D：路径绘制：</p>
-<pre><code>a：ctx.beginPath();      //开始绘画；
-b：ctx.moveTo(x,y);       //画笔的位置；
-c：ctx.lineTo(x,y);        //起始位置；
-    .
-    .
-    .
-d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
-e：ctx.fill();           //填充颜色(默认为黑色)；
-</code></pre></li>
-</ol>
-<pre><code>自动闭合(没有终止位置时)：
-
-    a：ctx.moveTo(x,y);
-    b：ctx.lineTo(x,y);
-        .
-        .
-        .
-    c：ctx.closePath();       //自动闭合；
-    d：ctx.stroke();
-
-E：绘制圆/圆弧：
-
-    a：ctx.beginPath();
-    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
-                        start：开始位置，end：结束位置(以x轴为基准)      
-                                 方向：true逆时针，false顺时针(默认false)；
-    c：ctx.fill();
-</code></pre><ol>
-<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
-</ol>
-<ol>
-<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
-</code></pre></li>
-</ol>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas_wd/">2017-11-21</a></time>
       
       
@@ -387,6 +352,94 @@ E：绘制圆/圆弧：
 </blockquote>
 </li>
 </ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
+<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
+</li>
+<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
+</li>
+<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
+</li>
+<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
+</li>
+<li><p>步骤：</p>
+<p> A： 获取canvas标签 a；</p>
+<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
+<p> C： 绘制矩形：</p>
+<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
+b：ctx.strokeRect();           //空心矩形；
+c：ctx.clearRect(x,y,width,height);           //清空区域；
+</code></pre><p> D：路径绘制：</p>
+<pre><code>a：ctx.beginPath();      //开始绘画；
+b：ctx.moveTo(x,y);       //画笔的位置；
+c：ctx.lineTo(x,y);        //起始位置；
+    .
+    .
+    .
+d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
+e：ctx.fill();           //填充颜色(默认为黑色)；
+</code></pre></li>
+</ol>
+<pre><code>自动闭合(没有终止位置时)：
+
+    a：ctx.moveTo(x,y);
+    b：ctx.lineTo(x,y);
+        .
+        .
+        .
+    c：ctx.closePath();       //自动闭合；
+    d：ctx.stroke();
+
+E：绘制圆/圆弧：
+
+    a：ctx.beginPath();
+    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
+                        start：开始位置，end：结束位置(以x轴为基准)      
+                                 方向：true逆时针，false顺时针(默认false)；
+    c：ctx.fill();
+</code></pre><ol>
+<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
+</ol>
+<ol>
+<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
+</code></pre></li>
+</ol>
 
       
     </div>
@@ -753,6 +806,10 @@ E：绘制圆/圆弧：
   <ul class="entry">
     
       <li>
+        <a href="/2017/11/28/js语句/">js语句</a>
+      </li>
+    
+      <li>
         <a href="/2017/11/25/html-css/">html/css</a>
       </li>
     
@@ -761,15 +818,11 @@ E：绘制圆/圆弧：
       </li>
     
       <li>
-        <a href="/2017/11/21/canvas/">canvas</a>
-      </li>
-    
-      <li>
         <a href="/2017/11/21/canvas_wd/">canvas用法</a>
       </li>
     
       <li>
-        <a href="/2017/11/20/微信小程序/">微信小程序</a>
+        <a href="/2017/11/21/canvas/">canvas</a>
       </li>
     
   </ul>
