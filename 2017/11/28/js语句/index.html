@@ -97,7 +97,51 @@ innerHTML：可以用来绘制局部页面；
 </code></pre><h3 id="do-while循环："><a href="#do-while循环：" class="headerlink" title="do while循环："></a>do while循环：</h3><pre><code>先执行，后判断；
 </code></pre><h3 id="break语句："><a href="#break语句：" class="headerlink" title="break语句："></a>break语句：</h3><pre><code>终止执行语句块（终止循环。。。。）；
 </code></pre><h3 id="continue语句："><a href="#continue语句：" class="headerlink" title="continue语句："></a>continue语句：</h3><pre><code>跳出当前循环，进入到下一次的循环
-</code></pre>
+</code></pre><h3 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h3><pre><code>就是用来储存多个数据的变量就是数组；
+</code></pre><h3 id="循环里面获取到对象中的属性值的形式为："><a href="#循环里面获取到对象中的属性值的形式为：" class="headerlink" title="循环里面获取到对象中的属性值的形式为："></a>循环里面获取到对象中的属性值的形式为：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for(x in obj)&#123;</div><div class="line">	</div><div class="line">	console.log(obj[x]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="数组的创建："><a href="#数组的创建：" class="headerlink" title="数组的创建："></a>数组的创建：</h3><pre><code>1.var arr =  [];           //直面量；推荐使用
+
+2.var arr = new Array();   //构造函数；
+</code></pre><h3 id="数组赋值："><a href="#数组赋值：" class="headerlink" title="数组赋值："></a>数组赋值：</h3><pre><code>数组有一个length属性，记录我们数组中元素的个数/数组长度；
+</code></pre><h3 id="数组的方法：重点"><a href="#数组的方法：重点" class="headerlink" title="数组的方法：重点"></a>数组的方法：<em>重点</em></h3><pre><code>1.join(); 
+
+    把数组转换成字符串；得到一个新的字符串，不会修改我们原来的数组，还可以继续使用数组； 
+
+    在这个过程中join方法不会修改我们原来的数组；
+
+    join方法可以传递一个参数，这个参数是用来确定我们用什么东西来分隔数组中的每一项； 
+
+    默认使用逗号分隔；也可以自定义：var a = arr.join(&quot;|&quot;);//就是用 | 分隔； 
+
+2.*重点*：pop();//直接调用，没有参数； 
+
+    pop 用来删除数组中的最后一项，会改变原来的数组，返回值是删除掉的元素； 
+
+    从后删除； 
+
+3.push();//用来给数组添加一个或多个元素(从后添加 / 追加) 
+
+    会改变原来的数组；返回值是数组的新的长度； 
+
+    例：var a = arr.push(&quot;a&quot;); 
+
+4.unshift();//从前面添加； 
+
+    改变了数组；返回值是当前数组的长度 
+
+    例：var a = arr.unshift(&quot;a&quot;); 
+
+5.shift();//从前面删除； 
+
+    返回值是被删除的数组，会改变原数组； 
+
+    例：var a = arr.shift(); 
+</code></pre><h3 id="多维数组："><a href="#多维数组：" class="headerlink" title="多维数组："></a>多维数组：</h3><pre><code>var arr = [[],[],[]];//二维数组； 
+
+var arr = [[[],[],[]],[[],[]]]];//三维数组； 
+
+调用方法：arr[0][0][1];.... 
+</code></pre><h3 id="冒泡排序："><a href="#冒泡排序：" class="headerlink" title="冒泡排序："></a>冒泡排序：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 5, 6, 2, 8, 3, 9, 7, 0];</div><div class="line"></div><div class="line">       for (var i = 0; i &lt; arr.length; i++) &#123;</div><div class="line"></div><div class="line">           for (var j = 0; j &lt; arr.length, j++) &#123;</div><div class="line"></div><div class="line">               if (arr[j] &lt; arr[j + 1]) &#123;</div><div class="line">                   var m;</div><div class="line">                   m = arr[j];</div><div class="line">                   arr[j] = arr[j + 1];</div><div class="line">                   arr[j + 1] = m;</div><div class="line">               &#125;</div><div class="line"></div><div class="line">           &#125;</div><div class="line"></div><div class="line">       &#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -145,11 +189,11 @@ innerHTML：可以用来绘制局部页面；
       </li>
     
       <li>
-        <a href="/2017/11/21/canvas_wd/">canvas用法</a>
+        <a href="/2017/11/21/canvas/">canvas</a>
       </li>
     
       <li>
-        <a href="/2017/11/21/canvas/">canvas</a>
+        <a href="/2017/11/21/canvas_wd/">canvas用法</a>
       </li>
     
   </ul>
