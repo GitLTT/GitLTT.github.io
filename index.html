@@ -72,7 +72,7 @@
     </header>
     <div class="entry">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">        var arr = [&quot;a&quot;, &quot;c&quot;, &quot;s&quot;, &quot;d&quot;, &quot;f&quot;, &quot;g&quot;, &quot;x&quot;];</div><div class="line">        var arr1 = [1, 2, 3, 4, 5];</div><div class="line">        var arr2 = [6, 7, 8, 9, 0];</div><div class="line"></div><div class="line">        //        var a = arr1.concat(arr2);//合并</div><div class="line">        //        console.log(a);//新数组</div><div class="line"></div><div class="line"></div><div class="line">        //        var b = arr.reverse();//颠倒</div><div class="line">        //        console.log(b);//新数组</div><div class="line"></div><div class="line"></div><div class="line">        //        var c = arr1.sort(fn); //排序(从大到小)；m-n(从小到大)</div><div class="line">        //        function fn(m, n) &#123;</div><div class="line">        //            return n - m;</div><div class="line">        //        &#125;</div><div class="line">        //        console.log(c); //新数组</div><div class="line"></div><div class="line"></div><div class="line">        //        var d = arr.slice(1, 2); //截取，要头不要尾</div><div class="line">        //        console.log(d);//删除元素</div><div class="line"></div><div class="line"></div><div class="line">        //        var e = arr.splice(1, 2); //截取，某位数后的多少个元素，包括这个位置的元素</div><div class="line">        //        console.log(e); //删除元素</div><div class="line"></div><div class="line"></div><div class="line">        //        var f = arr.pop(); //从后删除；</div><div class="line">        //        console.log(f);//删除元素；</div><div class="line"></div><div class="line"></div><div class="line">        //        var g = arr.push(&quot;aaa&quot;); //从后添加；</div><div class="line">        //        console.log(g);//新数组长度</div><div class="line"></div><div class="line"></div><div class="line">        //        var h = arr.unshift(&quot;aaaa&quot;);//从前添加</div><div class="line">        //        console.log(h);//新数组长度</div><div class="line"></div><div class="line"></div><div class="line">        //        var i = arr.shift(); //从前删除</div><div class="line">        //        console.log(i); //删除元素</div><div class="line"></div><div class="line"></div><div class="line">        //        var j = arr.join(); //转换为字符串</div><div class="line">        //        console.log(j); //字符串；</div><div class="line">    &lt;/script&gt;</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var arr = [&quot;a&quot;, &quot;c&quot;, &quot;s&quot;, &quot;d&quot;, &quot;f&quot;, &quot;g&quot;, &quot;x&quot;];</div><div class="line">    var arr1 = [1, 2, 3, 4, 5];</div><div class="line">    var arr2 = [6, 7, 8, 9, 0];</div><div class="line">    var a = arr1.concat(arr2);//合并</div><div class="line">    console.log(a);//新数组</div><div class="line">        </div><div class="line">    var b = arr.reverse();//颠倒</div><div class="line">    console.log(b);//新数组</div><div class="line">        </div><div class="line">    var c = arr1.sort(fn); //排序(从大到小)；m-n(从小到大)</div><div class="line">    function fn(m, n) &#123;</div><div class="line">        return n - m;</div><div class="line">    &#125;</div><div class="line">    console.log(c); //新数组</div><div class="line"></div><div class="line">    ar d = arr.slice(1, 2); //截取，要头不要尾</div><div class="line">    console.log(d);//删除元素</div><div class="line"></div><div class="line">    var e = arr.splice(1, 2); //截取，某位数后的多少个元素，包括这个位置的元素</div><div class="line">    console.log(e); //删除元素</div><div class="line"></div><div class="line">    var f = arr.pop(); //从后删除；</div><div class="line">    console.log(f);//删除元素；</div><div class="line"></div><div class="line">    var g = arr.push(&quot;aaa&quot;); //从后添加；</div><div class="line">    console.log(g);//新数组长度</div><div class="line"></div><div class="line">    var h = arr.unshift(&quot;aaaa&quot;);//从前添加</div><div class="line">    console.log(h);//新数组长度</div><div class="line"></div><div class="line">    var i = arr.shift(); //从前删除</div><div class="line">    console.log(i); //删除元素</div><div class="line"></div><div class="line">    var j = arr.join(); //转换为字符串</div><div class="line">    console.log(j); //字符串；</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -424,6 +424,94 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
+<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
+</li>
+<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
+</li>
+<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
+</li>
+<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
+</li>
+<li><p>步骤：</p>
+<p> A： 获取canvas标签 a；</p>
+<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
+<p> C： 绘制矩形：</p>
+<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
+b：ctx.strokeRect();           //空心矩形；
+c：ctx.clearRect(x,y,width,height);           //清空区域；
+</code></pre><p> D：路径绘制：</p>
+<pre><code>a：ctx.beginPath();      //开始绘画；
+b：ctx.moveTo(x,y);       //画笔的位置；
+c：ctx.lineTo(x,y);        //起始位置；
+    .
+    .
+    .
+d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
+e：ctx.fill();           //填充颜色(默认为黑色)；
+</code></pre></li>
+</ol>
+<pre><code>自动闭合(没有终止位置时)：
+
+    a：ctx.moveTo(x,y);
+    b：ctx.lineTo(x,y);
+        .
+        .
+        .
+    c：ctx.closePath();       //自动闭合；
+    d：ctx.stroke();
+
+E：绘制圆/圆弧：
+
+    a：ctx.beginPath();
+    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
+                        start：开始位置，end：结束位置(以x轴为基准)      
+                                 方向：true逆时针，false顺时针(默认false)；
+    c：ctx.fill();
+</code></pre><ol>
+<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
+</ol>
+<ol>
+<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas_wd/">2017-11-21</a></time>
       
       
@@ -489,94 +577,6 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
 </blockquote>
 </li>
 </ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
-<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
-</li>
-<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
-</li>
-<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
-</li>
-<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
-</li>
-<li><p>步骤：</p>
-<p> A： 获取canvas标签 a；</p>
-<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
-<p> C： 绘制矩形：</p>
-<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
-b：ctx.strokeRect();           //空心矩形；
-c：ctx.clearRect(x,y,width,height);           //清空区域；
-</code></pre><p> D：路径绘制：</p>
-<pre><code>a：ctx.beginPath();      //开始绘画；
-b：ctx.moveTo(x,y);       //画笔的位置；
-c：ctx.lineTo(x,y);        //起始位置；
-    .
-    .
-    .
-d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
-e：ctx.fill();           //填充颜色(默认为黑色)；
-</code></pre></li>
-</ol>
-<pre><code>自动闭合(没有终止位置时)：
-
-    a：ctx.moveTo(x,y);
-    b：ctx.lineTo(x,y);
-        .
-        .
-        .
-    c：ctx.closePath();       //自动闭合；
-    d：ctx.stroke();
-
-E：绘制圆/圆弧：
-
-    a：ctx.beginPath();
-    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
-                        start：开始位置，end：结束位置(以x轴为基准)      
-                                 方向：true逆时针，false顺时针(默认false)；
-    c：ctx.fill();
-</code></pre><ol>
-<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
-</ol>
-<ol>
-<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
-</code></pre></li>
-</ol>
 
       
     </div>
@@ -905,7 +905,7 @@ E：绘制圆/圆弧：
       </li>
     
       <li>
-        <a href="/2017/11/21/canvas_wd/">canvas用法</a>
+        <a href="/2017/11/21/canvas/">canvas</a>
       </li>
     
   </ul>
