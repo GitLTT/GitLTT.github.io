@@ -62,6 +62,97 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-11-03T01:43:32.000Z"><a href="/2017/11/03/JS/">2017-11-03</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/03/JS/">JS</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="JS笔记"><a href="#JS笔记" class="headerlink" title="JS笔记"></a>JS笔记</h1><h3 id="1-点击事件"><a href="#1-点击事件" class="headerlink" title="1. 点击事件:"></a>1. 点击事件:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;alert(&apos;welcome&apos;)&quot;&gt;</div><div class="line">点击</div><div class="line">&lt;/button&gt;</div></pre></td></tr></table></figure>
+<p>onclick :  点击<br>alert :  弹框输出</p>
+<h3 id="2-数据类型"><a href="#2-数据类型" class="headerlink" title="2.数据类型:"></a>2.数据类型:</h3><p>Number、String、Boolean、Object(object、数组)、Undefined、Null</p>
+<h3 id="3-输出方式"><a href="#3-输出方式" class="headerlink" title="3.输出方式:"></a>3.输出方式:</h3><p>1) alert();<br>2) .innerHTML = ;<br>3) console.log();  </p>
+<h3 id="4-改变HTML内容"><a href="#4-改变HTML内容" class="headerlink" title="4.改变HTML内容:"></a>4.改变HTML内容:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;demo&quot;&gt;123&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction()</div><div class="line">&#123;</div><div class="line">var x = document.getElementById(&quot;demo&quot;);</div><div class="line">x.innerHTML = &quot;hello JavaScript!&quot;;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;</div><div class="line">点击这里</div><div class="line">&lt;/button&gt;</div></pre></td></tr></table></figure>
+<h3 id="5-改变HTML图像"><a href="#5-改变HTML图像" class="headerlink" title="5.改变HTML图像:"></a>5.改变HTML图像:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">function changeImage()</div><div class="line">&#123;</div><div class="line">var element = document.getElementById(&quot;myimage&quot;);</div><div class="line">if(element.src.match(&quot;bulbon&quot;))</div><div class="line">&#123;</div><div class="line">element.src = &quot;i/eg_bulboff.gif&quot;;</div><div class="line">&#125;else&#123;</div><div class="line">element.src = &quot;i/eg_bulbon.gif&quot;;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;img id=&quot;myimage&quot; onclick=&quot;changeImage()&quot; src=&quot;i/eg_bulboff.gif&quot;&gt;</div><div class="line">&lt;p&gt;点击变换HTML图像&lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="6-变换HTML样式"><a href="#6-变换HTML样式" class="headerlink" title="6.变换HTML样式:"></a>6.变换HTML样式:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x = document.getElementById(&quot;demo&quot;);</div><div class="line">x.style.color = &quot;#ff0000&quot;;</div></pre></td></tr></table></figure>
+<h3 id="7-验证输入"><a href="#7-验证输入" class="headerlink" title="7. 验证输入:"></a>7. 验证输入:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;我的第一段 JavaScript&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;p&gt;请输入数字。如果输入值不是数字，浏览器会弹出提示框。&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;input id=&quot;demo&quot; type=&quot;text&quot;&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">function myFunction()</div><div class="line">&#123;</div><div class="line">var x=document.getElementById(&quot;demo&quot;).value;</div><div class="line">if(x==&quot;&quot;||isNaN(x))</div><div class="line">	&#123;</div><div class="line">	alert(&quot;Not Numeric&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;点击这里&lt;/button&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="8-获取节点"><a href="#8-获取节点" class="headerlink" title="8.获取节点:"></a>8.获取节点:</h3><p>1) 通过ID进行获取:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var x = document.getElementById(&quot;demo&quot;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>2) 通过claaa进行获取:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p class=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var x = document.getElementsByClassName(&quot;demo&quot;)[0];</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>3) 通过name进行获取:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p class=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var x =  document.getElementsByName(&quot;demo&quot;)[0];</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>4) 通过标签进行获取:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p class=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var x =  document.getElementsByTagName(&quot;demo&quot;)[0];</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="9-运算与符号"><a href="#9-运算与符号" class="headerlink" title="9. 运算与符号:"></a>9. 运算与符号:</h3><p>1) 算术运算符 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = 10;</div><div class="line">console.log(a++);//10;    +1;</div><div class="line">console.log(++a);//+1;    12;</div><div class="line">console.log(a--);//10;    -1;</div><div class="line">console.log(--a);//-1;    8;</div></pre></td></tr></table></figure></p>
+<p>注：a++：先使用(运算)后赋值；<br>&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp ++a：先复制后使用(运算)； </p>
+<p>2) 比较:  </p>
+<ul>
+<li>==: 判断两个变量的值是否相等；  </li>
+<li>===: 判断变量的值和数据类型是否相等；  </li>
+<li>!=(不等于): 代表是否两个变量值不相等；  </li>
+<li>!==(不全等): 代表两个变量的值和数据类型有一个不相等；  </li>
+</ul>
+<p>3) 三目运算符(三元运算符)：  </p>
+<p>表达式?语句1:语句2;</p>
+<p>A: 表达式为true时，执行语句1;<br>B: 表达式为false时，执行语句2;  </p>
+<h3 id="10-数据类型以及进制之间的转换"><a href="#10-数据类型以及进制之间的转换" class="headerlink" title="10. 数据类型以及进制之间的转换:"></a>10. 数据类型以及进制之间的转换:</h3><p>1) 转换Number类型:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = &quot;1&quot;;</div><div class="line">var newNum = Number(num);</div></pre></td></tr></table></figure></p>
+<p>2) 转换String类型:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = 1;</div><div class="line">var newNum = String(num);</div></pre></td></tr></table></figure></p>
+<p>3) 转换Boolean类型:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = 1;</div><div class="line">var newNum = Boolean(num);</div></pre></td></tr></table></figure></p>
+<p>4) toString(); 十进制转换为某一进制:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = 1;</div><div class="line">var newNum = num.toString();</div></pre></td></tr></table></figure></p>
+<p>注：toString()多用于进制之间的转化，括号里面为转换的某个进制;  </p>
+<p>5) parseInt(); 某一进制转换为十进制:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = 1;</div><div class="line">var newNum = parseInt(num,16);</div></pre></td></tr></table></figure></p>
+<h3 id="11-toUpperCase-大写"><a href="#11-toUpperCase-大写" class="headerlink" title="11. toUpperCase(); 大写:"></a>11. toUpperCase(); 大写:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = &quot;hello world&quot;;</div><div class="line">var newA = a.toUpperCase();</div></pre></td></tr></table></figure>
+<h3 id="12-全局变量"><a href="#12-全局变量" class="headerlink" title="12.全局变量:"></a>12.全局变量:</h3><p>1) 在任何作用于中，没有声明变量就赋值就可以是全局变量;<br>2) 在所有的作用域中可以使用的变量为全局变量;</p>
+<h3 id="13-局部变量"><a href="#13-局部变量" class="headerlink" title="13.局部变量:"></a>13.局部变量:</h3><p>只能在当前的作用域中使用，作用域外部无法调用局部变量。</p>
+<h3 id="14-声明变量提升"><a href="#14-声明变量提升" class="headerlink" title="14.声明变量提升:"></a>14.声明变量提升:</h3><p>1) 在js执行过程中，会先把所有的var给提升到当前作用域的最上面，然后再执行语句;<br>2) 在js中，内部可以访问外部的变量，外部不可以访问内部的变量;</p>
+<h3 id="15-js查找机制"><a href="#15-js查找机制" class="headerlink" title="15.js查找机制:"></a>15.js查找机制:</h3><p>会在当前作用域中进行查找使用，没有就访问上一级作用域中进行查找;</p>
+<h3 id="16-”-”字符"><a href="#16-”-”字符" class="headerlink" title="16.”+”字符:"></a>16.”+”字符:</h3><p>如果变量之间有一个是字符串，那么使用”+”就是拼接作用(逗逗加加法则);  </p>
+<h3 id="17-switch语句、if语句、for循环"><a href="#17-switch语句、if语句、for循环" class="headerlink" title="17.switch语句、if语句、for循环:"></a>17.switch语句、if语句、for循环:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">switch()&#123;</div><div class="line">case1:语句1;break;</div><div class="line">case2:语句2;break;</div><div class="line">case3:语句3;break;</div><div class="line">default:语句3;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if(表达式)&#123;</div><div class="line">执行语句1;</div><div class="line">&#125;else if(表达式)&#123;</div><div class="line">执行语句2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for(初始值;循环条件;变量)&#123;</div><div class="line">执行语句;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="18-定时器"><a href="#18-定时器" class="headerlink" title="18.定时器:"></a>18.定时器:</h3><ul>
+<li>setTimeout(function(){执行语句},1000);<br>注: 1000代表1秒，可以改变，只执行一次;  </li>
+<li>setInterval(function(){执行语句},1000);<br>注: 1000代表1秒，可以改变，循环执行;  </li>
+<li>清除定时器:<br>clearTimeout();<br>clearInterval();  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var timer = setInterval();  </div><div class="line">clearInterval(timer);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="19-事件"><a href="#19-事件" class="headerlink" title="19.事件:"></a>19.事件:</h3><ul>
+<li><p>onclick();点击事件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;button onclick=&quot;myFun()&quot;&gt;按钮&lt;/button&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFun()&#123;</div><div class="line">alert(&quot;点击&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>键盘事件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">document.onkeydown = function(event)&#123;</div><div class="line">var e = event||window.event||arguments.callee.caller.arguments[0];</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注: “var e”解决了一些兼容性的问题;</p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-11-02T06:25:33.000Z"><a href="/2017/11/02/JavaScript/">2017-11-02</a></time>
       
       
@@ -139,6 +230,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2017/12/01/函数-对象-定时器/">函数/对象/定时器</a>
+      </li>
+    
+      <li>
         <a href="/2017/11/29/数组方法总结/">数组方法总结</a>
       </li>
     
@@ -152,10 +247,6 @@
     
       <li>
         <a href="/2017/11/24/js-onload/">js_onload</a>
-      </li>
-    
-      <li>
-        <a href="/2017/11/21/canvas/">canvas</a>
       </li>
     
   </ul>

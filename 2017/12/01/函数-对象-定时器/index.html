@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>函数/对象/定时器 | LTT</title>
+  <meta name="author" content="LTT" />
+
+  
+  <meta name="description" content="函数：1. 定义：函数就是代码块，就是一个方法，就是一个完整的功能或者是某一个需求；
+
+2. 书写：function 函数名称(参数){代码逻辑}
+
+    a. 参数：就是你在函数中要用到的变量；【声明的参数就是形参，调用的参数就是实参】
+
+    b. 函数命名：最好是使用驼峰式命名；
+
+   " />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <meta property="og:title" content="函数/对象/定时器" />
+  <meta property="og:site_name" content="LTT" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="LTT" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">LTT</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-12-01T01:37:54.000Z"><a href="/2017/12/01/函数-对象-定时器/">2017-12-01</a></time>
+      
+      
+  
+    <h1 class="title">函数/对象/定时器</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="函数："><a href="#函数：" class="headerlink" title="函数："></a>函数：</h3><pre><code>1. 定义：函数就是代码块，就是一个方法，就是一个完整的功能或者是某一个需求；
+
+2. 书写：function 函数名称(参数){代码逻辑}
+
+    a. 参数：就是你在函数中要用到的变量；【声明的参数就是形参，调用的参数就是实参】
+
+    b. 函数命名：最好是使用驼峰式命名；
+
+    c. 调用方法：函数名称();
+</code></pre><h3 id="自调用函数："><a href="#自调用函数：" class="headerlink" title="自调用函数："></a>自调用函数：</h3><pre><code>1. 自己调用自己；是一个匿名函数（没有函数名称）；
+
+    例：(function (){})();
+
+2. 自调用函数可以实现模块化开发；
+
+3. 传参：
+
+    (function (a,b){   //形参；
+        console.log(a+b);  
+    })(5,8);  //实参；
+
+4. 在写自调用函数时通常使用的方法：【开头用&quot;!&quot;或者是&quot;;&quot;】
+
+    a. !(function(){})();
+
+    b. ;(function(){})();
+</code></pre><h3 id="带有返回值的函数："><a href="#带有返回值的函数：" class="headerlink" title="带有返回值的函数："></a>带有返回值的函数：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var fn = function()&#123;</div><div class="line">	return a;  //你如果想要什么就retyrn什么，和你上面的代码并不一定需要有什么关系</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h3><pre><code>创建对象：
+    1. var a = {};  //字面量形式；
+
+    2. var b = new Object();
+
+       b.name = &quot;&quot;;   //构造函数方法；
+</code></pre><h3 id="类的创建："><a href="#类的创建：" class="headerlink" title="类的创建："></a>类的创建：</h3><pre><code>自定义一个构造函数/自己来进行分类；
+
+1. 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function fn(name)&#123; //任何对象都是由函数创建出来的；</div><div class="line">	// this name; //这个地方的this就是你要创建的对象或者就是你创建的对象；</div><div class="line"></div><div class="line">	this.name = name;//第一个name：自定义的属性；第二个name：参数；</div><div class="line"></div><div class="line">	var a = new fn(&quot;张三&quot;);</div><div class="line"></div><div class="line">	console.log(a); //&#123;name:&quot;张三&quot;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>2. 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fn(name)&#123;</div><div class="line">	this.sayHi = function ()&#123;</div><div class="line">		this.name = name;</div><div class="line">		console.log(&quot;1&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">var a = fn(&quot;张三&quot;);</div><div class="line">a.sayHi();</div></pre></td></tr></table></figure>
+<h3 id="window和变量："><a href="#window和变量：" class="headerlink" title="window和变量："></a>window和变量：</h3><pre><code>window是一个对象【在BOM中是一个顶尖对象】
+
+只有在全局中var a = 1; == window.a = 1;
+
+例：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line"></div><div class="line">console.log(a);  //1</div><div class="line"></div><div class="line">console.log(window);  //a:1;.....</div><div class="line"></div><div class="line">console.log(window.a); // 1</div></pre></td></tr></table></figure>
+<h2 id="this指向：重点，常问；"><a href="#this指向：重点，常问；" class="headerlink" title="this指向：重点，常问；"></a>this指向：重点，常问；</h2><pre><code>1. 在全局作用域中的this指向的是window；
+
+    例：
+        this.a = 5;
+        console.log(this);// window{a = 5,....}
+
+2. 在普通函数调用时里面的this就是代表window；
+
+    例：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  function fn(a,b)&#123;</div><div class="line">this.name = a;</div><div class="line">this.age = b;</div><div class="line">console.log(this);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<pre><code>       fn(&quot;张三&quot;,&quot;18&quot;);//fn函数就是一个普通函数；此时this指向window；
+
+3. 在构造函数中的this指向该构造函数的实例（创建的对象）；
+
+    例：
+       var m = new fn(&quot;李四&quot;,&quot;19&quot;);//该函数就是调用函数；此时的this指向m（对象）
+
+4. 对象的方法中的this指向调用该方法的对象；（函数被当做对象的方法被调用时，this指向吊阿勇该方法的对象）
+
+    例：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  var x = &#123;</div><div class="line">name:&quot;张三&quot;;</div><div class="line">sayHi:function()&#123;</div><div class="line">	console.log(this);  //&#123;&#125;</div><div class="line">	console.log(this.name); //张三；</div><div class="line">&#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="定时器："><a href="#定时器：" class="headerlink" title="定时器："></a>定时器：</h3><pre><code>1. 延迟定时器：（只会执行一次）；
+
+    var a = setTimeout(函数,时间);//时间单位：毫秒；
+
+清除定时器：clearTimeout(a);//a：是定时器的id；
+
+2. 间隔定时器：（循环执行）
+
+    var b = setInterval(函数,时间)；
+
+清除定时器：clearInterval(b);
+</code></pre>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Neueste Artikel</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/01/函数-对象-定时器/">函数/对象/定时器</a>
+      </li>
+    
+      <li>
+        <a href="/2017/11/29/数组方法总结/">数组方法总结</a>
+      </li>
+    
+      <li>
+        <a href="/2017/11/28/js语句/">js语句</a>
+      </li>
+    
+      <li>
+        <a href="/2017/11/25/html-css/">html/css</a>
+      </li>
+    
+      <li>
+        <a href="/2017/11/24/js-onload/">js_onload</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2017 LTT
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+  
+    <script type="text/javascript" src="/live2d/script.js"></script>
+    <canvas id="live2dcanvas" width="150" height="300" class="live2d"></canvas>
+    <style>
+      #live2dcanvas {
+        position: fixed;
+        right: 0px;
+        z-index: 999;
+        pointer-events: none;
+        bottom: -60px;
+      }
+    </style>
+    <script>loadlive2d("live2dcanvas" ,"/live2d/assets/haruto/haruto.model.json",0.5)</script>
+  
+</body>
+</html>
