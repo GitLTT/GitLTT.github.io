@@ -62,6 +62,46 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-11-13T08:50:33.000Z"><a href="/2017/11/13/juzhong/">2017-11-13</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/13/juzhong/">完美居中盒子以及文字</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h4 id="已知元素的宽高"><a href="#已知元素的宽高" class="headerlink" title="已知元素的宽高:"></a>已知元素的宽高:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.a &#123;</div><div class="line">width: 500px;</div><div class="line">height: 500px;</div><div class="line">background: red;</div><div class="line">position: relative;</div><div class="line">&#125;</div><div class="line">.b &#123;</div><div class="line">width: 200px;</div><div class="line">height: 200px;</div><div class="line">background: blue;</div><div class="line">position: absolute;</div><div class="line">top: 50%;</div><div class="line">left: 50%;</div><div class="line">margin-top: -100px;</div><div class="line">margin-left: -100px;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;a&quot;&gt;</div><div class="line">&lt;div class=&quot;b&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h4 id="未知元素的宽高"><a href="#未知元素的宽高" class="headerlink" title="未知元素的宽高:"></a>未知元素的宽高:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.a &#123;</div><div class="line">width: 500px;</div><div class="line">height: 500px;</div><div class="line">background: red;</div><div class="line">position: relative;</div><div class="line">&#125;</div><div class="line">.b &#123;</div><div class="line">position: absolute;</div><div class="line">margin: auto;</div><div class="line">top: 0;</div><div class="line">right: 0;</div><div class="line">bottom: 0;</div><div class="line">left: 0;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;a&quot;&gt;</div><div class="line">&lt;div class=&quot;b&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h4 id="将行内元素进行居中"><a href="#将行内元素进行居中" class="headerlink" title="将行内元素进行居中:"></a>将行内元素进行居中:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;行内元素居中&lt;/title&gt;</div><div class="line">&lt;style&gt;</div><div class="line">div &#123;</div><div class="line">width: 600px;</div><div class="line">height: 600px;</div><div class="line">background: red;</div><div class="line">text-align: center;</div><div class="line">line-height: 600px;</div><div class="line">&#125;</div><div class="line">img &#123;</div><div class="line">/* 垂直对齐方式*/</div><div class="line">vertical-align: text-top;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div&gt;</div><div class="line">凄凄切切群群群</div><div class="line">&lt;img src=&quot;img/qrcode-wx.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;img src=&quot;img/qrcode-wx.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-11-03T01:43:32.000Z"><a href="/2017/11/03/JS/">2017-11-03</a></time>
       
       
@@ -230,6 +270,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2017/12/01/构造函数-拷贝/">构造函数/拷贝</a>
+      </li>
+    
+      <li>
         <a href="/2017/12/01/函数-对象-定时器/">函数/对象/定时器</a>
       </li>
     
@@ -243,10 +287,6 @@
     
       <li>
         <a href="/2017/11/25/html-css/">html/css</a>
-      </li>
-    
-      <li>
-        <a href="/2017/11/24/js-onload/">js_onload</a>
       </li>
     
   </ul>

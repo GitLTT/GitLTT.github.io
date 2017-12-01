@@ -62,6 +62,63 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-12-01T05:15:56.000Z"><a href="/2017/12/01/构造函数-拷贝/">2017-12-01</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/01/构造函数-拷贝/">构造函数/拷贝</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="构造函数："><a href="#构造函数：" class="headerlink" title="构造函数："></a>构造函数：</h3><pre><code>原型：在构造函数的原型上面挂载属性和方法；可以让每一个构造函数的实例来调用； 
+
+书写：原型.属性； 
+
+例：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fn(name,age)&#123;</div><div class="line">	this.name = name;</div><div class="line">	this.age = age;</div><div class="line">&#125;</div><div class="line">//相同的属性和方法挂在原型上，表现形式和调用的方法不变；</div><div class="line">fn.prototype.class = &quot;四组&quot;;</div><div class="line">var a = new fn(&quot;张三&quot;,18);</div><div class="line">a.class;//就可以调用；</div></pre></td></tr></table></figure>
+<h3 id="json："><a href="#json：" class="headerlink" title="json："></a>json：</h3><pre><code>轻量级的数据交换格式，主要用于跟服务器进行交换数据；(json对象)； 
+
+书写方式：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.var myJson = &#123;</div><div class="line">	&quot;name&quot;:&quot;张三&quot;</div><div class="line">&#125;</div><div class="line">console.log(myJson.name);//张三；</div></pre></td></tr></table></figure>
+<pre><code>* json格式的字符串：var a = &quot;{}&quot;; 
+
+
+* 把json的对象转换为字符串： 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var myJsonStr = JSON.stringify(myJson);</div><div class="line">	</div><div class="line">console.log(myJsonStr); // &#123;&quot;name&quot;:&quot;张三&quot;&#125;;</div><div class="line"></div><div class="line">console.log(typeof myJsonStr); // string;</div></pre></td></tr></table></figure>
+<pre><code>* 把json字符串转换为json对象： 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var myJson1 = JSON.parse(myJsonStr);</div><div class="line"></div><div class="line">console.log(myJson1); // &#123;&quot;name&quot;:&quot;张三&quot;&#125;;</div><div class="line"></div><div class="line">console.log(typeof myJson1); // object;</div></pre></td></tr></table></figure>
+<h3 id="对象的浅拷贝："><a href="#对象的浅拷贝：" class="headerlink" title="对象的浅拷贝："></a>对象的浅拷贝：</h3><pre><code>对象用for in循环；数组用for循环； 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var a = &#123;</div><div class="line">	name:&quot;张三&quot;,</div><div class="line">	age:18,</div><div class="line">	sex:&quot;男&quot;</div><div class="line">&#125;</div><div class="line">var b = &#123;&#125;;</div><div class="line">for(var x in a)&#123;</div><div class="line">	b[x] = a[x];</div><div class="line">&#125;</div><div class="line">console.log(b==a); // false;</div><div class="line">console.log(b===a); // false; // 全等：值、数据类型、地址；</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">//封装一个深拷贝的方法；</div><div class="line"></div><div class="line">		//如果用户输入的不是一个对象，我们把用户输入的东西返回去；</div><div class="line"></div><div class="line">		//如果用户输入的是一个对象：</div><div class="line">			</div><div class="line">			判断：</div><div class="line">				数组：拷贝数组，返回回去一个新的数组；</div><div class="line"></div><div class="line">				对象：拷贝对象，返回回去一个新的数组；</div><div class="line"></div><div class="line">	var obj = &#123;</div><div class="line">		name:&quot;张三&quot;,</div><div class="line">		age:18,</div><div class="line">		sc:&#123;</div><div class="line">			height:180,</div><div class="line">			weight:&quot;50kg&quot;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	</div><div class="line">	//clone函数有一个参数：你要拷贝的对象；</div><div class="line">	</div><div class="line">	function clone(a)&#123;</div><div class="line">		if(typeof a == &quot;Object&quot;)&#123;</div><div class="line">			if(a instanceof Array)&#123; // obj是Array的一个实例；</div><div class="line">				var arr = [];</div><div class="line"></div><div class="line">				for(var i = 0;i &lt; arr.length;i++)&#123;</div><div class="line"></div><div class="line">					arr[i] = a[i];</div><div class="line">				&#125;</div><div class="line"></div><div class="line">				return arr;</div><div class="line">			&#125;else&#123;</div><div class="line"></div><div class="line">				var obj = &#123;&#125;;</div><div class="line"></div><div class="line">				for(var x in a)&#123;</div><div class="line"></div><div class="line">					obj[x] = a [x];</div><div class="line">				&#125;</div><div class="line">				return obj;</div><div class="line">			&#125;</div><div class="line">		&#125;else&#123;</div><div class="line">			return a;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="对象的深拷贝："><a href="#对象的深拷贝：" class="headerlink" title="对象的深拷贝："></a>对象的深拷贝：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">//递归：自己调用自己；obj[x] = clone(a[x]);</div><div class="line"></div><div class="line">//方法：</div><div class="line"></div><div class="line">function clone(a)&#123;</div><div class="line">	if(typeof a == &quot;Object&quot;)&#123;</div><div class="line">		if(a instanceof Array)&#123; // obj是Array的一个实例；</div><div class="line">			var arr = [];</div><div class="line"></div><div class="line">			for(var i = 0;i &lt; arr.length;i++)&#123;</div><div class="line"></div><div class="line">				arr[i] = clone(a[i]);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			return arr;</div><div class="line">		&#125;else&#123;</div><div class="line"></div><div class="line">			var obj = &#123;&#125;;</div><div class="line"></div><div class="line">			for(var x in a)&#123;</div><div class="line"></div><div class="line">				obj[x] = clone(a[i]);</div><div class="line">			&#125;</div><div class="line">			return obj;</div><div class="line">		&#125;</div><div class="line">	&#125;else&#123;</div><div class="line">		return a;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-12-01T01:37:54.000Z"><a href="/2017/12/01/函数-对象-定时器/">2017-12-01</a></time>
       
       
@@ -536,94 +593,6 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
-<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
-</li>
-<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
-</li>
-<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
-</li>
-<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
-</li>
-<li><p>步骤：</p>
-<p> A： 获取canvas标签 a；</p>
-<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
-<p> C： 绘制矩形：</p>
-<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
-b：ctx.strokeRect();           //空心矩形；
-c：ctx.clearRect(x,y,width,height);           //清空区域；
-</code></pre><p> D：路径绘制：</p>
-<pre><code>a：ctx.beginPath();      //开始绘画；
-b：ctx.moveTo(x,y);       //画笔的位置；
-c：ctx.lineTo(x,y);        //起始位置；
-    .
-    .
-    .
-d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
-e：ctx.fill();           //填充颜色(默认为黑色)；
-</code></pre></li>
-</ol>
-<pre><code>自动闭合(没有终止位置时)：
-
-    a：ctx.moveTo(x,y);
-    b：ctx.lineTo(x,y);
-        .
-        .
-        .
-    c：ctx.closePath();       //自动闭合；
-    d：ctx.stroke();
-
-E：绘制圆/圆弧：
-
-    a：ctx.beginPath();
-    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
-                        start：开始位置，end：结束位置(以x轴为基准)      
-                                 方向：true逆时针，false顺时针(默认false)；
-    c：ctx.fill();
-</code></pre><ol>
-<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
-</ol>
-<ol>
-<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
-</code></pre></li>
-</ol>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas_wd/">2017-11-21</a></time>
       
       
@@ -689,6 +658,94 @@ E：绘制圆/圆弧：
 </blockquote>
 </li>
 </ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
+<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
+</li>
+<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
+</li>
+<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
+</li>
+<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
+</li>
+<li><p>步骤：</p>
+<p> A： 获取canvas标签 a；</p>
+<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
+<p> C： 绘制矩形：</p>
+<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
+b：ctx.strokeRect();           //空心矩形；
+c：ctx.clearRect(x,y,width,height);           //清空区域；
+</code></pre><p> D：路径绘制：</p>
+<pre><code>a：ctx.beginPath();      //开始绘画；
+b：ctx.moveTo(x,y);       //画笔的位置；
+c：ctx.lineTo(x,y);        //起始位置；
+    .
+    .
+    .
+d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
+e：ctx.fill();           //填充颜色(默认为黑色)；
+</code></pre></li>
+</ol>
+<pre><code>自动闭合(没有终止位置时)：
+
+    a：ctx.moveTo(x,y);
+    b：ctx.lineTo(x,y);
+        .
+        .
+        .
+    c：ctx.closePath();       //自动闭合；
+    d：ctx.stroke();
+
+E：绘制圆/圆弧：
+
+    a：ctx.beginPath();
+    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
+                        start：开始位置，end：结束位置(以x轴为基准)      
+                                 方向：true逆时针，false顺时针(默认false)；
+    c：ctx.fill();
+</code></pre><ol>
+<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
+</ol>
+<ol>
+<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
+</code></pre></li>
+</ol>
 
       
     </div>
@@ -845,46 +902,6 @@ E：绘制圆/圆弧：
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-13T08:50:33.000Z"><a href="/2017/11/13/juzhong/">2017-11-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/13/juzhong/">完美居中盒子以及文字</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h4 id="已知元素的宽高"><a href="#已知元素的宽高" class="headerlink" title="已知元素的宽高:"></a>已知元素的宽高:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.a &#123;</div><div class="line">width: 500px;</div><div class="line">height: 500px;</div><div class="line">background: red;</div><div class="line">position: relative;</div><div class="line">&#125;</div><div class="line">.b &#123;</div><div class="line">width: 200px;</div><div class="line">height: 200px;</div><div class="line">background: blue;</div><div class="line">position: absolute;</div><div class="line">top: 50%;</div><div class="line">left: 50%;</div><div class="line">margin-top: -100px;</div><div class="line">margin-left: -100px;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;a&quot;&gt;</div><div class="line">&lt;div class=&quot;b&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<h4 id="未知元素的宽高"><a href="#未知元素的宽高" class="headerlink" title="未知元素的宽高:"></a>未知元素的宽高:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.a &#123;</div><div class="line">width: 500px;</div><div class="line">height: 500px;</div><div class="line">background: red;</div><div class="line">position: relative;</div><div class="line">&#125;</div><div class="line">.b &#123;</div><div class="line">position: absolute;</div><div class="line">margin: auto;</div><div class="line">top: 0;</div><div class="line">right: 0;</div><div class="line">bottom: 0;</div><div class="line">left: 0;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;a&quot;&gt;</div><div class="line">&lt;div class=&quot;b&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<h4 id="将行内元素进行居中"><a href="#将行内元素进行居中" class="headerlink" title="将行内元素进行居中:"></a>将行内元素进行居中:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;行内元素居中&lt;/title&gt;</div><div class="line">&lt;style&gt;</div><div class="line">div &#123;</div><div class="line">width: 600px;</div><div class="line">height: 600px;</div><div class="line">background: red;</div><div class="line">text-align: center;</div><div class="line">line-height: 600px;</div><div class="line">&#125;</div><div class="line">img &#123;</div><div class="line">/* 垂直对齐方式*/</div><div class="line">vertical-align: text-top;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div&gt;</div><div class="line">凄凄切切群群群</div><div class="line">&lt;img src=&quot;img/qrcode-wx.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;img src=&quot;img/qrcode-wx.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -910,6 +927,10 @@ E：绘制圆/圆弧：
   <ul class="entry">
     
       <li>
+        <a href="/2017/12/01/构造函数-拷贝/">构造函数/拷贝</a>
+      </li>
+    
+      <li>
         <a href="/2017/12/01/函数-对象-定时器/">函数/对象/定时器</a>
       </li>
     
@@ -923,10 +944,6 @@ E：绘制圆/圆弧：
     
       <li>
         <a href="/2017/11/25/html-css/">html/css</a>
-      </li>
-    
-      <li>
-        <a href="/2017/11/24/js-onload/">js_onload</a>
       </li>
     
   </ul>
