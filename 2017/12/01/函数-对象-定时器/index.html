@@ -135,10 +135,8 @@
 2. 在普通函数调用时里面的this就是代表window；
 
     例：
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  function fn(a,b)&#123;</div><div class="line">this.name = a;</div><div class="line">this.age = b;</div><div class="line">console.log(this);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<pre><code>       fn(&quot;张三&quot;,&quot;18&quot;);//fn函数就是一个普通函数；此时this指向window；
-
-3. 在构造函数中的this指向该构造函数的实例（创建的对象）；
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  function fn(a,b)&#123;</div><div class="line">this.name = a;</div><div class="line">this.age = b;</div><div class="line">console.log(this);</div><div class="line">  &#125;</div><div class="line">  fn(&quot;张三&quot;,&quot;18&quot;);//fn函数就是一个普通函数；此时this指向window；</div></pre></td></tr></table></figure>
+<pre><code>3. 在构造函数中的this指向该构造函数的实例（创建的对象）；
 
     例：
        var m = new fn(&quot;李四&quot;,&quot;19&quot;);//该函数就是调用函数；此时的this指向m（对象）
