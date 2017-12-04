@@ -107,7 +107,7 @@
     a. !(function(){})();
 
     b. ;(function(){})();
-</code></pre><h3 id="带有返回值的函数："><a href="#带有返回值的函数：" class="headerlink" title="带有返回值的函数："></a>带有返回值的函数：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var fn = function()&#123;</div><div class="line">	return a;  //你如果想要什么就retyrn什么，和你上面的代码并不一定需要有什么关系</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><h3 id="带有返回值的函数："><a href="#带有返回值的函数：" class="headerlink" title="带有返回值的函数："></a>带有返回值的函数：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var fn = function()&#123;</div><div class="line">	return a;  //你如果想要什么就return什么，和你上面的代码并不一定需要有什么关系</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h3><pre><code>创建对象：
     1. var a = {};  //字面量形式；
 
@@ -141,7 +141,7 @@
     例：
        var m = new fn(&quot;李四&quot;,&quot;19&quot;);//该函数就是调用函数；此时的this指向m（对象）
 
-4. 对象的方法中的this指向调用该方法的对象；（函数被当做对象的方法被调用时，this指向吊阿勇该方法的对象）
+4. 对象的方法中的this指向调用该方法的对象；（函数被当做对象的方法被调用时，this指向调用该方法的对象）
 
     例：
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  var x = &#123;</div><div class="line">name:&quot;张三&quot;;</div><div class="line">sayHi:function()&#123;</div><div class="line">	console.log(this);  //&#123;&#125;</div><div class="line">	console.log(this.name); //张三；</div><div class="line">&#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
