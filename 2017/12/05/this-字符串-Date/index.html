@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>this/字符串/Date | LTT</title>
+  <meta name="author" content="LTT" />
+
+  
+  <meta name="description" content="改变this指向：1. call();
+
+    a. 语法：call(thisObj，Object) 
+    b. 定义：调用一个对象的一个方法，以另一个对象替换当前对象  
+
+2. apply(); 
+
+    a. 语法：apply(thisObj，[argArray]) 
+    b.  " />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <meta property="og:title" content="this/字符串/Date" />
+  <meta property="og:site_name" content="LTT" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="LTT" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">LTT</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-12-05T01:38:01.000Z"><a href="/2017/12/05/this-字符串-Date/">2017-12-05</a></time>
+      
+      
+  
+    <h1 class="title">this/字符串/Date</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="改变this指向："><a href="#改变this指向：" class="headerlink" title="改变this指向："></a>改变this指向：</h3><pre><code>1. call();
+
+    a. 语法：call(thisObj，Object) 
+    b. 定义：调用一个对象的一个方法，以另一个对象替换当前对象  
+
+2. apply(); 
+
+    a. 语法：apply(thisObj，[argArray]) 
+    b.  定义：应用某一对象的一个方法，用另一个对象替换当前对象 
+
+
+例：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">          	name: &quot;zhangsan&quot;,</div><div class="line">          	age: 15,</div><div class="line">          	fn: function(a, b, c) &#123;</div><div class="line">              	this.a = a;</div><div class="line">              	this.b = b;</div><div class="line">              	this.c = c;</div><div class="line">         	     &#125;</div><div class="line">      	&#125;</div><div class="line">      	var obj1 = &#123;</div><div class="line">         	name: &quot;zhangsan&quot;,</div><div class="line">          	age: 15</div><div class="line">      	&#125;</div><div class="line"></div><div class="line">      	//第一种方法：</div><div class="line"></div><div class="line">      	//        obj.fn.call(obj1, 1, 2, 3);</div><div class="line">      	//        console.log(obj1);</div><div class="line"></div><div class="line">      	//第二种方法：</div><div class="line"></div><div class="line">      	obj.fn.apply(obj1, [1, 2, 3]);</div><div class="line">      	console.log(obj1);</div></pre></td></tr></table></figure>
+<pre><code>3. call();和apply();的区别： 
+
+    作用：都是修改this的指向； 
+
+    参数：call(); 
+        第一个：你要把this修改成那个对象； 
+        第二个：从第二个参数开始每一个代表你要传递的实际参数 
+
+          apply(); 
+        第一个和call();相同 
+        第二个：必须是一个数组，数组中的每一项代表你要传的值 
+</code></pre><h3 id="字符串的操作："><a href="#字符串的操作：" class="headerlink" title="字符串的操作："></a>字符串的操作：</h3><pre><code>1. 创建子字符串： 
+
+    a. var a = &quot;&quot;;     //typeof  :   string; 
+
+    b. var a = new String(&quot;&quot;);     // typeof    :    object 
+
+2. 属性：length (长度) 
+
+3. 方法： 
+
+    a. charAt();返回指定位置的字符 
+
+        str.charAt(1); === str[0]; (但是不建议) 
+
+    b. charCodeAt(); 返回指定位置的字符的Unicode编码 
+
+    c. search() 用于检索字符串中指定的子字符串 
+
+                查找的时候是按照查找第一个位置来看的， 
+
+                 查找到后返回第一个字符的位置，差找不到后返回-1 
+
+    d. replace() 查找匹配指定的字符串，然后用新字符串代替匹配的字符串 
+
+        例：var a = str.replace(&quot;a&quot;,&quot;b&quot;); 
+
+            var b = str.replace(/a/g,&quot;b&quot;);   // 进行全局更改 
+
+    e. concat() 将两个或多个字符的文本组合起来，返回一个新的字符串 
+
+        例：str.concat(str1);  // str+str1; 
+
+    f. indexOf() 返回字符串中一个子串第一处出现的索引。如果没有匹配项，返回 -1 
+
+    g. lastIndexOf() 返回字符串中一个子串最后一处出现的索引，如果没有匹配项，返回 -1 
+
+    h. slice() 提取字符串的一部分，并返回一个新字符串。 
+
+            两个参数，第一个为起始位置，第二个为终    止位置（留头不留尾），如果没有end，就取到末尾 
+
+    i. toLowerCase() 将整个字符串转成小写字母 
+
+    j. toUpperCase() 将整个字符串转成大写字母 
+
+    k. 转义字符：转义字符 \ 
+
+            我们平时想输出一个双引号（“”）我们会这样写： 
+
+            document.write(“””); 
+
+            但是这样写是错诨的,所以我们需要用到转义字符： 
+
+            document.write(“ \””); 
+</code></pre><h3 id="Date对象："><a href="#Date对象：" class="headerlink" title="Date对象："></a>Date对象：</h3><pre><code>var date = new Date();
+</code></pre><h3 id="获取时间的方法："><a href="#获取时间的方法：" class="headerlink" title="获取时间的方法："></a>获取时间的方法：</h3><pre><code>1. Date()返回当日的日期和时间 
+
+2. getDate()从 Date 对象返回一个月中的某一天 (1 ~ 31) 
+
+3. getDay()从 Date 对象返回一周中的某一天 (0 ~ 6) 
+
+4. getMonth()从 Date 对象返回月份 (0 ~ 11) 
+
+5. getFullYear()从 Date 对象以四位数字返回年份 
+
+6. getHours()返回 Date 对象的小时 (0 ~ 23) 
+
+7. getMinutes()返回 Date 对象的分钟 (0 ~ 59) 
+
+8. getSeconds()返回 Date 对象的秒数 (0 ~ 59) 
+
+9. getMilliseconds()返回 Date 对象的毫秒(0 ~ 999) 
+
+10. getTime()返回 1970 年 1 月 1 日至今的毫秒数
+</code></pre>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Buscar">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Entradas Recientes</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/05/Math对象/">Math对象</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/05/原型链/">原型链</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/05/this-字符串-Date/">this/字符串/Date</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/01/构造函数-拷贝/">构造函数/拷贝</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/01/函数-对象-定时器/">函数/对象/定时器</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2017 LTT
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+  
+    <script type="text/javascript" src="/live2d/script.js"></script>
+    <canvas id="live2dcanvas" width="150" height="300" class="live2d"></canvas>
+    <style>
+      #live2dcanvas {
+        position: fixed;
+        right: 0px;
+        z-index: 999;
+        pointer-events: none;
+        bottom: -60px;
+      }
+    </style>
+    <script>loadlive2d("live2dcanvas" ,"/live2d/assets/haruto/haruto.model.json",0.5)</script>
+  
+</body>
+</html>

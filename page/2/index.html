@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Seite 2 | LTT</title>
+  <title>Página 2 | LTT</title>
   <meta name="author" content="LTT" />
 
   
@@ -56,6 +56,233 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas_wd/">2017-11-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/21/canvas_wd/">canvas用法</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><blockquote>
+<p><code>&lt;canvas&gt;</code> 是 HTML5 新增的元素，可用于通过使用JavaScript中的脚本来绘制图形。例如，它可以用于绘制图形，制作照片，创建动画，甚至可以进行实时视频处理或渲染。</p>
+</blockquote>
+<h2 id="基本用法："><a href="#基本用法：" class="headerlink" title="基本用法："></a>基本用法：</h2><ul>
+<li><p>创建canvas html上下文对象</p>
+<ul>
+<li>canvas对象只有两个属性,<strong>width</strong>和<strong>height</strong>,并且者两个属性都是可选属性,当不设置的话默认是:300*150的大小<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"tutorial"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>canvas 标签起初是空白的我们要向渲染(绘制),就得通过脚本(js)进行获取,通过 <code>.getContext</code>的方法获取上下文</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"tutorial"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">       var canvas = document.getElementById('tutorial');</span></div><div class="line"><span class="undefined">       var ctx = canvas.getContext('2d');</span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">```   </div><div class="line">## 绘制图形</div><div class="line">* canvas 中的坐标</div><div class="line">    * canvas 中的坐标是从左上角开始的一个栅格,一般一个栅格就代表一个像素点</div><div class="line">* 绘制矩形: </div><div class="line">    * 实心矩形:`fillRect(x, y, width, height)`</div><div class="line">    * 空心矩形:`strokeRect(x, y, width, height)`</div><div class="line">    * 清空矩形: `clearRect(x, y, width, height)`</div><div class="line">    &gt; x 和 y 代表要绘制的起点开始坐标,width和height代表要绘制的大小    </div><div class="line">* 绘制路径:</div><div class="line">    &gt; 图形的基本元素是路径。路径是通过不同颜色和宽度的线段或曲线相连形成的不同形状的点的集合。    </div><div class="line">    * 开始绘制/初始化: `beginPath()`</div><div class="line">    * 移动触笔: `moveTo()`</div><div class="line">    * 绘制直线: `lineTo()`  </div><div class="line">    * 填充区域: `fill()`</div><div class="line">    * 空心填充区域: `stroke()`</div><div class="line">    * 闭合路径: `closePath()`</div><div class="line">    </div><div class="line">* 绘制圆弧/圆</div><div class="line">```javascript</div><div class="line">arc(x, y, radius, startAngle, endAngle, anticlockwise)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。</p>
+</blockquote>
+<ul>
+<li>绘制贝塞尔曲线:<code>quadraticCurveTo()</code><blockquote>
+<p>quadraticCurveTo(cp1x, cp1y, x, y)<br>绘制二次贝塞尔曲线，cp1x,cp1y为一个控制点，x,y为结束点。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="添加样式和颜色"><a href="#添加样式和颜色" class="headerlink" title="添加样式和颜色"></a>添加样式和颜色</h2><ul>
+<li>添加填充色: <code>fillStyle</code></li>
+<li>添加轮廓色: <code>strokeStyle</code><h3 id="线性"><a href="#线性" class="headerlink" title="线性:"></a>线性:</h3></li>
+<li>lineWidth = value<blockquote>
+<p> 设置线条宽度。</p>
+</blockquote>
+</li>
+<li>lineCap = type<blockquote>
+<p> 设置线条末端样式。</p>
+</blockquote>
+</li>
+<li>lineJoin = type<blockquote>
+<p> 设定线条与线条间接合处的样式。</p>
+</blockquote>
+</li>
+<li>miterLimit = value<blockquote>
+<p> 限制当两条线相交时交接处最大长度；所谓交接处长度（斜接长度）是指线条交接处内角顶点到外角顶点的长度。</p>
+</blockquote>
+</li>
+<li>getLineDash()<blockquote>
+<p> 返回一个包含当前虚线样式，长度为非负偶数的数组。</p>
+</blockquote>
+</li>
+<li>setLineDash(segments)<blockquote>
+<p> 设置当前虚线样式。</p>
+</blockquote>
+</li>
+<li>lineDashOffset = value<blockquote>
+<p> 设置虚线样式的起始偏移量。</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-20T01:31:56.000Z"><a href="/2017/11/20/微信小程序/">2017-11-20</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/20/微信小程序/">微信小程序</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>app.js文件是属于全局的js文件。</li>
+</ul>
+<ol>
+<li><p>一个页面是由四个文件组成的：</p>
+<ul>
+<li>wxml文件：页面的结构 —– 相当于html文件</li>
+<li>wxss文件：页面的样式 —– 相当于css文件</li>
+<li>js文件：行为 / 逻辑</li>
+<li>json文件：页面的配置信息</li>
+</ul>
+</li>
+<li><p>每一个页面需要单独写一个文件夹，放到pages文件夹中，并且这个页面的的文件命名都是有要求的：</p>
+<ul>
+<li>假如你要创建一个index文件，那么首先要在pages文件里面创建一个index文件夹，并且这个文件夹下的文件都要叫index<br>  例如：index.wxml、index.wxss……..</li>
+</ul>
+</li>
+<li><p>添加一个页面：</p>
+<ul>
+<li>需要创建这个页面的文件夹；</li>
+<li>配置这个页面到小程序中：<ul>
+<li>在我们项目中的app.json文件中找到pages的字段，给这个字段添加内容，添加你要在小程序中添加的页面。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>app.json：是相当于小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部tab等。</li>
+</ol>
+<h5 id="当前页面的权限-gt-app-json的权限"><a href="#当前页面的权限-gt-app-json的权限" class="headerlink" title="当前页面的权限 &gt; app.json的权限"></a>当前页面的权限 &gt; app.json的权限</h5><h5 id="js文件中都需要有：Page-——-‘-’括号里面可以没有东西，但是必须要写"><a href="#js文件中都需要有：Page-——-‘-’括号里面可以没有东西，但是必须要写" class="headerlink" title=".js文件中都需要有：Page({})  ——- [‘{}’括号里面可以没有东西，但是必须要写]"></a>.js文件中都需要有：Page({})  ——- [‘{}’括号里面可以没有东西，但是必须要写]</h5>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-14T02:40:36.000Z"><a href="/2017/11/14/boke/">2017-11-14</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/14/boke/">博客更新，以及本地删除文件上传博客</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="创建公钥和密钥"><a href="#创建公钥和密钥" class="headerlink" title="创建公钥和密钥"></a>创建公钥和密钥</h2><h4 id="c盘-用户-7000-用户名文件夹-ssh文件是否存在-若存在删除"><a href="#c盘-用户-7000-用户名文件夹-ssh文件是否存在-若存在删除" class="headerlink" title="c盘 / 用户 / 7000(用户名文件夹) / .ssh文件是否存在(若存在删除)"></a>c盘 / 用户 / 7000(用户名文件夹) / .ssh文件是否存在(若存在删除)</h4><ul>
+<li><p>创建.ssh文件：</p>
+<ul>
+<li>Git Bash里面填写：</li>
+<li>ssh-keygen -t rsa -C “youremail@example.com”</li>
+<li>.ssh文件：名字短的是密钥，名字长的是公钥；</li>
+</ul>
+</li>
+<li><p>在博客里面：</p>
+<ul>
+<li>setting — Deploy keys — Add key ：</li>
+<li>title：xxx；</li>
+<li>key：放入公钥里面的所有东西；</li>
+<li>勾选，添加；</li>
+</ul>
+</li>
+</ul>
+<h4 id="本地文件夹被删除之后想要上传："><a href="#本地文件夹被删除之后想要上传：" class="headerlink" title="本地文件夹被删除之后想要上传："></a>本地文件夹被删除之后想要上传：</h4><ul>
+<li>新建文件夹：<ul>
+<li>git init</li>
+<li>git clone 仓库地址</li>
+<li>cd 下载的文件</li>
+<li>git add -A</li>
+<li>git commit -m “”</li>
+<li>git push ssh的地址</li>
+</ul>
+</li>
+</ul>
+<h4 id="更新已下载的文件："><a href="#更新已下载的文件：" class="headerlink" title="更新已下载的文件："></a>更新已下载的文件：</h4><ul>
+<li>git pull 文件地址</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
   <article class="post">
   
   <div class="post-content">
@@ -249,7 +476,7 @@
 <nav id="pagination">
   
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; Vorherige Seite</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; Anterior</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 </nav>
@@ -257,7 +484,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Buscar">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -266,8 +493,20 @@
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Entradas Recientes</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/05/Math对象/">Math对象</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/05/原型链/">原型链</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/05/this-字符串-Date/">this/字符串/Date</a>
+      </li>
     
       <li>
         <a href="/2017/12/01/构造函数-拷贝/">构造函数/拷贝</a>
@@ -275,18 +514,6 @@
     
       <li>
         <a href="/2017/12/01/函数-对象-定时器/">函数/对象/定时器</a>
-      </li>
-    
-      <li>
-        <a href="/2017/11/29/数组方法总结/">数组方法总结</a>
-      </li>
-    
-      <li>
-        <a href="/2017/11/28/js语句/">js语句</a>
-      </li>
-    
-      <li>
-        <a href="/2017/11/25/html-css/">html/css</a>
       </li>
     
   </ul>
