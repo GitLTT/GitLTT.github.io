@@ -62,6 +62,97 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-12-07T08:39:59.000Z"><a href="/2017/12/07/事件冒泡-捕获/">2017-12-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/07/事件冒泡-捕获/">事件冒泡/捕获</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="event对象：代表事件的状态"><a href="#event对象：代表事件的状态" class="headerlink" title="event对象：代表事件的状态"></a>event对象：代表事件的状态</h3><pre><code>鼠标 / 键盘属性：
+
+    clientX：返回当事件被触发时，鼠标指针的水平坐标。
+
+    clientY：返回当事件被触发时，鼠标指针的垂直坐标。
+
+    screenX：返回当某个事件被触发时，鼠标指针的水平坐标。
+
+    screenY：返回当某个事件被触发时，鼠标指针的垂直坐标。
+</code></pre><h3 id="事件由什么组成："><a href="#事件由什么组成：" class="headerlink" title="事件由什么组成："></a>事件由什么组成：</h3><pre><code>    三要素:
+
+ 1. 事件源：事件目标/给谁绑定事件
+
+ 2. 事件驱动： 什么事件/
+
+ 3. 事件程序：干什么/
+
+普通事件  ：  监视某个动作/ 监视某个元素的某个动作  
+
+同一个元素,同一个事件驱动,只能绑定一个;如果绑定两个,下面的会覆盖上面的;
+</code></pre><h3 id="事件冒泡："><a href="#事件冒泡：" class="headerlink" title="事件冒泡："></a>事件冒泡：</h3><pre><code>普通事件  :一个元素如果给他绑定两个相同的事件会被覆盖,会指向下面的事件
+
+事件监听函数 addEventListener();
+
+        有三个参数:
+
+                   第一个参数是你要绑定的事件句柄;但是要去掉 on
+
+                   第二个参数是 你要干什么?  你要执行的代码
+
+                    第三个: 绑定事件的位置:   布尔值
+
+                                true:    捕获阶段
+
+                                false:    冒泡阶段 (默认是false)
+
+捕获阶段:
+
+              当事件被触发后,会从dom文档的根标签(html)开始往下级查找,直到找到事件目标位置.
+
+              在查找的过程中.如果有元素在捕获阶段绑定了相同的事件,那么久会被触发
+
+     事件目标阶段:
+
+               当事件捕获阶段完成后,进入到事件目标阶段时,按照我们写代码的先后顺序来执行事件目标阶段的事件;
+
+     事件冒泡:
+
+               当事件目标阶段完成以后,事件开始冒泡,一直冒泡到我们的dom文档的根标签,
+
+               在这个过程中,如果有元素在冒泡阶段绑定了相同的事件,那么这个事件就会被执行;
+
+
+阻止冒泡：event.stopPropagation();
+</code></pre>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-12-07T01:27:45.000Z"><a href="/2017/12/07/DOM-事件/">2017-12-07</a></time>
       
       
@@ -904,67 +995,11 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-24T01:39:33.000Z"><a href="/2017/11/24/js-onload/">2017-11-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/24/js-onload/">js_onload</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><p>事件组成：</p>
-<ul>
-<li>事件源：节点</li>
-<li>事件驱动：onclick。。。。</li>
-<li>事件程序：console.log</li>
-</ul>
-</li>
-</ul>
-<h5 id="如果script标签写在head标签里面时-必须要写window-onload-入口函数-；"><a href="#如果script标签写在head标签里面时-必须要写window-onload-入口函数-；" class="headerlink" title="如果script标签写在head标签里面时  必须要写window.onload   (入口函数)；"></a>如果script标签写在head标签里面时  必须要写window.onload   (入口函数)；</h5><h5 id="window-onload-function-是在页面的和外部的所有文件、图片加载完毕之后再进行执行里面的内容"><a href="#window-onload-function-是在页面的和外部的所有文件、图片加载完毕之后再进行执行里面的内容" class="headerlink" title="window.onload = function (){};是在页面的和外部的所有文件、图片加载完毕之后再进行执行里面的内容"></a>window.onload = function (){};是在页面的和外部的所有文件、图片加载完毕之后再进行执行里面的内容</h5><h5 id="数组中的length属性：代表数组中元素或数据的个数；"><a href="#数组中的length属性：代表数组中元素或数据的个数；" class="headerlink" title="数组中的length属性：代表数组中元素或数据的个数；"></a>数组中的length属性：代表数组中元素或数据的个数；</h5><ul>
-<li><p>const声明常量：</p>
-<ul>
-<li><p>const a = 5；(定义一个常量)</p>
-</li>
-<li><p>a = 6；(不可以，会报错)</p>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Nächste Seite &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </nav>
@@ -972,7 +1007,7 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -981,8 +1016,12 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/07/事件冒泡-捕获/">事件冒泡/捕获</a>
+      </li>
     
       <li>
         <a href="/2017/12/07/DOM-事件/">DOM/事件</a>
@@ -998,10 +1037,6 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
     
       <li>
         <a href="/2017/12/05/this-字符串-Date/">this/字符串/Date</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/01/构造函数-拷贝/">构造函数/拷贝</a>
       </li>
     
   </ul>
