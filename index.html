@@ -62,6 +62,118 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-12-07T01:27:45.000Z"><a href="/2017/12/07/DOM-事件/">2017-12-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/07/DOM-事件/">DOM/事件</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="节点之间的关系："><a href="#节点之间的关系：" class="headerlink" title="节点之间的关系："></a>节点之间的关系：</h3><pre><code>父子关系：嵌套关系
+
+兄弟关系：并列关系
+</code></pre><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><pre><code>通过选择器来获取节点：document.querySelectorAll();
+</code></pre><h3 id="获取属性："><a href="#获取属性：" class="headerlink" title="获取属性："></a>获取属性：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var div = document.querySelector(&quot;div&quot;);</div><div class="line"></div><div class="line">       console.log(div[&quot;id&quot;]); //id名称</div><div class="line"></div><div class="line">       console.log(div.className); //class名称</div><div class="line"></div><div class="line">       console.log(div.getAttribute(&quot;style&quot;)); //样式</div><div class="line"></div><div class="line">       div.setAttribute(&quot;class&quot;, &quot;c&quot;); //设置属性或样式，并且完全被替换</div><div class="line"></div><div class="line">       div.removeAttribute(&quot;id&quot;); //删除id，并且完全会被删除；</div></pre></td></tr></table></figure>
+<h3 id="创建节点：（从后进行添加）"><a href="#创建节点：（从后进行添加）" class="headerlink" title="创建节点：（从后进行添加）"></a>创建节点：（从后进行添加）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var li = document.createElement(&quot;li&quot;);//创建的元素节点</div><div class="line"></div><div class="line">       var text = document.createTextNode(i + 1);//创建的文本节点</div><div class="line"></div><div class="line">       li.appendChild(text);//把文本放在创建的li里面</div><div class="line"></div><div class="line">       list.appendChild(li);//把创建的li放在ul里面</div></pre></td></tr></table></figure>
+<h3 id="节点操作："><a href="#节点操作：" class="headerlink" title="节点操作："></a>节点操作：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">insertBefore(a,b) :在指定的已有子节点之前插入新的子节点,a是新节点，b是旧节点</div><div class="line"></div><div class="line">appendChild 在DOM子集最后添加子节点</div><div class="line"></div><div class="line">removeChild 删除一个节点</div><div class="line"></div><div class="line">replaceChild(a,b) 替换节点;a是新节点，b是旧节点</div></pre></td></tr></table></figure>
+<h3 id="节点查找："><a href="#节点查找：" class="headerlink" title="节点查找："></a>节点查找：</h3><pre><code>获取下级节点：
+
+1. children：子节点，不包含空节点
+
+2. childNodes：子节点，包含空节点
+
+3. firstChild：第一个子节点，包含空节点
+
+4. firstElementChild：第一个子节点，不包含空节点
+
+5. lastChild：最后一个子节点，包含空节点
+
+6. lastElementChild：最后一个子节点，不包含空节点
+
+获取兄弟节点：
+
+1. nextSibling：下一个兄弟节点，包含空节点
+
+2. nextElementSibling：下一个兄弟节点，不包含空节点
+
+3. previousSibling：前一个兄弟节点，包含空节点
+
+4. previousElementSibling：前一个兄弟节点，不包含空节点
+
+获取父级节点：
+
+1. parentNode：父节点
+
+2. offsetParent：第一个有定位属性的父节点，如果没有，则返回body
+</code></pre><h3 id="事件："><a href="#事件：" class="headerlink" title="事件："></a>事件：</h3><pre><code>普通事件：a.onclick = function(){};
+
+    同一个元素，同一个事件驱动只能绑定一个，如果绑定两个，下面的事件会替换上面的；
+
+1. onload 图片或页面加载完成
+
+2. 焦点事件:onfocus/onblur 获得焦点/失去焦点
+
+3. onchange 表单内容发送改变
+
+4. onclick 点击
+
+5. ondblclick 点击两次
+
+6. onkeydown 键盘按下
+
+7. onkeyup 键盘抬起
+</code></pre><h3 id="获取对象-、-兼容处理："><a href="#获取对象-、-兼容处理：" class="headerlink" title="获取对象 、 兼容处理："></a>获取对象 、 兼容处理：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> document.onkeydown = function(ev)&#123;</div><div class="line"></div><div class="line"> 	var ev = ev || window.event;</div><div class="line"></div><div class="line">//获取事件对象兼容处理，一般浏览器直接在function参</div><div class="line"></div><div class="line">//数ev获取,ie浏览器通过window.event获取</div><div class="line"></div><div class="line">	document.write(ev.keyCode);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="键盘event对象属性-keyCode"><a href="#键盘event对象属性-keyCode" class="headerlink" title="键盘event对象属性 keyCode"></a>键盘event对象属性 keyCode</h3><pre><code>1. onmousedown 鼠标按下
+
+2. onmouseup 鼠标抬起
+
+3. onmousemove 鼠标移动
+
+4. onmouseover 移到对象上
+
+5. onmouseout 鼠标离开
+
+6. 鼠标event对象属性 clientX clientY
+
+7. onselect 在文本框中的文本被选中时发生,支持&lt;input type=&quot;text&quot;&gt;, &lt;textarea&gt;
+
+8. onsubmit 在表单中的提交按钮被点击时触发
+
+9. onreset 在表单中的重置按钮被点击时触发
+
+10. onerror 在文档或图像加载过程中发生错误时被触发
+
+11. 阻止默认事件preventDefault() 或者 return false；
+</code></pre>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-12-05T08:35:12.000Z"><a href="/2017/12/05/Math对象/">2017-12-05</a></time>
       
       
@@ -843,99 +955,11 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
-<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
-</li>
-<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
-</li>
-<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
-</li>
-<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
-</li>
-<li><p>步骤：</p>
-<p> A： 获取canvas标签 a；</p>
-<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
-<p> C： 绘制矩形：</p>
-<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
-b：ctx.strokeRect();           //空心矩形；
-c：ctx.clearRect(x,y,width,height);           //清空区域；
-</code></pre><p> D：路径绘制：</p>
-<pre><code>a：ctx.beginPath();      //开始绘画；
-b：ctx.moveTo(x,y);       //画笔的位置；
-c：ctx.lineTo(x,y);        //起始位置；
-    .
-    .
-    .
-d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
-e：ctx.fill();           //填充颜色(默认为黑色)；
-</code></pre></li>
-</ol>
-<pre><code>自动闭合(没有终止位置时)：
-
-    a：ctx.moveTo(x,y);
-    b：ctx.lineTo(x,y);
-        .
-        .
-        .
-    c：ctx.closePath();       //自动闭合；
-    d：ctx.stroke();
-
-E：绘制圆/圆弧：
-
-    a：ctx.beginPath();
-    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
-                        start：开始位置，end：结束位置(以x轴为基准)      
-                                 方向：true逆时针，false顺时针(默认false)；
-    c：ctx.fill();
-</code></pre><ol>
-<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
-</ol>
-<ol>
-<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
-</code></pre></li>
-</ol>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Nächste Seite &raquo;</a>
   </nav>
 
 </nav>
@@ -943,7 +967,7 @@ E：绘制圆/圆弧：
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -952,8 +976,12 @@ E：绘制圆/圆弧：
 
   
 <div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
+  <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/07/DOM-事件/">DOM/事件</a>
+      </li>
     
       <li>
         <a href="/2017/12/05/Math对象/">Math对象</a>
@@ -969,10 +997,6 @@ E：绘制圆/圆弧：
     
       <li>
         <a href="/2017/12/01/构造函数-拷贝/">构造函数/拷贝</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/01/函数-对象-定时器/">函数/对象/定时器</a>
       </li>
     
   </ul>
