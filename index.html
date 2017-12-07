@@ -147,6 +147,11 @@
 10. onerror 在文档或图像加载过程中发生错误时被触发
 
 11. 阻止默认事件preventDefault() 或者 return false；
+</code></pre><h3 id="事件委托："><a href="#事件委托：" class="headerlink" title="事件委托："></a>事件委托：</h3><pre><code>通过e.target
+
+就是把子元素的事件交给父元素进行管理，然后再执行的时候再通知具体某个元素执行；
+
+e.target: 触发这个事件的具体某个元素
 </code></pre>
       
     </div>
@@ -959,7 +964,7 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
 <nav id="pagination">
   
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Nächste Seite &raquo;</a>
   </nav>
 
 </nav>
@@ -967,7 +972,7 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -976,7 +981,7 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
 
   
 <div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
+  <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
     
       <li>
