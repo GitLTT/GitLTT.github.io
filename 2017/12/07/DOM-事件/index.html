@@ -157,7 +157,7 @@ DOM通过选择器来获取节点：document.querySelectorAll();
 就是把子元素的事件交给父元素进行管理，然后再执行的时候再通知具体某个元素执行；
 
 e.target: 触发这个事件的具体某个元素
-</code></pre>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">list.onclick = function(e) &#123;</div><div class="line">    var e = e || window.event;</div><div class="line">    alert(e.target.innerHTML); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
