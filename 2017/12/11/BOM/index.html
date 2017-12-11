@@ -3,23 +3,29 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>原型链 | LTT</title>
+  <title>BOM | LTT</title>
   <meta name="author" content="LTT" />
 
   
-  <meta name="description" content="原型链：每一个对象都有一个__proto__ 的属性，通过他可以找到该对象所继承的对象 
+  <meta name="description" content="Window 对象
+概念：
 
-通过这个方法一直往上查找到某个对象的__proto__ 属性值是null的这个路线就是原型链 
-原型、构造函数和实例之间的关系：构造函数中有一个prototype 属性指向了这个构造函数的原型， 
+Window 对象表示浏览器中打开的窗口。如果文档包含框架（frame 或 iframe 标签），
 
-(构造函" />
+浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象
+
+
+
+属性
+
+innerHeight 返回窗口的文档显示区的高度" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  <meta property="og:title" content="原型链" />
+  <meta property="og:title" content="BOM" />
   <meta property="og:site_name" content="LTT" />
 
   
@@ -68,27 +74,185 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-12-05T01:38:22.000Z"><a href="/2017/12/05/原型链/">2017-12-05</a></time>
+        <time datetime="2017-12-11T09:04:16.000Z"><a href="/2017/12/11/BOM/">2017-12-11</a></time>
       
       
   
-    <h1 class="title">原型链</h1>
+    <h1 class="title">BOM</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="原型链："><a href="#原型链：" class="headerlink" title="原型链："></a>原型链：</h3><pre><code>每一个对象都有一个__proto__ 的属性，通过他可以找到该对象所继承的对象 
+        <h3 id="Window-对象"><a href="#Window-对象" class="headerlink" title="Window 对象"></a>Window 对象</h3><ul>
+<li><p>概念：</p>
+<ul>
+<li><p>Window 对象表示浏览器中打开的窗口。如果文档包含框架（frame 或 iframe 标签），</p>
+</li>
+<li><p>浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象</p>
+</li>
+</ul>
+</li>
+<li><p>属性</p>
+<ul>
+<li><p>innerHeight 返回窗口的文档显示区的高度</p>
+</li>
+<li><p>innerWidth 返回窗口的文档显示区的宽度</p>
+</li>
+<li><p>outerHeight 返回窗口的外部高度 包括滚动条、地址栏、收藏栏等</p>
+</li>
+<li><p>outerwidth 返回窗口的外部宽度</p>
+</li>
+<li><p>length 设置或返回窗口中的框架数量</p>
+</li>
+<li><p>name 设置或返回窗口的名称。</p>
+</li>
+<li><p>window.open() 打开的新网页，第二个参数就是此网页的name。</p>
+</li>
+<li><p>iframe里面，name属性就是window的name</p>
+</li>
+</ul>
+</li>
+<li><p>方法</p>
+<ul>
+<li><p>close() 关闭浏览器窗口</p>
+</li>
+<li><p>alert() 显示带有一段消息和一个确认按钮的警告框</p>
+</li>
+<li><p>confirm() 显示带有一段消息以及确认按钮和取消按钮的对话框</p>
+</li>
+<li><p>prompt()显示可提示用户输入的对话框</p>
+</li>
+<li><p>open() 打开一个新的浏览器窗口或查找一个已命名的窗口</p>
+</li>
+<li><p>resizeBy() 按照指定的像素调整窗口的大小</p>
+</li>
+<li><p>resizeTo() 把窗口的大小调整到指定的宽度和高度</p>
+</li>
+<li><p>scrollBy() 按照指定的像素值来滚动内容</p>
+</li>
+<li><p>scrollTo() 把内容滚动到指定的坐标</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><pre><code>navigator对象通常用于检测浏览器不操作系统的版本
+</code></pre><ul>
+<li><p>属性：</p>
+<ul>
+<li><p>appCodeName返回浏览器的代码名</p>
+</li>
+<li><p>appVersion返回浏览器的次级版本</p>
+</li>
+<li><p>appName返回浏览器的名称</p>
+</li>
+<li><p>language返回当前浏览器的语言</p>
+</li>
+<li><p>platform 返回运行浏览器的操作系统平台</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><pre><code>document 对象是 Window 对象的一部分，包含整个htmlDOM,可通过 window.document 属性对其进行访问,
+也可以用document直接访问
+</code></pre><ul>
+<li><p>属性:</p>
+<ul>
+<li><p>document.cookie 获取或设置cookie</p>
+<ul>
+<li>由服务端设置，客户端保存</li>
+</ul>
+</li>
+<li><p>document.title 获取或设置title</p>
+</li>
+<li><p>document.URL 获取或设置URL</p>
+<ul>
+<li>设置后并没有什么效果</li>
+</ul>
+</li>
+<li><p>window下的其他对象</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="screen-对象包含有关客户端显示屏幕的信息"><a href="#screen-对象包含有关客户端显示屏幕的信息" class="headerlink" title="screen 对象包含有关客户端显示屏幕的信息"></a>screen 对象包含有关客户端显示屏幕的信息</h3><ul>
+<li><p>属性</p>
+<ul>
+<li><p>height 返回显示屏幕的高度； width返回显示器屏幕的宽度</p>
+</li>
+<li><p>availHeight 返回显示屏幕的高度 (除 Windows 任务栏之外)</p>
+</li>
+<li><p>availWidth 返回显示屏幕的宽度 (除 Windows 任务栏之外)</p>
+</li>
+<li><p>colorDepth 返回目标设备或缓冲器上的调色板的比特深度</p>
+</li>
+<li><p>pixelDepth 返回显示屏幕的颜色分辨率（比特每像素）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Body对象"><a href="#Body对象" class="headerlink" title="Body对象"></a>Body对象</h3><ul>
+<li><p>属性</p>
+<ul>
+<li><p>clientWidth网页可见区域宽</p>
+</li>
+<li><p>clientHeight网页可见区域高</p>
+</li>
+<li><p>scrollWidth网页正文全文宽</p>
+</li>
+<li><p>scrollHeight网页正文全文高</p>
+</li>
+<li><p>scrollTop网页被卷去的高</p>
+</li>
+<li><p>scrollLeft网页被卷去的左</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Location-对象"><a href="#Location-对象" class="headerlink" title="Location 对象"></a>Location 对象</h3><pre><code>Location 对象对象包含有关当前 URL 的信息，对URL信息进行处理
+</code></pre><ul>
+<li><p>属性</p>
+<ul>
+<li><p>hash设置或返回从井号 (#) 开始的 URL（锚）</p>
+<ul>
+<li>哈希值：用 “#” 来代表；</li>
+</ul>
+</li>
+<li><p>host设置或返回主机名和当前 URL 的端口号</p>
+</li>
+<li><p>hostname设置或返回当前 URL 的主机名</p>
+</li>
+<li><p>href设置或返回完整的 URL</p>
+</li>
+<li><p>pathname设置或返回当前 URL 的路径部分</p>
+</li>
+<li><p>port设置或返回当前 URL 的端口号</p>
+</li>
+<li><p>protocol设置或返回当前 URL 的协议</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="search设置或返回从问号-开始的-URL（查询部分）"><a href="#search设置或返回从问号-开始的-URL（查询部分）" class="headerlink" title="search设置或返回从问号 (?) 开始的 URL（查询部分）"></a>search设置或返回从问号 (?) 开始的 URL（查询部分）</h3><pre><code>* 用 &quot;?&quot; 来代表
+</code></pre><ul>
+<li><p>方法</p>
+<ul>
+<li><p>assign() 加载新的文档</p>
+</li>
+<li><p>reload() 重新加载当前文档</p>
+</li>
+<li><p>replace() 用新的文档替换当前文档</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="window对象的事件"><a href="#window对象的事件" class="headerlink" title="window对象的事件"></a>window对象的事件</h3><ul>
+<li><p>onscroll 当浏览器滚动的时候触发</p>
+</li>
+<li><p>onresize 当浏览器窗口改变大小时触发</p>
+</li>
+</ul>
 
-通过这个方法一直往上查找到某个对象的__proto__ 属性值是null的这个路线就是原型链 
-</code></pre><h3 id="原型、构造函数和实例之间的关系："><a href="#原型、构造函数和实例之间的关系：" class="headerlink" title="原型、构造函数和实例之间的关系："></a>原型、构造函数和实例之间的关系：</h3><pre><code>构造函数中有一个prototype 属性指向了这个构造函数的原型， 
-
-(构造函数的原型)中有一个constructor的属性指向了构造函数； 
-
-构造函数通过new关键字调用可以生成一个对象，对象中有一个__proto__ 的属性， 
-
-指向了创建它的构造函数的原型，对象通过__proto__的属性继承了构造函数的原型的方法和属性 
-</code></pre>
       
     </div>
     
@@ -99,11 +263,6 @@
         </div>
         
         
-  
-  <div class="tags">
-    <a href="/tags/原型链/">原型链</a>
-  </div>
-
         <!-- partial('post/share') -->
       <div class="clearfix"></div>
     </footer>
