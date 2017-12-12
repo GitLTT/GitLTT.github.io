@@ -62,6 +62,164 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-11-28T02:55:37.000Z"><a href="/2017/11/28/js语句/">2017-11-28</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/28/js语句/">js语句</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="三目运算符的多个判断："><a href="#三目运算符的多个判断：" class="headerlink" title="三目运算符的多个判断："></a>三目运算符的多个判断：</h3><pre><code>条件1?语句1:条件2?语句2:条件3?语句3.....:条件n?语句n:语句n+1;
+</code></pre><h3 id="在js里面："><a href="#在js里面：" class="headerlink" title="在js里面："></a>在js里面：</h3><pre><code>不赋值就是获取，赋值就是设置；
+</code></pre><h4 id="document-write："><a href="#document-write：" class="headerlink" title="document.write："></a>document.write：</h4><pre><code>会重新绘制整个页面；
+
+用来改变页面的内容；
+
+可以识别html标签；
+</code></pre><h3 id="innerHTML："><a href="#innerHTML：" class="headerlink" title="innerHTML："></a>innerHTML：</h3><pre><code>可以用来绘制局部页面；
+
+用来改变页面的内容；
+
+可以识别html标签；
+</code></pre><h3 id="while循环-注意事项："><a href="#while循环-注意事项：" class="headerlink" title="while循环 注意事项："></a>while循环 注意事项：</h3><pre><code>一定要在大括号中加入限制变量改变的方法；
+</code></pre><h3 id="do-while循环："><a href="#do-while循环：" class="headerlink" title="do while循环："></a>do while循环：</h3><pre><code>先执行，后判断；
+</code></pre><h3 id="break语句："><a href="#break语句：" class="headerlink" title="break语句："></a>break语句：</h3><pre><code>终止执行语句块（终止循环。。。。）；
+</code></pre><h3 id="continue语句："><a href="#continue语句：" class="headerlink" title="continue语句："></a>continue语句：</h3><pre><code>跳出当前循环，进入到下一次的循环
+</code></pre><h3 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h3><pre><code>就是用来储存多个数据的变量就是数组；
+</code></pre><h3 id="循环里面获取到对象中的属性值的形式为："><a href="#循环里面获取到对象中的属性值的形式为：" class="headerlink" title="循环里面获取到对象中的属性值的形式为："></a>循环里面获取到对象中的属性值的形式为：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for(x in obj)&#123;</div><div class="line">	</div><div class="line">	console.log(obj[x]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="数组的创建："><a href="#数组的创建：" class="headerlink" title="数组的创建："></a>数组的创建：</h3><pre><code>1.var arr =  [];           //直面量；推荐使用
+
+2.var arr = new Array();   //构造函数；
+</code></pre><h3 id="数组赋值："><a href="#数组赋值：" class="headerlink" title="数组赋值："></a>数组赋值：</h3><pre><code>数组有一个length属性，记录我们数组中元素的个数/数组长度；
+</code></pre><h3 id="数组的方法：重点"><a href="#数组的方法：重点" class="headerlink" title="数组的方法：重点"></a>数组的方法：<em>重点</em></h3><pre><code>1.join(); 
+
+    把数组转换成字符串；得到一个新的字符串，不会修改我们原来的数组，还可以继续使用数组； 
+
+    在这个过程中join方法不会修改我们原来的数组；
+
+    join方法可以传递一个参数，这个参数是用来确定我们用什么东西来分隔数组中的每一项； 
+
+    默认使用逗号分隔；也可以自定义：var a = arr.join(&quot;|&quot;);//就是用 | 分隔； 
+
+2.*重点*：pop();//直接调用，没有参数； 
+
+    pop 用来删除数组中的最后一项，会改变原来的数组，返回值是删除掉的元素； 
+
+    从后删除； 
+
+3.push();//用来给数组添加一个或多个元素(从后添加 / 追加) 
+
+    会改变原来的数组；返回值是数组的新的长度； 
+
+    例：var a = arr.push(&quot;a&quot;); 
+
+4.unshift();//从前面添加； 
+
+    改变了数组；返回值是当前数组的长度 
+
+    例：var a = arr.unshift(&quot;a&quot;); 
+
+5.shift();//从前面删除； 
+
+    返回值是被删除的数组，会改变原数组； 
+
+    例：var a = arr.shift(); 
+
+6.reverse();
+
+    把数组顺序颠倒，会改变原数组； 
+
+    返回值为新数组；使用后新的数组等于原来的数组； 
+
+    例：var a = arr.reverse(); 
+        a = arr; 
+
+
+7.sort();
+
+    1.如果不给他传递参数，他就会按照字母的先后顺序排序 
+
+        例：var a = arr.sort(); 
+
+    2.按照大小进行排序： 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function fn(a,b)&#123;</div><div class="line">	return a-b;//从小到大排序</div><div class="line">&#125;</div><div class="line"></div><div class="line">var x = arr.sort(fn);</div></pre></td></tr></table></figure>
+<pre><code>8.concat();
+
+    连接两个或者是多个数组；不会改变原数组；返回一个新数组； 
+
+    把两个数组合并成一个数组，谁调用谁再前面； 
+
+    例：var newArr = arr.concat(arr1,arr2); 
+        用arr连接arr1，arr2.。。。。； 
+
+
+9.slice();[截取/获取]
+
+    不会改变原数组；返回结果是你要的元素(把你要的元素放到一个新数组中)； 
+
+    如果你只传一个参数，代表的是你要开始截取的位置，返回结果是从截取的位置到这个数组的末尾； 
+
+    例：var a = arr.slice(2);//2是索引值； 
+
+    传两个参数：第一个是代表你要截取的位置，第二个参数是你要截取到的位置；(要头不要尾)； 
+
+    例：var b = arr.slice(2,3); 
+
+
+10.splice(a,b);
+
+    会改变原数组；如果只传一个参数，那么这个参数就是你要开始删除的位置，一直删除到末尾； 
+
+    例： var a= arr.splice(2); 
+
+    传两个参数：代表从第a个开始删除b个元素，返回值是删除调度元素，组成新的数组； 
+
+    例： var a= arr.splice(2,3); 
+
+    删除数组中的元素，并且替换成新的元素； 
+
+    例：var a= arr.splice(2,3,&quot;a&quot;,&quot;b&quot;,&quot;c&quot;); 
+</code></pre><h3 id="多维数组："><a href="#多维数组：" class="headerlink" title="多维数组："></a>多维数组：</h3><pre><code>var arr = [[],[],[]];//二维数组； 
+
+var arr = [[[],[],[]],[[],[]]]];//三维数组； 
+
+调用方法：arr[0][0][1];.... 
+</code></pre><h3 id="冒泡排序："><a href="#冒泡排序：" class="headerlink" title="冒泡排序："></a>冒泡排序：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 5, 6, 2, 8, 3, 9, 7, 0];</div><div class="line"></div><div class="line">       for (var i = 0; i &lt; arr.length; i++) &#123;</div><div class="line"></div><div class="line">           for (var j = 0; j &lt; arr.length, j++) &#123;</div><div class="line"></div><div class="line">               if (arr[j] &lt; arr[j + 1]) &#123;</div><div class="line">                   var m;</div><div class="line">                   m = arr[j];</div><div class="line">                   arr[j] = arr[j + 1];</div><div class="line">                   arr[j + 1] = m;</div><div class="line">               &#125;</div><div class="line"></div><div class="line">           &#125;</div><div class="line"></div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/js语句/">js语句</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-11-25T11:39:04.000Z"><a href="/2017/11/25/html-css/">2017-11-25</a></time>
       
       
@@ -244,6 +402,99 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
+<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
+</li>
+<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
+</li>
+<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
+</li>
+<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
+</li>
+<li><p>步骤：</p>
+<p> A： 获取canvas标签 a；</p>
+<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
+<p> C： 绘制矩形：</p>
+<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
+b：ctx.strokeRect();           //空心矩形；
+c：ctx.clearRect(x,y,width,height);           //清空区域；
+</code></pre><p> D：路径绘制：</p>
+<pre><code>a：ctx.beginPath();      //开始绘画；
+b：ctx.moveTo(x,y);       //画笔的位置；
+c：ctx.lineTo(x,y);        //起始位置；
+    .
+    .
+    .
+d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
+e：ctx.fill();           //填充颜色(默认为黑色)；
+</code></pre></li>
+</ol>
+<pre><code>自动闭合(没有终止位置时)：
+
+    a：ctx.moveTo(x,y);
+    b：ctx.lineTo(x,y);
+        .
+        .
+        .
+    c：ctx.closePath();       //自动闭合；
+    d：ctx.stroke();
+
+E：绘制圆/圆弧：
+
+    a：ctx.beginPath();
+    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
+                        start：开始位置，end：结束位置(以x轴为基准)      
+                                 方向：true逆时针，false顺时针(默认false)；
+    c：ctx.fill();
+</code></pre><ol>
+<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
+</ol>
+<ol>
+<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/canvas画图/">canvas画图</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas_wd/">2017-11-21</a></time>
       
       
@@ -323,99 +574,6 @@
   
   <div class="tags">
     <a href="/tags/canvas使用/">canvas使用</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
-<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
-</li>
-<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
-</li>
-<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
-</li>
-<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
-</li>
-<li><p>步骤：</p>
-<p> A： 获取canvas标签 a；</p>
-<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
-<p> C： 绘制矩形：</p>
-<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
-b：ctx.strokeRect();           //空心矩形；
-c：ctx.clearRect(x,y,width,height);           //清空区域；
-</code></pre><p> D：路径绘制：</p>
-<pre><code>a：ctx.beginPath();      //开始绘画；
-b：ctx.moveTo(x,y);       //画笔的位置；
-c：ctx.lineTo(x,y);        //起始位置；
-    .
-    .
-    .
-d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
-e：ctx.fill();           //填充颜色(默认为黑色)；
-</code></pre></li>
-</ol>
-<pre><code>自动闭合(没有终止位置时)：
-
-    a：ctx.moveTo(x,y);
-    b：ctx.lineTo(x,y);
-        .
-        .
-        .
-    c：ctx.closePath();       //自动闭合；
-    d：ctx.stroke();
-
-E：绘制圆/圆弧：
-
-    a：ctx.beginPath();
-    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
-                        start：开始位置，end：结束位置(以x轴为基准)      
-                                 方向：true逆时针，false顺时针(默认false)；
-    c：ctx.fill();
-</code></pre><ol>
-<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
-</ol>
-<ol>
-<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
-</code></pre></li>
-</ol>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/canvas画图/">canvas画图</a>
   </div>
 
         <!-- partial('post/share') -->
@@ -802,6 +960,10 @@ E：绘制圆/圆弧：
   <ul class="entry">
     
       <li>
+        <a href="/2017/12/12/全屏滚动/">js实现全屏滚动</a>
+      </li>
+    
+      <li>
         <a href="/2017/12/11/BOM/">BOM</a>
       </li>
     
@@ -815,10 +977,6 @@ E：绘制圆/圆弧：
     
       <li>
         <a href="/2017/12/05/Math对象/">Math对象</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/05/原型链/">原型链</a>
       </li>
     
   </ul>

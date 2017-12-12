@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>js实现全屏滚动 | LTT</title>
+  <meta name="author" content="LTT" />
+
+  
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <meta property="og:title" content="js实现全屏滚动" />
+  <meta property="og:site_name" content="LTT" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="LTT" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">LTT</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-12-12T08:55:57.000Z"><a href="/2017/12/12/全屏滚动/">2017-12-12</a></time>
+      
+      
+  
+    <h1 class="title">js实现全屏滚动</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</div><div class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        * &#123;</div><div class="line">            margin: 0;</div><div class="line">            padding: 0;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .box &#123;</div><div class="line">            width: 100%;</div><div class="line">            height: 500px;</div><div class="line">            overflow: hidden;</div><div class="line">            position: relative;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item &#123;</div><div class="line">            width: 100%;</div><div class="line">            height: 100%;</div><div class="line">            overflow: hidden;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item&gt;h1 &#123;</div><div class="line">            text-align: center;</div><div class="line">            margin-top: 50px;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item1 &#123;</div><div class="line">            background-color: pink;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item2 &#123;</div><div class="line">            background-color: red;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item3 &#123;</div><div class="line">            background-color: blue;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item4 &#123;</div><div class="line">            background-color: purple;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item5 &#123;</div><div class="line">            background-color: greenyellow;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .wrap &#123;</div><div class="line">            width: 100%;</div><div class="line">            position: absolute;</div><div class="line">            top: 0;</div><div class="line">            left: 0;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;box&quot;&gt;</div><div class="line">        &lt;div class=&quot;wrap&quot;&gt;</div><div class="line">            &lt;div class=&quot;item item1&quot;&gt;</div><div class="line">                &lt;h1&gt;第一屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;div class=&quot;item item2&quot;&gt;</div><div class="line">                &lt;h1&gt;第二屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;div class=&quot;item item3&quot;&gt;</div><div class="line">                &lt;h1&gt;第三屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;div class=&quot;item item4&quot;&gt;</div><div class="line">                &lt;h1&gt;第四屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;div class=&quot;item item5&quot;&gt;</div><div class="line">                &lt;h1&gt;第五屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;script&gt;</div><div class="line">        var items = document.querySelectorAll(&quot;.item&quot;);</div><div class="line">        var box = document.querySelector(&quot;.box&quot;);</div><div class="line">        var wrap = document.querySelector(&quot;.wrap&quot;);</div><div class="line">        /*</div><div class="line">        *   	屏幕适配，让box 的大小始终都是屏幕的大小</div><div class="line">        *   getHeight:  获取窗口高度然后把box设置成这个高度</div><div class="line">        * */</div><div class="line">        var height; //  屏幕的高度</div><div class="line">        var Num = 0;</div><div class="line"></div><div class="line">        function getHeight() &#123;</div><div class="line">            height = window.innerHeight; // 获取浏览器的高度</div><div class="line">            var item_length = items.length;</div><div class="line">            box.style.height = height + &quot;px&quot;;</div><div class="line">            for (var i = 0; i &lt; item_length; i++) &#123;</div><div class="line">                items[i].style.height = height + &quot;px&quot;;</div><div class="line">            &#125;</div><div class="line">            wrap.style.top = -Num * height + &quot;px&quot;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        getHeight();</div><div class="line">        window.onresize = function() &#123;</div><div class="line">            getHeight();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /*</div><div class="line">         *需求：</div><div class="line">         *   当用户滚动鼠标滚轮，实现页面滚动</div><div class="line">         *       - 鼠标滚动的方向：</div><div class="line">         *           - 向上滚： 滚动到上一屏；如果当前就是第一屏？不动</div><div class="line">         *           - 向下滚： 滚动到下一屏; 如果说当前是最后一屏？ 不动</div><div class="line">         * */</div><div class="line"></div><div class="line">        if (document.addEventListener) &#123; //看看浏览器支持不支持addeventlistener事件  //火狐</div><div class="line">            //  支持的话就用这种方法 绑定  鼠标滚轮  事件</div><div class="line">            document.addEventListener(&quot;DOMMouseScroll&quot;, scrollFun);</div><div class="line">        &#125;</div><div class="line">        // 低版本ie            // ie和谷歌</div><div class="line"></div><div class="line">        window.onmousewheel = document.onmousewheel = scrollFun;</div><div class="line"></div><div class="line">        /* 鼠标滚动事件  判断鼠标滚动方向。根据不同的操作，实现不同的功能*/</div><div class="line">        function scrollFun(e) &#123;</div><div class="line">            var e = e || window.event;</div><div class="line">            if (e.wheelDelta) &#123; //谷歌 和ie</div><div class="line">                if (e.wheelDelta &gt; 0) &#123;</div><div class="line">                    scrollUp();</div><div class="line">                &#125; else &#123;</div><div class="line">                    scrollDown();</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125; else if (e.detail) &#123; //火狐</div><div class="line">                if (e.detail &lt; 0) &#123;</div><div class="line">                    scrollUp();</div><div class="line">                &#125; else &#123;</div><div class="line">                    scrollDown();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        var ifScroll = true;</div><div class="line">        var scrollNum = 0; // 用户滚动了多少次</div><div class="line"></div><div class="line">        var setID;</div><div class="line">        /*   获取用户到第要去第几屏   */</div><div class="line">        /*  向上滚函数 */</div><div class="line">        function scrollUp() &#123;</div><div class="line">            if (scrollNum &lt; 1) &#123;</div><div class="line">                clearTimeout(setID);</div><div class="line">                setID = setTimeout(function() &#123;</div><div class="line">                    scrollNum++;</div><div class="line">                &#125;, 300);</div><div class="line">            &#125; else if (ifScroll) &#123;</div><div class="line">                ifScroll = false;</div><div class="line">                scrollNum = 0;</div><div class="line"></div><div class="line">                Num--;</div><div class="line"></div><div class="line">                if (Num &lt; 0) &#123;</div><div class="line">                    Num = 0;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                scrollGo(false);</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /* 向下滚函数 */</div><div class="line"></div><div class="line">        function scrollDown() &#123;</div><div class="line"></div><div class="line">            if (scrollNum &lt; 1) &#123;</div><div class="line"></div><div class="line">                clearTimeout(setID);</div><div class="line">                setID = setTimeout(function() &#123;</div><div class="line">                    scrollNum++;</div><div class="line">                &#125;, 300);</div><div class="line">            &#125; else if (ifScroll) &#123;</div><div class="line"></div><div class="line">                ifScroll = false; //</div><div class="line">                Num++;</div><div class="line">                if (Num &gt; 4) &#123;</div><div class="line">                    Num = 4;</div><div class="line">                &#125;</div><div class="line">                scrollGo(true); // 滚动需要时间 ；</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /* 真正滚动函数  */</div><div class="line">        /* 去的位置=  取得屏数（num）* 屏的高度 （height） */</div><div class="line">        function scrollGo(upOrdown) &#123;</div><div class="line"></div><div class="line">            var target = Num * height; //要到达的目标；</div><div class="line"></div><div class="line">            if (upOrdown) &#123;</div><div class="line">                var step = 3;</div><div class="line"></div><div class="line">            &#125; else &#123;</div><div class="line">                var step = -3;</div><div class="line">            &#125;</div><div class="line">            var StopScroll = setInterval(function() &#123;</div><div class="line"></div><div class="line">                wrap.style.top = wrap.offsetTop - step + &quot;px&quot;</div><div class="line"></div><div class="line">                if (wrap.offsetTop == -target || upOrdown ? wrap.offsetTop &lt; -target : wrap.offsetTop &gt; -target) &#123;</div><div class="line">                    wrap.style.top = -target + &quot;px&quot;;</div><div class="line">                    clearInterval(StopScroll);</div><div class="line"></div><div class="line">                    ifScroll = true;</div><div class="line">                    scrollNum = 0;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;, 17)</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Neueste Artikel</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/12/全屏滚动/">js实现全屏滚动</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/11/BOM/">BOM</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/07/事件冒泡-捕获/">事件冒泡/捕获</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/07/DOM-事件/">DOM/事件</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/05/Math对象/">Math对象</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>1</small></li>
+  
+    <li><a href="/tags/Math对象/">Math对象</a><small>1</small></li>
+  
+    <li><a href="/tags/canvas使用/">canvas使用</a><small>1</small></li>
+  
+    <li><a href="/tags/canvas画图/">canvas画图</a><small>1</small></li>
+  
+    <li><a href="/tags/html-css/">html/css</a><small>1</small></li>
+  
+    <li><a href="/tags/js笔记/">js笔记</a><small>1</small></li>
+  
+    <li><a href="/tags/js语句/">js语句</a><small>1</small></li>
+  
+    <li><a href="/tags/onload/">onload</a><small>1</small></li>
+  
+    <li><a href="/tags/this-字符串-Date/">this/字符串/Date</a><small>1</small></li>
+  
+    <li><a href="/tags/事件/">事件</a><small>1</small></li>
+  
+    <li><a href="/tags/冒泡、捕获/">冒泡、捕获</a><small>1</small></li>
+  
+    <li><a href="/tags/函数-对象-定时器/">函数/对象/定时器</a><small>1</small></li>
+  
+    <li><a href="/tags/博客/">博客</a><small>1</small></li>
+  
+    <li><a href="/tags/原型链/">原型链</a><small>1</small></li>
+  
+    <li><a href="/tags/小程序/">小程序</a><small>1</small></li>
+  
+    <li><a href="/tags/居中/">居中</a><small>1</small></li>
+  
+    <li><a href="/tags/数组方法总结/">数组方法总结</a><small>1</small></li>
+  
+    <li><a href="/tags/构造函数-拷贝/">构造函数/拷贝</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag-Cloud</h3>
+  <div class="entry">
+    <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2017 LTT
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+  
+    <script type="text/javascript" src="/live2d/script.js"></script>
+    <canvas id="live2dcanvas" width="150" height="300" class="live2d"></canvas>
+    <style>
+      #live2dcanvas {
+        position: fixed;
+        right: 0px;
+        z-index: 999;
+        pointer-events: none;
+        bottom: -60px;
+      }
+    </style>
+    <script>loadlive2d("live2dcanvas" ,"/live2d/assets/haruto/haruto.model.json",0.5)</script>
+  
+</body>
+</html>

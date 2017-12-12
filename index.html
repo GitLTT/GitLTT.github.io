@@ -62,6 +62,43 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-12-12T08:55:57.000Z"><a href="/2017/12/12/全屏滚动/">2017-12-12</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/12/全屏滚动/">js实现全屏滚动</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</div><div class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        * &#123;</div><div class="line">            margin: 0;</div><div class="line">            padding: 0;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .box &#123;</div><div class="line">            width: 100%;</div><div class="line">            height: 500px;</div><div class="line">            overflow: hidden;</div><div class="line">            position: relative;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item &#123;</div><div class="line">            width: 100%;</div><div class="line">            height: 100%;</div><div class="line">            overflow: hidden;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item&gt;h1 &#123;</div><div class="line">            text-align: center;</div><div class="line">            margin-top: 50px;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item1 &#123;</div><div class="line">            background-color: pink;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item2 &#123;</div><div class="line">            background-color: red;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item3 &#123;</div><div class="line">            background-color: blue;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item4 &#123;</div><div class="line">            background-color: purple;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .item5 &#123;</div><div class="line">            background-color: greenyellow;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .wrap &#123;</div><div class="line">            width: 100%;</div><div class="line">            position: absolute;</div><div class="line">            top: 0;</div><div class="line">            left: 0;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;box&quot;&gt;</div><div class="line">        &lt;div class=&quot;wrap&quot;&gt;</div><div class="line">            &lt;div class=&quot;item item1&quot;&gt;</div><div class="line">                &lt;h1&gt;第一屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;div class=&quot;item item2&quot;&gt;</div><div class="line">                &lt;h1&gt;第二屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;div class=&quot;item item3&quot;&gt;</div><div class="line">                &lt;h1&gt;第三屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;div class=&quot;item item4&quot;&gt;</div><div class="line">                &lt;h1&gt;第四屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;div class=&quot;item item5&quot;&gt;</div><div class="line">                &lt;h1&gt;第五屏&lt;/h1&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;script&gt;</div><div class="line">        var items = document.querySelectorAll(&quot;.item&quot;);</div><div class="line">        var box = document.querySelector(&quot;.box&quot;);</div><div class="line">        var wrap = document.querySelector(&quot;.wrap&quot;);</div><div class="line">        /*</div><div class="line">        *   	屏幕适配，让box 的大小始终都是屏幕的大小</div><div class="line">        *   getHeight:  获取窗口高度然后把box设置成这个高度</div><div class="line">        * */</div><div class="line">        var height; //  屏幕的高度</div><div class="line">        var Num = 0;</div><div class="line"></div><div class="line">        function getHeight() &#123;</div><div class="line">            height = window.innerHeight; // 获取浏览器的高度</div><div class="line">            var item_length = items.length;</div><div class="line">            box.style.height = height + &quot;px&quot;;</div><div class="line">            for (var i = 0; i &lt; item_length; i++) &#123;</div><div class="line">                items[i].style.height = height + &quot;px&quot;;</div><div class="line">            &#125;</div><div class="line">            wrap.style.top = -Num * height + &quot;px&quot;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        getHeight();</div><div class="line">        window.onresize = function() &#123;</div><div class="line">            getHeight();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /*</div><div class="line">         *需求：</div><div class="line">         *   当用户滚动鼠标滚轮，实现页面滚动</div><div class="line">         *       - 鼠标滚动的方向：</div><div class="line">         *           - 向上滚： 滚动到上一屏；如果当前就是第一屏？不动</div><div class="line">         *           - 向下滚： 滚动到下一屏; 如果说当前是最后一屏？ 不动</div><div class="line">         * */</div><div class="line"></div><div class="line">        if (document.addEventListener) &#123; //看看浏览器支持不支持addeventlistener事件  //火狐</div><div class="line">            //  支持的话就用这种方法 绑定  鼠标滚轮  事件</div><div class="line">            document.addEventListener(&quot;DOMMouseScroll&quot;, scrollFun);</div><div class="line">        &#125;</div><div class="line">        // 低版本ie            // ie和谷歌</div><div class="line"></div><div class="line">        window.onmousewheel = document.onmousewheel = scrollFun;</div><div class="line"></div><div class="line">        /* 鼠标滚动事件  判断鼠标滚动方向。根据不同的操作，实现不同的功能*/</div><div class="line">        function scrollFun(e) &#123;</div><div class="line">            var e = e || window.event;</div><div class="line">            if (e.wheelDelta) &#123; //谷歌 和ie</div><div class="line">                if (e.wheelDelta &gt; 0) &#123;</div><div class="line">                    scrollUp();</div><div class="line">                &#125; else &#123;</div><div class="line">                    scrollDown();</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125; else if (e.detail) &#123; //火狐</div><div class="line">                if (e.detail &lt; 0) &#123;</div><div class="line">                    scrollUp();</div><div class="line">                &#125; else &#123;</div><div class="line">                    scrollDown();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        var ifScroll = true;</div><div class="line">        var scrollNum = 0; // 用户滚动了多少次</div><div class="line"></div><div class="line">        var setID;</div><div class="line">        /*   获取用户到第要去第几屏   */</div><div class="line">        /*  向上滚函数 */</div><div class="line">        function scrollUp() &#123;</div><div class="line">            if (scrollNum &lt; 1) &#123;</div><div class="line">                clearTimeout(setID);</div><div class="line">                setID = setTimeout(function() &#123;</div><div class="line">                    scrollNum++;</div><div class="line">                &#125;, 300);</div><div class="line">            &#125; else if (ifScroll) &#123;</div><div class="line">                ifScroll = false;</div><div class="line">                scrollNum = 0;</div><div class="line"></div><div class="line">                Num--;</div><div class="line"></div><div class="line">                if (Num &lt; 0) &#123;</div><div class="line">                    Num = 0;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                scrollGo(false);</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /* 向下滚函数 */</div><div class="line"></div><div class="line">        function scrollDown() &#123;</div><div class="line"></div><div class="line">            if (scrollNum &lt; 1) &#123;</div><div class="line"></div><div class="line">                clearTimeout(setID);</div><div class="line">                setID = setTimeout(function() &#123;</div><div class="line">                    scrollNum++;</div><div class="line">                &#125;, 300);</div><div class="line">            &#125; else if (ifScroll) &#123;</div><div class="line"></div><div class="line">                ifScroll = false; //</div><div class="line">                Num++;</div><div class="line">                if (Num &gt; 4) &#123;</div><div class="line">                    Num = 4;</div><div class="line">                &#125;</div><div class="line">                scrollGo(true); // 滚动需要时间 ；</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        /* 真正滚动函数  */</div><div class="line">        /* 去的位置=  取得屏数（num）* 屏的高度 （height） */</div><div class="line">        function scrollGo(upOrdown) &#123;</div><div class="line"></div><div class="line">            var target = Num * height; //要到达的目标；</div><div class="line"></div><div class="line">            if (upOrdown) &#123;</div><div class="line">                var step = 3;</div><div class="line"></div><div class="line">            &#125; else &#123;</div><div class="line">                var step = -3;</div><div class="line">            &#125;</div><div class="line">            var StopScroll = setInterval(function() &#123;</div><div class="line"></div><div class="line">                wrap.style.top = wrap.offsetTop - step + &quot;px&quot;</div><div class="line"></div><div class="line">                if (wrap.offsetTop == -target || upOrdown ? wrap.offsetTop &lt; -target : wrap.offsetTop &gt; -target) &#123;</div><div class="line">                    wrap.style.top = -target + &quot;px&quot;;</div><div class="line">                    clearInterval(StopScroll);</div><div class="line"></div><div class="line">                    ifScroll = true;</div><div class="line">                    scrollNum = 0;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;, 17)</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-12-11T09:04:16.000Z"><a href="/2017/12/11/BOM/">2017-12-11</a></time>
       
       
@@ -993,164 +1030,6 @@ e.target: 触发这个事件的具体某个元素
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-28T02:55:37.000Z"><a href="/2017/11/28/js语句/">2017-11-28</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/28/js语句/">js语句</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="三目运算符的多个判断："><a href="#三目运算符的多个判断：" class="headerlink" title="三目运算符的多个判断："></a>三目运算符的多个判断：</h3><pre><code>条件1?语句1:条件2?语句2:条件3?语句3.....:条件n?语句n:语句n+1;
-</code></pre><h3 id="在js里面："><a href="#在js里面：" class="headerlink" title="在js里面："></a>在js里面：</h3><pre><code>不赋值就是获取，赋值就是设置；
-</code></pre><h4 id="document-write："><a href="#document-write：" class="headerlink" title="document.write："></a>document.write：</h4><pre><code>会重新绘制整个页面；
-
-用来改变页面的内容；
-
-可以识别html标签；
-</code></pre><h3 id="innerHTML："><a href="#innerHTML：" class="headerlink" title="innerHTML："></a>innerHTML：</h3><pre><code>可以用来绘制局部页面；
-
-用来改变页面的内容；
-
-可以识别html标签；
-</code></pre><h3 id="while循环-注意事项："><a href="#while循环-注意事项：" class="headerlink" title="while循环 注意事项："></a>while循环 注意事项：</h3><pre><code>一定要在大括号中加入限制变量改变的方法；
-</code></pre><h3 id="do-while循环："><a href="#do-while循环：" class="headerlink" title="do while循环："></a>do while循环：</h3><pre><code>先执行，后判断；
-</code></pre><h3 id="break语句："><a href="#break语句：" class="headerlink" title="break语句："></a>break语句：</h3><pre><code>终止执行语句块（终止循环。。。。）；
-</code></pre><h3 id="continue语句："><a href="#continue语句：" class="headerlink" title="continue语句："></a>continue语句：</h3><pre><code>跳出当前循环，进入到下一次的循环
-</code></pre><h3 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h3><pre><code>就是用来储存多个数据的变量就是数组；
-</code></pre><h3 id="循环里面获取到对象中的属性值的形式为："><a href="#循环里面获取到对象中的属性值的形式为：" class="headerlink" title="循环里面获取到对象中的属性值的形式为："></a>循环里面获取到对象中的属性值的形式为：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for(x in obj)&#123;</div><div class="line">	</div><div class="line">	console.log(obj[x]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="数组的创建："><a href="#数组的创建：" class="headerlink" title="数组的创建："></a>数组的创建：</h3><pre><code>1.var arr =  [];           //直面量；推荐使用
-
-2.var arr = new Array();   //构造函数；
-</code></pre><h3 id="数组赋值："><a href="#数组赋值：" class="headerlink" title="数组赋值："></a>数组赋值：</h3><pre><code>数组有一个length属性，记录我们数组中元素的个数/数组长度；
-</code></pre><h3 id="数组的方法：重点"><a href="#数组的方法：重点" class="headerlink" title="数组的方法：重点"></a>数组的方法：<em>重点</em></h3><pre><code>1.join(); 
-
-    把数组转换成字符串；得到一个新的字符串，不会修改我们原来的数组，还可以继续使用数组； 
-
-    在这个过程中join方法不会修改我们原来的数组；
-
-    join方法可以传递一个参数，这个参数是用来确定我们用什么东西来分隔数组中的每一项； 
-
-    默认使用逗号分隔；也可以自定义：var a = arr.join(&quot;|&quot;);//就是用 | 分隔； 
-
-2.*重点*：pop();//直接调用，没有参数； 
-
-    pop 用来删除数组中的最后一项，会改变原来的数组，返回值是删除掉的元素； 
-
-    从后删除； 
-
-3.push();//用来给数组添加一个或多个元素(从后添加 / 追加) 
-
-    会改变原来的数组；返回值是数组的新的长度； 
-
-    例：var a = arr.push(&quot;a&quot;); 
-
-4.unshift();//从前面添加； 
-
-    改变了数组；返回值是当前数组的长度 
-
-    例：var a = arr.unshift(&quot;a&quot;); 
-
-5.shift();//从前面删除； 
-
-    返回值是被删除的数组，会改变原数组； 
-
-    例：var a = arr.shift(); 
-
-6.reverse();
-
-    把数组顺序颠倒，会改变原数组； 
-
-    返回值为新数组；使用后新的数组等于原来的数组； 
-
-    例：var a = arr.reverse(); 
-        a = arr; 
-
-
-7.sort();
-
-    1.如果不给他传递参数，他就会按照字母的先后顺序排序 
-
-        例：var a = arr.sort(); 
-
-    2.按照大小进行排序： 
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function fn(a,b)&#123;</div><div class="line">	return a-b;//从小到大排序</div><div class="line">&#125;</div><div class="line"></div><div class="line">var x = arr.sort(fn);</div></pre></td></tr></table></figure>
-<pre><code>8.concat();
-
-    连接两个或者是多个数组；不会改变原数组；返回一个新数组； 
-
-    把两个数组合并成一个数组，谁调用谁再前面； 
-
-    例：var newArr = arr.concat(arr1,arr2); 
-        用arr连接arr1，arr2.。。。。； 
-
-
-9.slice();[截取/获取]
-
-    不会改变原数组；返回结果是你要的元素(把你要的元素放到一个新数组中)； 
-
-    如果你只传一个参数，代表的是你要开始截取的位置，返回结果是从截取的位置到这个数组的末尾； 
-
-    例：var a = arr.slice(2);//2是索引值； 
-
-    传两个参数：第一个是代表你要截取的位置，第二个参数是你要截取到的位置；(要头不要尾)； 
-
-    例：var b = arr.slice(2,3); 
-
-
-10.splice(a,b);
-
-    会改变原数组；如果只传一个参数，那么这个参数就是你要开始删除的位置，一直删除到末尾； 
-
-    例： var a= arr.splice(2); 
-
-    传两个参数：代表从第a个开始删除b个元素，返回值是删除调度元素，组成新的数组； 
-
-    例： var a= arr.splice(2,3); 
-
-    删除数组中的元素，并且替换成新的元素； 
-
-    例：var a= arr.splice(2,3,&quot;a&quot;,&quot;b&quot;,&quot;c&quot;); 
-</code></pre><h3 id="多维数组："><a href="#多维数组：" class="headerlink" title="多维数组："></a>多维数组：</h3><pre><code>var arr = [[],[],[]];//二维数组； 
-
-var arr = [[[],[],[]],[[],[]]]];//三维数组； 
-
-调用方法：arr[0][0][1];.... 
-</code></pre><h3 id="冒泡排序："><a href="#冒泡排序：" class="headerlink" title="冒泡排序："></a>冒泡排序：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 5, 6, 2, 8, 3, 9, 7, 0];</div><div class="line"></div><div class="line">       for (var i = 0; i &lt; arr.length; i++) &#123;</div><div class="line"></div><div class="line">           for (var j = 0; j &lt; arr.length, j++) &#123;</div><div class="line"></div><div class="line">               if (arr[j] &lt; arr[j + 1]) &#123;</div><div class="line">                   var m;</div><div class="line">                   m = arr[j];</div><div class="line">                   arr[j] = arr[j + 1];</div><div class="line">                   arr[j + 1] = m;</div><div class="line">               &#125;</div><div class="line"></div><div class="line">           &#125;</div><div class="line"></div><div class="line">       &#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/js语句/">js语句</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -1176,6 +1055,10 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
   <ul class="entry">
     
       <li>
+        <a href="/2017/12/12/全屏滚动/">js实现全屏滚动</a>
+      </li>
+    
+      <li>
         <a href="/2017/12/11/BOM/">BOM</a>
       </li>
     
@@ -1189,10 +1072,6 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
     
       <li>
         <a href="/2017/12/05/Math对象/">Math对象</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/05/原型链/">原型链</a>
       </li>
     
   </ul>
