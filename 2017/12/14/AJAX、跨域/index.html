@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>AJAX、跨域 | LTT</title>
+  <meta name="author" content="LTT" />
+
+  
+  <meta name="description" content="AJAX概念：Asynchronous JavaScript and XML（异步JavaScript和XML)
+作用：不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。 
+
+节省用户操作，时间，提高用户体验，减少数据请求传输获取数据 
+过程：初始化 – &amp;gt;发送请求 –&amp;gt" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <meta property="og:title" content="AJAX、跨域" />
+  <meta property="og:site_name" content="LTT" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="LTT" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">LTT</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-12-14T01:25:17.000Z"><a href="/2017/12/14/AJAX、跨域/">2017-12-14</a></time>
+      
+      
+  
+    <h1 class="title">AJAX、跨域</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="AJAX概念："><a href="#AJAX概念：" class="headerlink" title="AJAX概念："></a>AJAX概念：</h3><pre><code>Asynchronous JavaScript and XML（异步JavaScript和XML)
+</code></pre><h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><pre><code>不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。 
+
+节省用户操作，时间，提高用户体验，减少数据请求传输获取数据 
+</code></pre><h4 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h4><pre><code>初始化 – &gt;发送请求 –&gt; 服务器收到请求 –&gt; 服务器处理 –&gt; 返回结果
+</code></pre><h4 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h4><ul>
+<li><p>表单form</p>
+<ul>
+<li><p>action 提交到哪里</p>
+</li>
+<li><p>method 提交方式</p>
+</li>
+<li><p>第一个： 发送方式  //  GET    POST</p>
+</li>
+<li><p>第二个： 发送地址   //  发送到的地址</p>
+</li>
+<li><p>第三个： 发送内容</p>
+</li>
+</ul>
+</li>
+<li><p>Get方式</p>
+<ul>
+<li><p>Get通过url地址传输</p>
+</li>
+<li><p>GET请求 发送数据大小有限制；</p>
+</li>
+<li><p>提交内容是明文的，不安全</p>
+</li>
+<li><p>GET 请求传输速度快；</p>
+</li>
+</ul>
+</li>
+<li><p>Post方式</p>
+<ul>
+<li><p>Post通过浏览器内部传输</p>
+</li>
+<li><p>数据量理论上无限</p>
+</li>
+<li><p>相对比较安全</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="AJAX发送方式："><a href="#AJAX发送方式：" class="headerlink" title="AJAX发送方式："></a>AJAX发送方式：</h3><h4 id="GET请求："><a href="#GET请求：" class="headerlink" title="GET请求："></a>GET请求：</h4><pre><code>var  xhr=new XMLHttpRequest();  //初始化一个 xmlhttpqequest对象
+
+xhr.open(&quot;get&quot;,&quot;/logo?username=&quot;+user_val+&quot;&amp;psd=&quot;+psd_val); 
+
+注： 有三个参数：
+                  第一个： 请求方式
+
+                  第二个： 请求地址
+
+                  第三个： 同步还是异步
+
+            （布尔值，true：异步；false：同步；默认异步）
+
+xhr.send(); 
+
+xhr.onreadystatechange = function () {}
+
+        注： 当我们的ajax 对象状态发生改变的时候，请求状态发生改变
+
+var data = xhr.responseText;
+</code></pre><h4 id="readyState属性：请求状态"><a href="#readyState属性：请求状态" class="headerlink" title="readyState属性：请求状态"></a>readyState属性：请求状态</h4><pre><code>data = 0 （初始化）还没有调用open()方法
+
+data = 1（载入）已调用send()方法，正在发送请求
+
+data = 2（载入完成）send()方法完成，已收到全部响应内容
+
+data = 3（解析）正在解析响应内容
+
+data = 4（完成）响应内容解析完成，可以在客户端调用了
+
+    注：如果想要操作后台数据的话，必须是在data = 4时才可以
+</code></pre><h4 id="POST请求："><a href="#POST请求：" class="headerlink" title="POST请求："></a>POST请求：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">	// 建立链接</div><div class="line"></div><div class="line">	xhr.open(&quot;post&quot;,&quot;/logo&quot;,true);</div><div class="line"></div><div class="line">	// 设置请求头： 告诉服务器我们给他发的是一个什么数据；</div><div class="line"></div><div class="line">	xhr.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</div><div class="line"></div><div class="line">	// 发送数据</div><div class="line"></div><div class="line">	xhr.send(&quot;username=&quot;+user_val+&quot;&amp;psd=&quot;+psd_val);</div><div class="line"></div><div class="line">	// 接受数据</div><div class="line"></div><div class="line">	 xhr.onreadystatechange=function () &#123;</div><div class="line"></div><div class="line">            //  当xhr 的状态等于4的时候，代表接受数据完毕，可以调用数据了；</div><div class="line"></div><div class="line">            if(xhr.readyState==4)&#123;</div><div class="line"></div><div class="line">                // 用来接受数据；</div><div class="line"></div><div class="line">                var data=xhr.responseText;</div><div class="line"></div><div class="line">                console.log(data);</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">```	</div><div class="line">### xhr.responseText 和 xhr.responseXML 的区别：</div><div class="line"></div><div class="line">	都是获取数据的；</div><div class="line"></div><div class="line">	作用：</div><div class="line"></div><div class="line">		xhr.responseXML：获取后台发来的XML 格式的数据；</div><div class="line"></div><div class="line">### 跨域：</div><div class="line"></div><div class="line">	同源策略：就是只允许访问当前网站的资源，不允许访问其他网站的资源，这样就更安全</div><div class="line"></div><div class="line">#### 何为同源？</div><div class="line"></div><div class="line">	协议   域名   端口 一致就是同源，有一项不同就是跨域</div><div class="line"></div><div class="line">#### 跨域请求：</div><div class="line"></div><div class="line">            浏览器虽然不允许 对外部的网站发送请求，但是允许我们 请求图片。js，等资源</div><div class="line"></div><div class="line">            所以利用这一特性，我们可以进行跨域发送数据，获取数据</div><div class="line"></div><div class="line">#### 操作：</div><div class="line"></div><div class="line">            1. 动态创建一个带有src 属性的标签。 （一般正常情况下使用script）；</div><div class="line"></div><div class="line">            2. 让 这个标签的src 属性等于我们要请求的地址；</div><div class="line"></div><div class="line">            3. 把这个标签放到页面里面；</div><div class="line"></div><div class="line">            4. 获取数据操作数据；</div><div class="line"></div><div class="line">### callback函数：</div></pre></td></tr></table></figure>
+<pre><code>var num=document.querySelector(&quot;#num&quot;);
+
+    var btn=document.querySelector(&quot;#btn&quot;);
+
+    var h1=document.querySelector(&quot;#h1&quot;);
+
+    btn.onclick=function () {
+
+        var  num_val=num.value;
+
+        var script=document.createElement(&quot;script&quot;);
+
+        // 当 我们把这个标签放到页面上以后，我们就可以发送请求；但是服务器给我们返回回来的数据我们
+
+        //没有 方法调用，这个时候我们可以给地址栏传递一个callback，同时页面上要有callback对应的函数；
+
+        script.src=&quot;http://apis.juhe.cn/mobile/get?phone=&quot;+num_va+&quot;&amp;key=2c82c35f0899ad77140516fe5efcdd0a&amp;callback=fn&quot;;
+
+        document.head.appendChild(script);
+
+        document.head.removeChild(script);
+
+    }
+
+    function fn(data) {
+
+       var  html=&quot;尊敬的&quot;+data.result.company+&quot;用户您好，你的号码归属于：&quot;+data.result.province+data.result.city
+
+   h1.innerHTML=html;
+
+}
+</code></pre><p>```</p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Neueste Artikel</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/14/AJAX、跨域/">AJAX、跨域</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/12/全屏滚动/">js实现全屏滚动</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/11/BOM/">BOM</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/07/事件冒泡-捕获/">事件冒泡/捕获</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/07/DOM-事件/">DOM/事件</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/JavaScript/">JavaScript</a><small>1</small></li>
+  
+    <li><a href="/tags/Math对象/">Math对象</a><small>1</small></li>
+  
+    <li><a href="/tags/canvas使用/">canvas使用</a><small>1</small></li>
+  
+    <li><a href="/tags/canvas画图/">canvas画图</a><small>1</small></li>
+  
+    <li><a href="/tags/html-css/">html/css</a><small>1</small></li>
+  
+    <li><a href="/tags/js笔记/">js笔记</a><small>1</small></li>
+  
+    <li><a href="/tags/js语句/">js语句</a><small>1</small></li>
+  
+    <li><a href="/tags/onload/">onload</a><small>1</small></li>
+  
+    <li><a href="/tags/this-字符串-Date/">this/字符串/Date</a><small>1</small></li>
+  
+    <li><a href="/tags/事件/">事件</a><small>1</small></li>
+  
+    <li><a href="/tags/冒泡、捕获/">冒泡、捕获</a><small>1</small></li>
+  
+    <li><a href="/tags/函数-对象-定时器/">函数/对象/定时器</a><small>1</small></li>
+  
+    <li><a href="/tags/博客/">博客</a><small>1</small></li>
+  
+    <li><a href="/tags/原型链/">原型链</a><small>1</small></li>
+  
+    <li><a href="/tags/小程序/">小程序</a><small>1</small></li>
+  
+    <li><a href="/tags/居中/">居中</a><small>1</small></li>
+  
+    <li><a href="/tags/数组方法总结/">数组方法总结</a><small>1</small></li>
+  
+    <li><a href="/tags/构造函数-拷贝/">构造函数/拷贝</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag-Cloud</h3>
+  <div class="entry">
+    <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2017 LTT
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+  
+    <script type="text/javascript" src="/live2d/script.js"></script>
+    <canvas id="live2dcanvas" width="150" height="300" class="live2d"></canvas>
+    <style>
+      #live2dcanvas {
+        position: fixed;
+        right: 0px;
+        z-index: 999;
+        pointer-events: none;
+        bottom: -60px;
+      }
+    </style>
+    <script>loadlive2d("live2dcanvas" ,"/live2d/assets/haruto/haruto.model.json",0.5)</script>
+  
+</body>
+</html>

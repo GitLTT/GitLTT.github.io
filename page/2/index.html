@@ -62,6 +62,48 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-11-29T09:09:55.000Z"><a href="/2017/11/29/数组方法总结/">2017-11-29</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/29/数组方法总结/">数组方法总结</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var arr = [&quot;a&quot;, &quot;c&quot;, &quot;s&quot;, &quot;d&quot;, &quot;f&quot;, &quot;g&quot;, &quot;x&quot;];</div><div class="line">    var arr1 = [1, 2, 3, 4, 5];</div><div class="line">    var arr2 = [6, 7, 8, 9, 0];</div><div class="line">    var a = arr1.concat(arr2);//合并</div><div class="line">    console.log(a);//新数组</div><div class="line">        </div><div class="line">    var b = arr.reverse();//颠倒</div><div class="line">    console.log(b);//新数组</div><div class="line">        </div><div class="line">    var c = arr1.sort(fn); //排序(从大到小)；m-n(从小到大)</div><div class="line">    function fn(m, n) &#123;</div><div class="line">        return n - m;</div><div class="line">    &#125;</div><div class="line">    console.log(c); //新数组</div><div class="line"></div><div class="line">    ar d = arr.slice(1, 2); //截取，要头不要尾</div><div class="line">    console.log(d);//删除元素</div><div class="line"></div><div class="line">    var e = arr.splice(1, 2); //截取，某位数后的多少个元素，包括这个位置的元素</div><div class="line">    console.log(e); //删除元素</div><div class="line"></div><div class="line">    var f = arr.pop(); //从后删除；</div><div class="line">    console.log(f);//删除元素；</div><div class="line"></div><div class="line">    var g = arr.push(&quot;aaa&quot;); //从后添加；</div><div class="line">    console.log(g);//新数组长度</div><div class="line"></div><div class="line">    var h = arr.unshift(&quot;aaaa&quot;);//从前添加</div><div class="line">    console.log(h);//新数组长度</div><div class="line"></div><div class="line">    var i = arr.shift(); //从前删除</div><div class="line">    console.log(i); //删除元素</div><div class="line"></div><div class="line">    var j = arr.join(); //转换为字符串</div><div class="line">    console.log(j); //字符串；</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/数组方法总结/">数组方法总结</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-11-28T02:55:37.000Z"><a href="/2017/11/28/js语句/">2017-11-28</a></time>
       
       
@@ -872,74 +914,11 @@ E：绘制圆/圆弧：
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-02T06:25:33.000Z"><a href="/2017/11/02/JavaScript/">2017-11-02</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/02/JavaScript/">JavaScript</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="JavaScript-组成"><a href="#JavaScript-组成" class="headerlink" title="JavaScript 组成"></a>JavaScript 组成</h3><p>1) ECMAScript(api):  </p>
-<ul>
-<li>E : 元素;</li>
-<li>C : 类名;</li>
-<li>M : 注释;</li>
-<li>A : 属性;<br>2) BOM:浏览器对象模型;<br>3) DOM:文档对象模型;</li>
-</ul>
-<h3 id="lt-script-gt-标签"><a href="#lt-script-gt-标签" class="headerlink" title="&lt;script&gt; 标签"></a><code>&lt;script&gt;</code> 标签</h3><p>如需在 HTML 页面中插入 JavaScript，请使用 <code>&lt;script&gt;</code> 标签。<br><code>&lt;script&gt;</code> 和 <code>&lt;/script&gt;</code> 会告诉 JavaScript 在何处开始和结束。<br><code>&lt;script&gt;</code> 和 <code>&lt;/script&gt;</code> 之间的代码行包含了 JavaScript：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">alert(&quot;My First JavaScript&quot;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="lt-body-gt-中的-JavaScript"><a href="#lt-body-gt-中的-JavaScript" class="headerlink" title="&lt;body&gt; 中的 JavaScript"></a><code>&lt;body&gt;</code> 中的 JavaScript</h3><p>在本例中，JavaScript 会在页面加载时向 HTML 的 <code>&lt;body&gt;</code> 写文本：</p>
-<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">document.write(&quot;&lt;h1&gt;This is a heading&lt;/h1&gt;&quot;);</div><div class="line">document.write(&quot;&lt;p&gt;This is a paragraph&lt;/p&gt;&quot;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="lt-head-gt-中的-JavaScript函数"><a href="#lt-head-gt-中的-JavaScript函数" class="headerlink" title="&lt;head&gt;中的 JavaScript函数"></a><code>&lt;head&gt;</code>中的 JavaScript函数</h3><p>在本例中，我们把一个 JavaScript 函数放置到 HTML 页面的 <code>&lt;head&gt;</code> 部分。<br>该函数会在点击按钮时被调用：</p>
-<h5 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction()</div><div class="line">&#123;</div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML=&quot;My First JavaScript Function&quot;;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;My Web Page&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;p id=&quot;demo&quot;&gt;A Paragraph&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="lt-body-gt-中的-JavaScript-函数"><a href="#lt-body-gt-中的-JavaScript-函数" class="headerlink" title="&lt;body&gt; 中的 JavaScript 函数"></a><code>&lt;body&gt;</code> 中的 JavaScript 函数</h3><p>在本例中，我们把一个 JavaScript 函数放置到 HTML 页面的 <code>&lt;body&gt;</code> 部分。<br>该函数会在点击按钮时被调用：</p>
-<h5 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;My Web Page&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;p id=&quot;demo&quot;&gt;A Paragraph&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">function myFunction()</div><div class="line">&#123;</div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML=&quot;My First JavaScript Function&quot;;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="外部的-JavaScript"><a href="#外部的-JavaScript" class="headerlink" title="外部的 JavaScript"></a>外部的 JavaScript</h3><p>也可以把脚本保存到外部文件中。外部文件通常包含被多个网页使用的代码。<br>外部 JavaScript 文件的文件扩展名是 .js。<br>如需使用外部文件，请在 <code>&lt;script&gt;</code> 标签的 “src” 属性中设置该 .js 文件：</p>
-<h5 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="操作-HTML-元素"><a href="#操作-HTML-元素" class="headerlink" title="操作 HTML 元素"></a>操作 HTML 元素</h3><h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><p>通过指定的 id 来访问 HTML 元素，并改变其内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;我的第一张网页&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;p id=&quot;demo&quot;&gt;我的第一个段落&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML=&quot;我的第一段 JavaScript&quot;;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="写到文档输出"><a href="#写到文档输出" class="headerlink" title="写到文档输出"></a>写到文档输出</h3><p>下面的例子直接把 <code>&lt;p&gt;</code> 元素写到 HTML 文档输出中：</p>
-<h5 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;我的第一张网页&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">document.write(&quot;&lt;p&gt;我的第一段 JavaScript&lt;/p&gt;&quot;);</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h3><p>请使用 document.write() 仅仅向文档输出写内容。<br>如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖：</p>
-<h5 id="实例-5"><a href="#实例-5" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;我的第一张网页&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;p&gt;我的第一个段落。&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;button onclick=&quot;myFunction()&quot;&gt;点击这里&lt;/button&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">function myFunction()</div><div class="line">&#123;</div><div class="line">document.write(&quot;糟糕！文档消失了。&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/JavaScript/">JavaScript</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; Vorherige Seite</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; Vorherige Seite</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Nächste Seite &raquo;</a>
   </nav>
 
 </nav>
@@ -960,6 +939,10 @@ E：绘制圆/圆弧：
   <ul class="entry">
     
       <li>
+        <a href="/2017/12/14/AJAX、跨域/">AJAX、跨域</a>
+      </li>
+    
+      <li>
         <a href="/2017/12/12/全屏滚动/">js实现全屏滚动</a>
       </li>
     
@@ -973,10 +956,6 @@ E：绘制圆/圆弧：
     
       <li>
         <a href="/2017/12/07/DOM-事件/">DOM/事件</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/05/Math对象/">Math对象</a>
       </li>
     
   </ul>

@@ -62,6 +62,150 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-12-14T01:25:17.000Z"><a href="/2017/12/14/AJAX、跨域/">2017-12-14</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/14/AJAX、跨域/">AJAX、跨域</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="AJAX概念："><a href="#AJAX概念：" class="headerlink" title="AJAX概念："></a>AJAX概念：</h3><pre><code>Asynchronous JavaScript and XML（异步JavaScript和XML)
+</code></pre><h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><pre><code>不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。 
+
+节省用户操作，时间，提高用户体验，减少数据请求传输获取数据 
+</code></pre><h4 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h4><pre><code>初始化 – &gt;发送请求 –&gt; 服务器收到请求 –&gt; 服务器处理 –&gt; 返回结果
+</code></pre><h4 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h4><ul>
+<li><p>表单form</p>
+<ul>
+<li><p>action 提交到哪里</p>
+</li>
+<li><p>method 提交方式</p>
+</li>
+<li><p>第一个： 发送方式  //  GET    POST</p>
+</li>
+<li><p>第二个： 发送地址   //  发送到的地址</p>
+</li>
+<li><p>第三个： 发送内容</p>
+</li>
+</ul>
+</li>
+<li><p>Get方式</p>
+<ul>
+<li><p>Get通过url地址传输</p>
+</li>
+<li><p>GET请求 发送数据大小有限制；</p>
+</li>
+<li><p>提交内容是明文的，不安全</p>
+</li>
+<li><p>GET 请求传输速度快；</p>
+</li>
+</ul>
+</li>
+<li><p>Post方式</p>
+<ul>
+<li><p>Post通过浏览器内部传输</p>
+</li>
+<li><p>数据量理论上无限</p>
+</li>
+<li><p>相对比较安全</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="AJAX发送方式："><a href="#AJAX发送方式：" class="headerlink" title="AJAX发送方式："></a>AJAX发送方式：</h3><h4 id="GET请求："><a href="#GET请求：" class="headerlink" title="GET请求："></a>GET请求：</h4><pre><code>var  xhr=new XMLHttpRequest();  //初始化一个 xmlhttpqequest对象
+
+xhr.open(&quot;get&quot;,&quot;/logo?username=&quot;+user_val+&quot;&amp;psd=&quot;+psd_val); 
+
+注： 有三个参数：
+                  第一个： 请求方式
+
+                  第二个： 请求地址
+
+                  第三个： 同步还是异步
+
+            （布尔值，true：异步；false：同步；默认异步）
+
+xhr.send(); 
+
+xhr.onreadystatechange = function () {}
+
+        注： 当我们的ajax 对象状态发生改变的时候，请求状态发生改变
+
+var data = xhr.responseText;
+</code></pre><h4 id="readyState属性：请求状态"><a href="#readyState属性：请求状态" class="headerlink" title="readyState属性：请求状态"></a>readyState属性：请求状态</h4><pre><code>data = 0 （初始化）还没有调用open()方法
+
+data = 1（载入）已调用send()方法，正在发送请求
+
+data = 2（载入完成）send()方法完成，已收到全部响应内容
+
+data = 3（解析）正在解析响应内容
+
+data = 4（完成）响应内容解析完成，可以在客户端调用了
+
+    注：如果想要操作后台数据的话，必须是在data = 4时才可以
+</code></pre><h4 id="POST请求："><a href="#POST请求：" class="headerlink" title="POST请求："></a>POST请求：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">	// 建立链接</div><div class="line"></div><div class="line">	xhr.open(&quot;post&quot;,&quot;/logo&quot;,true);</div><div class="line"></div><div class="line">	// 设置请求头： 告诉服务器我们给他发的是一个什么数据；</div><div class="line"></div><div class="line">	xhr.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</div><div class="line"></div><div class="line">	// 发送数据</div><div class="line"></div><div class="line">	xhr.send(&quot;username=&quot;+user_val+&quot;&amp;psd=&quot;+psd_val);</div><div class="line"></div><div class="line">	// 接受数据</div><div class="line"></div><div class="line">	 xhr.onreadystatechange=function () &#123;</div><div class="line"></div><div class="line">            //  当xhr 的状态等于4的时候，代表接受数据完毕，可以调用数据了；</div><div class="line"></div><div class="line">            if(xhr.readyState==4)&#123;</div><div class="line"></div><div class="line">                // 用来接受数据；</div><div class="line"></div><div class="line">                var data=xhr.responseText;</div><div class="line"></div><div class="line">                console.log(data);</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">```	</div><div class="line">### xhr.responseText 和 xhr.responseXML 的区别：</div><div class="line"></div><div class="line">	都是获取数据的；</div><div class="line"></div><div class="line">	作用：</div><div class="line"></div><div class="line">		xhr.responseXML：获取后台发来的XML 格式的数据；</div><div class="line"></div><div class="line">### 跨域：</div><div class="line"></div><div class="line">	同源策略：就是只允许访问当前网站的资源，不允许访问其他网站的资源，这样就更安全</div><div class="line"></div><div class="line">#### 何为同源？</div><div class="line"></div><div class="line">	协议   域名   端口 一致就是同源，有一项不同就是跨域</div><div class="line"></div><div class="line">#### 跨域请求：</div><div class="line"></div><div class="line">            浏览器虽然不允许 对外部的网站发送请求，但是允许我们 请求图片。js，等资源</div><div class="line"></div><div class="line">            所以利用这一特性，我们可以进行跨域发送数据，获取数据</div><div class="line"></div><div class="line">#### 操作：</div><div class="line"></div><div class="line">            1. 动态创建一个带有src 属性的标签。 （一般正常情况下使用script）；</div><div class="line"></div><div class="line">            2. 让 这个标签的src 属性等于我们要请求的地址；</div><div class="line"></div><div class="line">            3. 把这个标签放到页面里面；</div><div class="line"></div><div class="line">            4. 获取数据操作数据；</div><div class="line"></div><div class="line">### callback函数：</div></pre></td></tr></table></figure>
+<pre><code>var num=document.querySelector(&quot;#num&quot;);
+
+    var btn=document.querySelector(&quot;#btn&quot;);
+
+    var h1=document.querySelector(&quot;#h1&quot;);
+
+    btn.onclick=function () {
+
+        var  num_val=num.value;
+
+        var script=document.createElement(&quot;script&quot;);
+
+        // 当 我们把这个标签放到页面上以后，我们就可以发送请求；但是服务器给我们返回回来的数据我们
+
+        //没有 方法调用，这个时候我们可以给地址栏传递一个callback，同时页面上要有callback对应的函数；
+
+        script.src=&quot;http://apis.juhe.cn/mobile/get?phone=&quot;+num_va+&quot;&amp;key=2c82c35f0899ad77140516fe5efcdd0a&amp;callback=fn&quot;;
+
+        document.head.appendChild(script);
+
+        document.head.removeChild(script);
+
+    }
+
+    function fn(data) {
+
+       var  html=&quot;尊敬的&quot;+data.result.company+&quot;用户您好，你的号码归属于：&quot;+data.result.province+data.result.city
+
+   h1.innerHTML=html;
+
+}
+</code></pre><p>```</p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-12-12T08:55:57.000Z"><a href="/2017/12/12/全屏滚动/">2017-12-12</a></time>
       
       
@@ -988,53 +1132,11 @@ e.target: 触发这个事件的具体某个元素
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-29T09:09:55.000Z"><a href="/2017/11/29/数组方法总结/">2017-11-29</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/29/数组方法总结/">数组方法总结</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var arr = [&quot;a&quot;, &quot;c&quot;, &quot;s&quot;, &quot;d&quot;, &quot;f&quot;, &quot;g&quot;, &quot;x&quot;];</div><div class="line">    var arr1 = [1, 2, 3, 4, 5];</div><div class="line">    var arr2 = [6, 7, 8, 9, 0];</div><div class="line">    var a = arr1.concat(arr2);//合并</div><div class="line">    console.log(a);//新数组</div><div class="line">        </div><div class="line">    var b = arr.reverse();//颠倒</div><div class="line">    console.log(b);//新数组</div><div class="line">        </div><div class="line">    var c = arr1.sort(fn); //排序(从大到小)；m-n(从小到大)</div><div class="line">    function fn(m, n) &#123;</div><div class="line">        return n - m;</div><div class="line">    &#125;</div><div class="line">    console.log(c); //新数组</div><div class="line"></div><div class="line">    ar d = arr.slice(1, 2); //截取，要头不要尾</div><div class="line">    console.log(d);//删除元素</div><div class="line"></div><div class="line">    var e = arr.splice(1, 2); //截取，某位数后的多少个元素，包括这个位置的元素</div><div class="line">    console.log(e); //删除元素</div><div class="line"></div><div class="line">    var f = arr.pop(); //从后删除；</div><div class="line">    console.log(f);//删除元素；</div><div class="line"></div><div class="line">    var g = arr.push(&quot;aaa&quot;); //从后添加；</div><div class="line">    console.log(g);//新数组长度</div><div class="line"></div><div class="line">    var h = arr.unshift(&quot;aaaa&quot;);//从前添加</div><div class="line">    console.log(h);//新数组长度</div><div class="line"></div><div class="line">    var i = arr.shift(); //从前删除</div><div class="line">    console.log(i); //删除元素</div><div class="line"></div><div class="line">    var j = arr.join(); //转换为字符串</div><div class="line">    console.log(j); //字符串；</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/数组方法总结/">数组方法总结</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Nächste Seite &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Nächste Seite &raquo;</a>
   </nav>
 
 </nav>
@@ -1055,6 +1157,10 @@ e.target: 触发这个事件的具体某个元素
   <ul class="entry">
     
       <li>
+        <a href="/2017/12/14/AJAX、跨域/">AJAX、跨域</a>
+      </li>
+    
+      <li>
         <a href="/2017/12/12/全屏滚动/">js实现全屏滚动</a>
       </li>
     
@@ -1068,10 +1174,6 @@ e.target: 触发这个事件的具体某个元素
     
       <li>
         <a href="/2017/12/07/DOM-事件/">DOM/事件</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/05/Math对象/">Math对象</a>
       </li>
     
   </ul>
