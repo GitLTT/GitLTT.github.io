@@ -167,16 +167,19 @@ jQ遍历分为四种，1. 想上遍历 2. 向下遍历 3. 过滤 4. 水平遍历
 <li><p>向上遍历 （查找元素祖先）</p>
 <ul>
 <li><p>parent()    返回被选元素的直接父元素 (只会向下一级对 DOM 树进行遍历 )     </p>
-<p>例：        </p>
+</li>
+<li><p>例：        </p>
 <p>  $(“span”).parent();</p>
 </li>
 <li><p>parents()    返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)     </html></p>
-<p>例：</p>
+</li>
+<li><p>例：</p>
 <p>  $(“span”).parents();$(“span”).parents(“ul”) </p>
 <p>  返回所有 <span> 元素的所有祖先，并且它是<ul> 元素 </ul></span></p>
 </li>
 <li><p>parentsUntil()    返回介于两个给定元素之间的所有祖先元素     </p>
-<p>例：</p>
+</li>
+<li><p>例：</p>
 <p>  $(“span”).parentsUntil(“div”);</p>
 </li>
 </ul>
@@ -184,33 +187,38 @@ jQ遍历分为四种，1. 想上遍历 2. 向下遍历 3. 过滤 4. 水平遍历
 <li><p>向下遍历（查找元素后代）</p>
 <ul>
 <li><p>children()    返回被选元素的所有直接子元素(只会向下一级对 DOM 树进行遍历 )     </p>
-<p>例：</p>
-<p>  $(“div”).children()$(“div”).children(“p.1”) </p>
-<p>  返回类名为 “1” 的所有 </p><p> 元素，并且它们是<div> 的直接子元素 </div></p>
+</li>
+<li><p>例：</p>
+<p>  $(“div”).children()$(“div”).children(“p.1”) 返回类名为 “1” 的所有 <code>&lt;p&gt;</code> 元素，并且它们是<code>&lt;div&gt;</code> 的直接子元素 </p>
 </li>
 <li><p>find()    返回被选元素的后代元素，一路向下直到最后一个后代    </p>
-<p>例：</p>
-<p>  $(“div”).find(“span”);$(“div”).find(“*”);返回 <div> 的所有后代</div></p>
+</li>
+<li><p>例：</p>
+<p>  $(“div”).find(“span”);$(“div”).find(“*”);返回 <code>&lt;div&gt;</code>的所有后代</p>
 </li>
 </ul>
 </li>
 <li><p>水平遍历方法(元素同胞元素)：</p>
 <ul>
 <li><p>siblings()    返回被选元素的所有同胞元素    </p>
-<p>例：</p>
+</li>
+<li><p>例：</p>
 <p>  $(“h2”).siblings();$(“h2”).siblings(“p”);</p>
-<p>  返回属于 </p><h2> 的同胞元素的所有 <p> 元素</p>
-</h2></li>
+<p>  返回属于 <code>&lt;h2&gt;</code> 的同胞元素的所有 <code>&lt;p&gt;</code> 元素</p>
+</li>
 <li><p>next() 、prev()    返回被选元素的下一个/上一个同胞元素    </p>
-<p>例：</p>
+</li>
+<li><p>例：</p>
 <p>  $(“h2”).next();</p>
 </li>
 <li><p>nextAll()、prevAll()    返回被选元素的所有跟随的同胞（前面同胞）元素 </p>
-<p>例：</p>
+</li>
+<li><p>例：</p>
 <p>  $(“h2”).nextAll();</p>
 </li>
 <li><p>nextUntil()、prevUntil()      返回介于两个给定参数之间的所有跟随的同胞（前面同胞）元素    </p>
-<p>例：</p>
+</li>
+<li><p>例：</p>
 <p>  $(“h2”).nextUntil(“h6”);</p>
 </li>
 </ul>
@@ -218,19 +226,23 @@ jQ遍历分为四种，1. 想上遍历 2. 向下遍历 3. 过滤 4. 水平遍历
 <li><p>过滤：</p>
 <ul>
 <li><p>first()      返回被选元素的首个元素    </p>
-<p>例：        </p>
+</li>
+<li><p>例：        </p>
 <p>  $(“div p”).first();</p>
 </li>
 <li><p>last()    返回被选元素的最后一个元素    </p>
-<p>例：</p>
+</li>
+<li><p>例：</p>
 <p>  $(“div p”).last();</p>
 </li>
 <li><p>eq()    返回被选元素中带有指定索引号的元素    </p>
-<p>例：</p>
+</li>
+<li><p>例：</p>
 <p>  $(“p”).eq(1);</p>
 </li>
 <li><p>filter()    不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回 </p>
-<p>例：</p>
+</li>
+<li><p>例：</p>
 <p>  $(“p”).filter(“.intro”);</p>
 </li>
 <li><p>not() not()    方法返回不匹配标准的所有元素not() 方法不 filter() 相反。    </p>
@@ -297,7 +309,7 @@ jQ遍历分为四种，1. 想上遍历 2. 向下遍历 3. 过滤 4. 水平遍历
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -306,7 +318,7 @@ jQ遍历分为四种，1. 想上遍历 2. 向下遍历 3. 过滤 4. 水平遍历
 
   
 <div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
+  <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
     
       <li>
@@ -392,7 +404,7 @@ jQ遍历分为四种，1. 想上遍历 2. 向下遍历 3. 过滤 4. 水平遍历
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
+  <h3 class="title">Tag-Cloud</h3>
   <div class="entry">
     <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
   </div>

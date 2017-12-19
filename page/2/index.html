@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Page 2 | LTT</title>
+  <title>Seite 2 | LTT</title>
   <meta name="author" content="LTT" />
 
   
@@ -837,99 +837,6 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
-<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
-</li>
-<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
-</li>
-<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
-</li>
-<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
-</li>
-<li><p>步骤：</p>
-<p> A： 获取canvas标签 a；</p>
-<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
-<p> C： 绘制矩形：</p>
-<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
-b：ctx.strokeRect();           //空心矩形；
-c：ctx.clearRect(x,y,width,height);           //清空区域；
-</code></pre><p> D：路径绘制：</p>
-<pre><code>a：ctx.beginPath();      //开始绘画；
-b：ctx.moveTo(x,y);       //画笔的位置；
-c：ctx.lineTo(x,y);        //起始位置；
-    .
-    .
-    .
-d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
-e：ctx.fill();           //填充颜色(默认为黑色)；
-</code></pre></li>
-</ol>
-<pre><code>自动闭合(没有终止位置时)：
-
-    a：ctx.moveTo(x,y);
-    b：ctx.lineTo(x,y);
-        .
-        .
-        .
-    c：ctx.closePath();       //自动闭合；
-    d：ctx.stroke();
-
-E：绘制圆/圆弧：
-
-    a：ctx.beginPath();
-    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
-                        start：开始位置，end：结束位置(以x轴为基准)      
-                                 方向：true逆时针，false顺时针(默认false)；
-    c：ctx.fill();
-</code></pre><ol>
-<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
-</ol>
-<ol>
-<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
-</code></pre></li>
-</ol>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/canvas画图/">canvas画图</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas_wd/">2017-11-21</a></time>
       
       
@@ -1021,11 +928,104 @@ E：绘制圆/圆弧：
 
 
 
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
+<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
+</li>
+<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
+</li>
+<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
+</li>
+<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
+</li>
+<li><p>步骤：</p>
+<p> A： 获取canvas标签 a；</p>
+<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
+<p> C： 绘制矩形：</p>
+<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
+b：ctx.strokeRect();           //空心矩形；
+c：ctx.clearRect(x,y,width,height);           //清空区域；
+</code></pre><p> D：路径绘制：</p>
+<pre><code>a：ctx.beginPath();      //开始绘画；
+b：ctx.moveTo(x,y);       //画笔的位置；
+c：ctx.lineTo(x,y);        //起始位置；
+    .
+    .
+    .
+d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
+e：ctx.fill();           //填充颜色(默认为黑色)；
+</code></pre></li>
+</ol>
+<pre><code>自动闭合(没有终止位置时)：
+
+    a：ctx.moveTo(x,y);
+    b：ctx.lineTo(x,y);
+        .
+        .
+        .
+    c：ctx.closePath();       //自动闭合；
+    d：ctx.stroke();
+
+E：绘制圆/圆弧：
+
+    a：ctx.beginPath();
+    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
+                        start：开始位置，end：结束位置(以x轴为基准)      
+                                 方向：true逆时针，false顺时针(默认false)；
+    c：ctx.fill();
+</code></pre><ol>
+<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
+</ol>
+<ol>
+<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/canvas画图/">canvas画图</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
 
 <nav id="pagination">
   
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Vorherige Seite</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Nächste Seite &raquo;</a>
   </nav>
 
 </nav>
@@ -1033,7 +1033,7 @@ E：绘制圆/圆弧：
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -1042,7 +1042,7 @@ E：绘制圆/圆弧：
 
   
 <div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
+  <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
     
       <li>
@@ -1128,7 +1128,7 @@ E：绘制圆/圆弧：
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
+  <h3 class="title">Tag-Cloud</h3>
   <div class="entry">
     <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
   </div>
