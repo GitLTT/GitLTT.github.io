@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Seite 3 | LTT</title>
+  <title>Page 3 | LTT</title>
   <meta name="author" content="LTT" />
 
   
@@ -56,6 +56,151 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-20T01:31:56.000Z"><a href="/2017/11/20/微信小程序/">2017-11-20</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/20/微信小程序/">微信小程序</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>app.js文件是属于全局的js文件。</li>
+</ul>
+<ol>
+<li><p>一个页面是由四个文件组成的：</p>
+<ul>
+<li>wxml文件：页面的结构 —– 相当于html文件</li>
+<li>wxss文件：页面的样式 —– 相当于css文件</li>
+<li>js文件：行为 / 逻辑</li>
+<li>json文件：页面的配置信息</li>
+</ul>
+</li>
+<li><p>每一个页面需要单独写一个文件夹，放到pages文件夹中，并且这个页面的的文件命名都是有要求的：</p>
+<ul>
+<li>假如你要创建一个index文件，那么首先要在pages文件里面创建一个index文件夹，并且这个文件夹下的文件都要叫index<br>  例如：index.wxml、index.wxss……..</li>
+</ul>
+</li>
+<li><p>添加一个页面：</p>
+<ul>
+<li>需要创建这个页面的文件夹；</li>
+<li>配置这个页面到小程序中：<ul>
+<li>在我们项目中的app.json文件中找到pages的字段，给这个字段添加内容，添加你要在小程序中添加的页面。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>app.json：是相当于小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部tab等。</li>
+</ol>
+<h5 id="当前页面的权限-gt-app-json的权限"><a href="#当前页面的权限-gt-app-json的权限" class="headerlink" title="当前页面的权限 &gt; app.json的权限"></a>当前页面的权限 &gt; app.json的权限</h5><h5 id="js文件中都需要有：Page-——-‘-’括号里面可以没有东西，但是必须要写"><a href="#js文件中都需要有：Page-——-‘-’括号里面可以没有东西，但是必须要写" class="headerlink" title=".js文件中都需要有：Page({})  ——- [‘{}’括号里面可以没有东西，但是必须要写]"></a>.js文件中都需要有：Page({})  ——- [‘{}’括号里面可以没有东西，但是必须要写]</h5>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/小程序/">小程序</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-14T02:40:36.000Z"><a href="/2017/11/14/boke/">2017-11-14</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/14/boke/">博客更新，以及本地删除文件上传博客</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="创建公钥和密钥"><a href="#创建公钥和密钥" class="headerlink" title="创建公钥和密钥"></a>创建公钥和密钥</h2><h4 id="c盘-用户-7000-用户名文件夹-ssh文件是否存在-若存在删除"><a href="#c盘-用户-7000-用户名文件夹-ssh文件是否存在-若存在删除" class="headerlink" title="c盘 / 用户 / 7000(用户名文件夹) / .ssh文件是否存在(若存在删除)"></a>c盘 / 用户 / 7000(用户名文件夹) / .ssh文件是否存在(若存在删除)</h4><ul>
+<li><p>创建.ssh文件：</p>
+<ul>
+<li>Git Bash里面填写：</li>
+<li>ssh-keygen -t rsa -C “youremail@example.com”</li>
+<li>.ssh文件：名字短的是密钥，名字长的是公钥；</li>
+</ul>
+</li>
+<li><p>在博客里面：</p>
+<ul>
+<li>setting — Deploy keys — Add key ：</li>
+<li>title：xxx；</li>
+<li>key：放入公钥里面的所有东西；</li>
+<li>勾选，添加；</li>
+</ul>
+</li>
+</ul>
+<h4 id="本地文件夹被删除之后想要上传："><a href="#本地文件夹被删除之后想要上传：" class="headerlink" title="本地文件夹被删除之后想要上传："></a>本地文件夹被删除之后想要上传：</h4><ul>
+<li>新建文件夹：<ul>
+<li>git init</li>
+<li>git clone 仓库地址</li>
+<li>cd 下载的文件</li>
+<li>git add -A</li>
+<li>git commit -m “”</li>
+<li>git push ssh的地址</li>
+</ul>
+</li>
+</ul>
+<h4 id="更新已下载的文件："><a href="#更新已下载的文件：" class="headerlink" title="更新已下载的文件："></a>更新已下载的文件：</h4><ul>
+<li>git pull 文件地址</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/博客/">博客</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
   <article class="post">
   
   <div class="post-content">
@@ -264,7 +409,7 @@
 <nav id="pagination">
   
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Vorherige Seite</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
 </nav>
@@ -272,7 +417,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -281,8 +426,16 @@
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/19/JQuery2/">JQurey2</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/19/demo/">demo</a>
+      </li>
     
       <li>
         <a href="/2017/12/19/JQuery1/">JQuery1</a>
@@ -294,14 +447,6 @@
     
       <li>
         <a href="/2017/12/14/AJAX、跨域/">AJAX、跨域</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/12/全屏滚动/">js实现全屏滚动</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/11/BOM/">BOM</a>
       </li>
     
   </ul>
@@ -317,7 +462,7 @@
   
     <li><a href="/tags/BOM/">BOM</a><small>1</small></li>
   
-    <li><a href="/tags/JQuery1/">JQuery1</a><small>1</small></li>
+    <li><a href="/tags/JQuery/">JQuery</a><small>2</small></li>
   
     <li><a href="/tags/JavaScript/">JavaScript</a><small>1</small></li>
   
@@ -326,6 +471,8 @@
     <li><a href="/tags/canvas使用/">canvas使用</a><small>1</small></li>
   
     <li><a href="/tags/canvas画图/">canvas画图</a><small>1</small></li>
+  
+    <li><a href="/tags/demo/">demo</a><small>1</small></li>
   
     <li><a href="/tags/html-css/">html/css</a><small>1</small></li>
   
@@ -365,9 +512,9 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag-Cloud</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery1/" style="font-size: 10px;">JQuery1</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+    <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
   </div>
 </div>
 

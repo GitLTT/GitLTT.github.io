@@ -3,29 +3,29 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>BOM | LTT</title>
+  <title>JQurey2 | LTT</title>
   <meta name="author" content="LTT" />
 
   
-  <meta name="description" content="Window 对象
-概念：
+  <meta name="description" content="jQuery 中的遍历：
+jQuery 遍历 ：用于根据其相对于其他元素的关系来“查找”（或选取）HTML 元素。
+  以某项选择开始，并沿着这个选择移动，直到抵达期望的元素为止。
 
-Window 对象表示浏览器中打开的窗口。如果文档包含框架（frame 或 iframe 标签），
-
-浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象
-
+jQ遍历分为四种，1. 想上遍历 2. 向下遍历 3. 过滤 4. 水平遍历
 
 
-属性
 
-innerHeight 返回窗口的文档显示区的高度" />
+.eq 过滤遍历
+
+用法
+  $" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  <meta property="og:title" content="BOM" />
+  <meta property="og:title" content="JQurey2" />
   <meta property="og:site_name" content="LTT" />
 
   
@@ -74,183 +74,200 @@ innerHeight 返回窗口的文档显示区的高度" />
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-12-11T09:04:16.000Z"><a href="/2017/12/11/BOM/">2017-12-11</a></time>
+        <time datetime="2017-12-19T08:59:51.000Z"><a href="/2017/12/19/JQuery2/">2017-12-19</a></time>
       
       
   
-    <h1 class="title">BOM</h1>
+    <h1 class="title">JQurey2</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="Window-对象"><a href="#Window-对象" class="headerlink" title="Window 对象"></a>Window 对象</h3><ul>
-<li><p>概念：</p>
+        <h2 id="jQuery-中的遍历："><a href="#jQuery-中的遍历：" class="headerlink" title="jQuery 中的遍历："></a>jQuery 中的遍历：</h2><ul>
+<li><p>jQuery 遍历 ：用于根据其相对于其他元素的关系来“查找”（或选取）HTML 元素。</p>
+<p>  以某项选择开始，并沿着这个选择移动，直到抵达期望的元素为止。</p>
+</li>
+<li><p>jQ遍历分为四种，1. 想上遍历 2. 向下遍历 3. 过滤 4. 水平遍历</p>
+</li>
+</ul>
+<ol>
+<li><p>.eq 过滤遍历</p>
 <ul>
-<li><p>Window 对象表示浏览器中打开的窗口。如果文档包含框架（frame 或 iframe 标签），</p>
+<li><p>用法</p>
+<p>  $(‘li’).eq(0).css(‘background’,’red’);</p>
 </li>
-<li><p>浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象</p>
+<li><p>说明：</p>
+<p>  查找获取到所有li标签中的第几个，从零开始</p>
 </li>
 </ul>
 </li>
-<li><p>属性</p>
+<li><p>.first() 过滤遍历</p>
 <ul>
-<li><p>innerHeight 返回窗口的文档显示区的高度</p>
+<li><p>用法</p>
+<p>  $(‘li’).first().css(‘background’,’red’);</p>
 </li>
-<li><p>innerWidth 返回窗口的文档显示区的宽度</p>
-</li>
-<li><p>outerHeight 返回窗口的外部高度 包括滚动条、地址栏、收藏栏等</p>
-</li>
-<li><p>outerwidth 返回窗口的外部宽度</p>
-</li>
-<li><p>length 设置或返回窗口中的框架数量</p>
-</li>
-<li><p>name 设置或返回窗口的名称。</p>
-</li>
-<li><p>window.open() 打开的新网页，第二个参数就是此网页的name。</p>
-</li>
-<li><p>iframe里面，name属性就是window的name</p>
+<li><p>说明：</p>
+<p>  查找获取到所有li标签中的第一个</p>
 </li>
 </ul>
 </li>
-<li><p>方法</p>
+<li><p>.last() 过滤遍历</p>
 <ul>
-<li><p>close() 关闭浏览器窗口</p>
+<li><p>用法</p>
+<p>  $(‘li’).last().css(‘background’,’red’);</p>
 </li>
-<li><p>alert() 显示带有一段消息和一个确认按钮的警告框</p>
-</li>
-<li><p>confirm() 显示带有一段消息以及确认按钮和取消按钮的对话框</p>
-</li>
-<li><p>prompt()显示可提示用户输入的对话框</p>
-</li>
-<li><p>open() 打开一个新的浏览器窗口或查找一个已命名的窗口</p>
-</li>
-<li><p>resizeBy() 按照指定的像素调整窗口的大小</p>
-</li>
-<li><p>resizeTo() 把窗口的大小调整到指定的宽度和高度</p>
-</li>
-<li><p>scrollBy() 按照指定的像素值来滚动内容</p>
-</li>
-<li><p>scrollTo() 把内容滚动到指定的坐标</p>
+<li><p>说明：</p>
+<p>  查找获取到所有li标签中的最后一个</p>
 </li>
 </ul>
 </li>
-</ul>
-<h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><pre><code>navigator对象通常用于检测浏览器不操作系统的版本
-</code></pre><ul>
-<li><p>属性：</p>
+<li><p>.slice() 过滤遍历</p>
 <ul>
-<li><p>appCodeName返回浏览器的代码名</p>
+<li><p>用法</p>
+<p>  $(‘li’).slice(2,4).css(‘background’,’red’);</p>
 </li>
-<li><p>appVersion返回浏览器的次级版本</p>
-</li>
-<li><p>appName返回浏览器的名称</p>
-</li>
-<li><p>language返回当前浏览器的语言</p>
-</li>
-<li><p>platform 返回运行浏览器的操作系统平台</p>
+<li><p>说明：</p>
+<p>  查找获取到所有li标签中的第几个到第几个，下标从零开始，要头不要尾</p>
 </li>
 </ul>
 </li>
-</ul>
-<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><pre><code>document 对象是 Window 对象的一部分，包含整个htmlDOM,可通过 window.document 属性对其进行访问,
-也可以用document直接访问
-</code></pre><ul>
-<li><p>属性:</p>
+<li><p>.children(选择器) 向下遍历</p>
 <ul>
-<li><p>document.cookie 获取或设置cookie</p>
+<li><p>用法</p>
+<p>  $(‘ul’).children(‘div’).css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  查找获取到所有ul标签中的所有【直接子元素】是选择器的元素</p>
+</li>
+</ul>
+</li>
+<li><p>.find(选择器) 向下遍历</p>
 <ul>
-<li>由服务端设置，客户端保存</li>
+<li><p>用法</p>
+<p>  $(‘ul’).find(‘div’).css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  查找获取到所有ul标签中的所有后代是选择器的元素</p>
+</li>
 </ul>
 </li>
-<li><p>document.title 获取或设置title</p>
-</li>
-<li><p>document.URL 获取或设置URL</p>
+<li><p>.parent() 向上遍历</p>
 <ul>
-<li>设置后并没有什么效果</li>
+<li><p>用法</p>
+<p>  $(‘ul’).parent().css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  返回ul的直接父元素</p>
+</li>
 </ul>
 </li>
-<li><p>window下的其他对象</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="screen-对象包含有关客户端显示屏幕的信息"><a href="#screen-对象包含有关客户端显示屏幕的信息" class="headerlink" title="screen 对象包含有关客户端显示屏幕的信息"></a>screen 对象包含有关客户端显示屏幕的信息</h3><ul>
-<li><p>属性</p>
+<li><p>更多遍历方法</p>
 <ul>
-<li><p>height 返回显示屏幕的高度； width返回显示器屏幕的宽度</p>
-</li>
-<li><p>availHeight 返回显示屏幕的高度 (除 Windows 任务栏之外)</p>
-</li>
-<li><p>availWidth 返回显示屏幕的宽度 (除 Windows 任务栏之外)</p>
-</li>
-<li><p>colorDepth 返回目标设备或缓冲器上的调色板的比特深度</p>
-</li>
-<li><p>pixelDepth 返回显示屏幕的颜色分辨率（比特每像素）</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Body对象"><a href="#Body对象" class="headerlink" title="Body对象"></a>Body对象</h3><ul>
-<li><p>属性</p>
+<li><p>向上遍历 （查找元素祖先）</p>
 <ul>
-<li><p>clientWidth网页可见区域宽</p>
+<li><p>parent()    返回被选元素的直接父元素 (只会向下一级对 DOM 树进行遍历 )     </p>
+<p>例：        </p>
+<p>  $(“span”).parent();</p>
 </li>
-<li><p>clientHeight网页可见区域高</p>
+<li><p>parents()    返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)     </html></p>
+<p>例：</p>
+<p>  $(“span”).parents();$(“span”).parents(“ul”) </p>
+<p>  返回所有 <span> 元素的所有祖先，并且它是<ul> 元素 </ul></span></p>
 </li>
-<li><p>scrollWidth网页正文全文宽</p>
-</li>
-<li><p>scrollHeight网页正文全文高</p>
-</li>
-<li><p>scrollTop网页被卷去的高</p>
-</li>
-<li><p>scrollLeft网页被卷去的左</p>
+<li><p>parentsUntil()    返回介于两个给定元素之间的所有祖先元素     </p>
+<p>例：</p>
+<p>  $(“span”).parentsUntil(“div”);</p>
 </li>
 </ul>
 </li>
-</ul>
-<h3 id="Location-对象"><a href="#Location-对象" class="headerlink" title="Location 对象"></a>Location 对象</h3><pre><code>Location 对象对象包含有关当前 URL 的信息，对URL信息进行处理
-</code></pre><ul>
-<li><p>属性</p>
+<li><p>向下遍历（查找元素后代）</p>
 <ul>
-<li><p>hash设置或返回从井号 (#) 开始的 URL（锚）</p>
+<li><p>children()    返回被选元素的所有直接子元素(只会向下一级对 DOM 树进行遍历 )     </p>
+<p>例：</p>
+<p>  $(“div”).children()$(“div”).children(“p.1”) </p>
+<p>  返回类名为 “1” 的所有 </p><p> 元素，并且它们是<div> 的直接子元素 </div></p>
+</li>
+<li><p>find()    返回被选元素的后代元素，一路向下直到最后一个后代    </p>
+<p>例：</p>
+<p>  $(“div”).find(“span”);$(“div”).find(“*”);返回 <div> 的所有后代</div></p>
+</li>
+</ul>
+</li>
+<li><p>水平遍历方法(元素同胞元素)：</p>
 <ul>
-<li>哈希值：用 “#” 来代表；</li>
+<li><p>siblings()    返回被选元素的所有同胞元素    </p>
+<p>例：</p>
+<p>  $(“h2”).siblings();$(“h2”).siblings(“p”);</p>
+<p>  返回属于 </p><h2> 的同胞元素的所有 <p> 元素</p>
+</h2></li>
+<li><p>next() 、prev()    返回被选元素的下一个/上一个同胞元素    </p>
+<p>例：</p>
+<p>  $(“h2”).next();</p>
+</li>
+<li><p>nextAll()、prevAll()    返回被选元素的所有跟随的同胞（前面同胞）元素 </p>
+<p>例：</p>
+<p>  $(“h2”).nextAll();</p>
+</li>
+<li><p>nextUntil()、prevUntil()      返回介于两个给定参数之间的所有跟随的同胞（前面同胞）元素    </p>
+<p>例：</p>
+<p>  $(“h2”).nextUntil(“h6”);</p>
+</li>
 </ul>
 </li>
-<li><p>host设置或返回主机名和当前 URL 的端口号</p>
-</li>
-<li><p>hostname设置或返回当前 URL 的主机名</p>
-</li>
-<li><p>href设置或返回完整的 URL</p>
-</li>
-<li><p>pathname设置或返回当前 URL 的路径部分</p>
-</li>
-<li><p>port设置或返回当前 URL 的端口号</p>
-</li>
-<li><p>protocol设置或返回当前 URL 的协议</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="search设置或返回从问号-开始的-URL（查询部分）"><a href="#search设置或返回从问号-开始的-URL（查询部分）" class="headerlink" title="search设置或返回从问号 (?) 开始的 URL（查询部分）"></a>search设置或返回从问号 (?) 开始的 URL（查询部分）</h3><pre><code>* 用 &quot;?&quot; 来代表
-</code></pre><ul>
-<li><p>方法</p>
+<li><p>过滤：</p>
 <ul>
-<li><p>assign() 加载新的文档</p>
+<li><p>first()      返回被选元素的首个元素    </p>
+<p>例：        </p>
+<p>  $(“div p”).first();</p>
 </li>
-<li><p>reload() 重新加载当前文档</p>
+<li><p>last()    返回被选元素的最后一个元素    </p>
+<p>例：</p>
+<p>  $(“div p”).last();</p>
 </li>
-<li><p>replace() 用新的文档替换当前文档</p>
+<li><p>eq()    返回被选元素中带有指定索引号的元素    </p>
+<p>例：</p>
+<p>  $(“p”).eq(1);</p>
+</li>
+<li><p>filter()    不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回 </p>
+<p>例：</p>
+<p>  $(“p”).filter(“.intro”);</p>
+</li>
+<li><p>not() not()    方法返回不匹配标准的所有元素not() 方法不 filter() 相反。    </p>
+<p>例：</p>
+<p>  $(“p”).not(“.intro”);</p>
+</li>
+</ul>
+</li>
+<li><p>遍历所有 each遍历：</p>
+<ul>
+<li><p>each()方法规定为每个匹配元素指定运行的函数</p>
+</li>
+<li><p>语法：$(selector).each(function(index,element))</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&quot;button&quot;).click(function()&#123;</div><div class="line">	$(&quot;li&quot;).each(function()&#123;</div><div class="line">		alert($(this).text())</div><div class="line">			&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="window对象的事件"><a href="#window对象的事件" class="headerlink" title="window对象的事件"></a>window对象的事件</h3><ul>
-<li><p>onscroll 当浏览器滚动的时候触发</p>
 </li>
-<li><p>onresize 当浏览器窗口改变大小时触发</p>
+</ol>
+<h2 id="easing-js的使用"><a href="#easing-js的使用" class="headerlink" title="easing.js的使用"></a>easing.js的使用</h2><ul>
+<li><p>easing.js是个极小的 JavaScript 第三方包，支持 CSS3 的动画效果，非常简单美观。</p>
+<p>  move.js中有编写了多种效果</p>
 </li>
+<li><p>老规矩，要使用，先引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;js/jquery-1.8.3.min.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">// easing是基于jQ的，说要在引用他之前要先引用jQ</div><div class="line"></div><div class="line">&lt;script src=&quot;js/easing.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="animate-css的使用"><a href="#animate-css的使用" class="headerlink" title="animate.css的使用"></a>animate.css的使用</h2><ul>
+<li><p>animate.cssanimate.css 是一个来自国外的 CSS3 动画库，</p>
+<p>  它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、</p>
+<p>  旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 60 多种动画效果，几乎包含了所有常见的动画效果。</p>
+</li>
+</ul>
+<ul>
+<li>使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">引入文件：&lt;link href=&quot;animate.css&quot; type=&quot;text/css&quot; /&gt;</div><div class="line"></div><div class="line">HTML及使用：&lt;div class=“animated bounce” &gt;&lt;/div&gt;</div><div class="line"></div><div class="line">刷新页面就可看到动画效果</div></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -265,7 +282,7 @@ innerHeight 返回窗口的文档显示区的高度" />
         
   
   <div class="tags">
-    <a href="/tags/BOM/">BOM</a>
+    <a href="/tags/JQuery/">JQuery</a>
   </div>
 
         <!-- partial('post/share') -->

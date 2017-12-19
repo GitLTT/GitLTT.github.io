@@ -62,6 +62,275 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-12-19T08:59:51.000Z"><a href="/2017/12/19/JQuery2/">2017-12-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/19/JQuery2/">JQurey2</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="jQuery-中的遍历："><a href="#jQuery-中的遍历：" class="headerlink" title="jQuery 中的遍历："></a>jQuery 中的遍历：</h2><ul>
+<li><p>jQuery 遍历 ：用于根据其相对于其他元素的关系来“查找”（或选取）HTML 元素。</p>
+<p>  以某项选择开始，并沿着这个选择移动，直到抵达期望的元素为止。</p>
+</li>
+<li><p>jQ遍历分为四种，1. 想上遍历 2. 向下遍历 3. 过滤 4. 水平遍历</p>
+</li>
+</ul>
+<ol>
+<li><p>.eq 过滤遍历</p>
+<ul>
+<li><p>用法</p>
+<p>  $(‘li’).eq(0).css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  查找获取到所有li标签中的第几个，从零开始</p>
+</li>
+</ul>
+</li>
+<li><p>.first() 过滤遍历</p>
+<ul>
+<li><p>用法</p>
+<p>  $(‘li’).first().css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  查找获取到所有li标签中的第一个</p>
+</li>
+</ul>
+</li>
+<li><p>.last() 过滤遍历</p>
+<ul>
+<li><p>用法</p>
+<p>  $(‘li’).last().css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  查找获取到所有li标签中的最后一个</p>
+</li>
+</ul>
+</li>
+<li><p>.slice() 过滤遍历</p>
+<ul>
+<li><p>用法</p>
+<p>  $(‘li’).slice(2,4).css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  查找获取到所有li标签中的第几个到第几个，下标从零开始，要头不要尾</p>
+</li>
+</ul>
+</li>
+<li><p>.children(选择器) 向下遍历</p>
+<ul>
+<li><p>用法</p>
+<p>  $(‘ul’).children(‘div’).css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  查找获取到所有ul标签中的所有【直接子元素】是选择器的元素</p>
+</li>
+</ul>
+</li>
+<li><p>.find(选择器) 向下遍历</p>
+<ul>
+<li><p>用法</p>
+<p>  $(‘ul’).find(‘div’).css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  查找获取到所有ul标签中的所有后代是选择器的元素</p>
+</li>
+</ul>
+</li>
+<li><p>.parent() 向上遍历</p>
+<ul>
+<li><p>用法</p>
+<p>  $(‘ul’).parent().css(‘background’,’red’);</p>
+</li>
+<li><p>说明：</p>
+<p>  返回ul的直接父元素</p>
+</li>
+</ul>
+</li>
+<li><p>更多遍历方法</p>
+<ul>
+<li><p>向上遍历 （查找元素祖先）</p>
+<ul>
+<li><p>parent()    返回被选元素的直接父元素 (只会向下一级对 DOM 树进行遍历 )     </p>
+<p>例：        </p>
+<p>  $(“span”).parent();</p>
+</li>
+<li><p>parents()    返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)     </html></p>
+<p>例：</p>
+<p>  $(“span”).parents();$(“span”).parents(“ul”) </p>
+<p>  返回所有 <span> 元素的所有祖先，并且它是<ul> 元素 </ul></span></p>
+</li>
+<li><p>parentsUntil()    返回介于两个给定元素之间的所有祖先元素     </p>
+<p>例：</p>
+<p>  $(“span”).parentsUntil(“div”);</p>
+</li>
+</ul>
+</li>
+<li><p>向下遍历（查找元素后代）</p>
+<ul>
+<li><p>children()    返回被选元素的所有直接子元素(只会向下一级对 DOM 树进行遍历 )     </p>
+<p>例：</p>
+<p>  $(“div”).children()$(“div”).children(“p.1”) </p>
+<p>  返回类名为 “1” 的所有 </p><p> 元素，并且它们是<div> 的直接子元素 </div></p>
+</li>
+<li><p>find()    返回被选元素的后代元素，一路向下直到最后一个后代    </p>
+<p>例：</p>
+<p>  $(“div”).find(“span”);$(“div”).find(“*”);返回 <div> 的所有后代</div></p>
+</li>
+</ul>
+</li>
+<li><p>水平遍历方法(元素同胞元素)：</p>
+<ul>
+<li><p>siblings()    返回被选元素的所有同胞元素    </p>
+<p>例：</p>
+<p>  $(“h2”).siblings();$(“h2”).siblings(“p”);</p>
+<p>  返回属于 </p><h2> 的同胞元素的所有 <p> 元素</p>
+</h2></li>
+<li><p>next() 、prev()    返回被选元素的下一个/上一个同胞元素    </p>
+<p>例：</p>
+<p>  $(“h2”).next();</p>
+</li>
+<li><p>nextAll()、prevAll()    返回被选元素的所有跟随的同胞（前面同胞）元素 </p>
+<p>例：</p>
+<p>  $(“h2”).nextAll();</p>
+</li>
+<li><p>nextUntil()、prevUntil()      返回介于两个给定参数之间的所有跟随的同胞（前面同胞）元素    </p>
+<p>例：</p>
+<p>  $(“h2”).nextUntil(“h6”);</p>
+</li>
+</ul>
+</li>
+<li><p>过滤：</p>
+<ul>
+<li><p>first()      返回被选元素的首个元素    </p>
+<p>例：        </p>
+<p>  $(“div p”).first();</p>
+</li>
+<li><p>last()    返回被选元素的最后一个元素    </p>
+<p>例：</p>
+<p>  $(“div p”).last();</p>
+</li>
+<li><p>eq()    返回被选元素中带有指定索引号的元素    </p>
+<p>例：</p>
+<p>  $(“p”).eq(1);</p>
+</li>
+<li><p>filter()    不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回 </p>
+<p>例：</p>
+<p>  $(“p”).filter(“.intro”);</p>
+</li>
+<li><p>not() not()    方法返回不匹配标准的所有元素not() 方法不 filter() 相反。    </p>
+<p>例：</p>
+<p>  $(“p”).not(“.intro”);</p>
+</li>
+</ul>
+</li>
+<li><p>遍历所有 each遍历：</p>
+<ul>
+<li><p>each()方法规定为每个匹配元素指定运行的函数</p>
+</li>
+<li><p>语法：$(selector).each(function(index,element))</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&quot;button&quot;).click(function()&#123;</div><div class="line">	$(&quot;li&quot;).each(function()&#123;</div><div class="line">		alert($(this).text())</div><div class="line">			&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="easing-js的使用"><a href="#easing-js的使用" class="headerlink" title="easing.js的使用"></a>easing.js的使用</h2><ul>
+<li><p>easing.js是个极小的 JavaScript 第三方包，支持 CSS3 的动画效果，非常简单美观。</p>
+<p>  move.js中有编写了多种效果</p>
+</li>
+<li><p>老规矩，要使用，先引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;js/jquery-1.8.3.min.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">// easing是基于jQ的，说要在引用他之前要先引用jQ</div><div class="line"></div><div class="line">&lt;script src=&quot;js/easing.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="animate-css的使用"><a href="#animate-css的使用" class="headerlink" title="animate.css的使用"></a>animate.css的使用</h2><ul>
+<li><p>animate.cssanimate.css 是一个来自国外的 CSS3 动画库，</p>
+<p>  它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、</p>
+<p>  旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 60 多种动画效果，几乎包含了所有常见的动画效果。</p>
+</li>
+</ul>
+<ul>
+<li>使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">引入文件：&lt;link href=&quot;animate.css&quot; type=&quot;text/css&quot; /&gt;</div><div class="line"></div><div class="line">HTML及使用：&lt;div class=“animated bounce” &gt;&lt;/div&gt;</div><div class="line"></div><div class="line">刷新页面就可看到动画效果</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/JQuery/">JQuery</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-12-19T06:49:57.000Z"><a href="/2017/12/19/demo/">2017-12-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/19/demo/">demo</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/demo/">demo</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-12-19T06:25:07.000Z"><a href="/2017/12/19/JQuery1/">2017-12-19</a></time>
       
       
@@ -273,7 +542,7 @@ $(document).ready(function(){})则不同，它可以编写多个，并且每一�
         
   
   <div class="tags">
-    <a href="/tags/JQuery1/">JQuery1</a>
+    <a href="/tags/JQuery/">JQuery</a>
   </div>
 
         <!-- partial('post/share') -->
@@ -1035,223 +1304,11 @@ e.target: 触发这个事件的具体某个元素
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-12-05T01:38:22.000Z"><a href="/2017/12/05/原型链/">2017-12-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/12/05/原型链/">原型链</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="原型链："><a href="#原型链：" class="headerlink" title="原型链："></a>原型链：</h3><pre><code>每一个对象都有一个__proto__ 的属性，通过他可以找到该对象所继承的对象 
-
-通过这个方法一直往上查找到某个对象的__proto__ 属性值是null的这个路线就是原型链 
-</code></pre><h3 id="原型、构造函数和实例之间的关系："><a href="#原型、构造函数和实例之间的关系：" class="headerlink" title="原型、构造函数和实例之间的关系："></a>原型、构造函数和实例之间的关系：</h3><pre><code>构造函数中有一个prototype 属性指向了这个构造函数的原型， 
-
-(构造函数的原型)中有一个constructor的属性指向了构造函数； 
-
-构造函数通过new关键字调用可以生成一个对象，对象中有一个__proto__ 的属性， 
-
-指向了创建它的构造函数的原型，对象通过__proto__的属性继承了构造函数的原型的方法和属性 
-</code></pre>
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/原型链/">原型链</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-12-05T01:38:01.000Z"><a href="/2017/12/05/this-字符串-Date/">2017-12-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/12/05/this-字符串-Date/">this/字符串/Date</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="改变this指向："><a href="#改变this指向：" class="headerlink" title="改变this指向："></a>改变this指向：</h3><pre><code>1. call();
-
-    a. 语法：call(thisObj，Object) 
-    b. 定义：调用一个对象的一个方法，以另一个对象替换当前对象  
-
-2. apply(); 
-
-    a. 语法：apply(thisObj，[argArray]) 
-    b.  定义：应用某一对象的一个方法，用另一个对象替换当前对象 
-
-
-例：
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">          	name: &quot;zhangsan&quot;,</div><div class="line">          	age: 15,</div><div class="line">          	fn: function(a, b, c) &#123;</div><div class="line">              	this.a = a;</div><div class="line">              	this.b = b;</div><div class="line">              	this.c = c;</div><div class="line">         	     &#125;</div><div class="line">      	&#125;</div><div class="line">      	var obj1 = &#123;</div><div class="line">         	name: &quot;zhangsan&quot;,</div><div class="line">          	age: 15</div><div class="line">      	&#125;</div><div class="line"></div><div class="line">      	//第一种方法：</div><div class="line"></div><div class="line">      	//        obj.fn.call(obj1, 1, 2, 3);</div><div class="line">      	//        console.log(obj1);</div><div class="line"></div><div class="line">      	//第二种方法：</div><div class="line"></div><div class="line">      	obj.fn.apply(obj1, [1, 2, 3]);</div><div class="line">      	console.log(obj1);</div></pre></td></tr></table></figure>
-<pre><code>3. call();和apply();的区别： 
-
-    作用：都是修改this的指向； 
-
-    参数：call(); 
-        第一个：你要把this修改成那个对象； 
-        第二个：从第二个参数开始每一个代表你要传递的实际参数 
-
-          apply(); 
-        第一个和call();相同 
-        第二个：必须是一个数组，数组中的每一项代表你要传的值 
-</code></pre><h3 id="字符串的操作："><a href="#字符串的操作：" class="headerlink" title="字符串的操作："></a>字符串的操作：</h3><pre><code>1. 创建子字符串： 
-
-    a. var a = &quot;&quot;;     //typeof  :   string; 
-
-    b. var a = new String(&quot;&quot;);     // typeof    :    object 
-
-2. 属性：length (长度) 
-
-3. 方法： 
-
-    a. charAt();返回指定位置的字符 
-
-        str.charAt(1); === str[0]; (但是不建议) 
-
-    b. charCodeAt(); 返回指定位置的字符的Unicode编码 
-
-    c. search() 用于检索字符串中指定的子字符串 
-
-                查找的时候是按照查找第一个位置来看的， 
-
-                 查找到后返回第一个字符的位置，差找不到后返回-1 
-
-    d. replace() 查找匹配指定的字符串，然后用新字符串代替匹配的字符串 
-
-        例：var a = str.replace(&quot;a&quot;,&quot;b&quot;); 
-
-            var b = str.replace(/a/g,&quot;b&quot;);   // 进行全局更改 
-
-    e. concat() 将两个或多个字符的文本组合起来，返回一个新的字符串 
-
-        例：str.concat(str1);  // str+str1; 
-
-    f. indexOf() 返回字符串中一个子串第一处出现的索引。如果没有匹配项，返回 -1 
-
-    g. lastIndexOf() 返回字符串中一个子串最后一处出现的索引，如果没有匹配项，返回 -1 
-
-    h. slice() 提取字符串的一部分，并返回一个新字符串。 
-
-            两个参数，第一个为起始位置，第二个为终    止位置（留头不留尾），如果没有end，就取到末尾 
-
-    i. toLowerCase() 将整个字符串转成小写字母 
-
-    j. toUpperCase() 将整个字符串转成大写字母 
-
-    k. 转义字符：转义字符 \ 
-
-            我们平时想输出一个双引号（“”）我们会这样写： 
-
-            document.write(“””); 
-
-            但是这样写是错诨的,所以我们需要用到转义字符： 
-
-            document.write(“ \””); 
-</code></pre><h3 id="Date对象："><a href="#Date对象：" class="headerlink" title="Date对象："></a>Date对象：</h3><pre><code>var date = new Date();
-</code></pre><ul>
-<li><p>获取时间的方法：</p>
-<ol>
-<li><p>Date()返回当日的日期和时间； </p>
-</li>
-<li><p>getDate()从 Date 对象返回一个月中的某一天 (1 ~ 31)； </p>
-</li>
-<li><p>getDay()从 Date 对象返回一周中的某一天 (0 ~ 6)； </p>
-</li>
-<li><p>getMonth()从 Date 对象返回月份 (0 ~ 11)； </p>
-</li>
-<li><p>getFullYear()从 Date 对象以四位数字返回年份； </p>
-</li>
-<li><p>getHours()返回 Date 对象的小时 (0 ~ 23)； </p>
-</li>
-<li><p>getMinutes()返回 Date 对象的分钟 (0 ~ 59)； </p>
-</li>
-<li><p>getSeconds()返回 Date 对象的秒数 (0 ~ 59)； </p>
-</li>
-<li><p>getMilliseconds()返回 Date 对象的毫秒(0 ~ 999)；</p>
-</li>
-<li><p>getTime()返回 1970 年 1 月 1 日至今的毫秒数；</p>
-</li>
-</ol>
-</li>
-<li><p>设置时间方法：</p>
-<ol>
-<li><p>setHours()设置 Date 对象中的小时 (0 ~ 23)；</p>
-</li>
-<li><p>setMinutes()设置 Date 对象中的分钟 (0 ~ 59)；</p>
-</li>
-<li><p>setSeconds()设置 Date 对象中的秒钟 (0 ~ 59)；</p>
-</li>
-<li><p>setMilliseconds()设置 Date 对象中的毫秒 (0 ~ 999)；</p>
-</li>
-<li><p>setTime()以毫秒设置 Date 对象；</p>
-</li>
-</ol>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/this-字符串-Date/">this/字符串/Date</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Nächste Seite &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </nav>
@@ -1259,7 +1316,7 @@ e.target: 触发这个事件的具体某个元素
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -1268,8 +1325,16 @@ e.target: 触发这个事件的具体某个元素
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/19/JQuery2/">JQurey2</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/19/demo/">demo</a>
+      </li>
     
       <li>
         <a href="/2017/12/19/JQuery1/">JQuery1</a>
@@ -1281,14 +1346,6 @@ e.target: 触发这个事件的具体某个元素
     
       <li>
         <a href="/2017/12/14/AJAX、跨域/">AJAX、跨域</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/12/全屏滚动/">js实现全屏滚动</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/11/BOM/">BOM</a>
       </li>
     
   </ul>
@@ -1304,7 +1361,7 @@ e.target: 触发这个事件的具体某个元素
   
     <li><a href="/tags/BOM/">BOM</a><small>1</small></li>
   
-    <li><a href="/tags/JQuery1/">JQuery1</a><small>1</small></li>
+    <li><a href="/tags/JQuery/">JQuery</a><small>2</small></li>
   
     <li><a href="/tags/JavaScript/">JavaScript</a><small>1</small></li>
   
@@ -1313,6 +1370,8 @@ e.target: 触发这个事件的具体某个元素
     <li><a href="/tags/canvas使用/">canvas使用</a><small>1</small></li>
   
     <li><a href="/tags/canvas画图/">canvas画图</a><small>1</small></li>
+  
+    <li><a href="/tags/demo/">demo</a><small>1</small></li>
   
     <li><a href="/tags/html-css/">html/css</a><small>1</small></li>
   
@@ -1352,9 +1411,9 @@ e.target: 触发这个事件的具体某个元素
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag-Cloud</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery1/" style="font-size: 10px;">JQuery1</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+    <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
   </div>
 </div>
 
