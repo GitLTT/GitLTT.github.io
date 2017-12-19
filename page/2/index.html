@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Seite 2 | LTT</title>
+  <title>Page 2 | LTT</title>
   <meta name="author" content="LTT" />
 
   
@@ -56,6 +56,187 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-12-01T05:15:56.000Z"><a href="/2017/12/01/构造函数-拷贝/">2017-12-01</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/01/构造函数-拷贝/">构造函数/拷贝</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="构造函数："><a href="#构造函数：" class="headerlink" title="构造函数："></a>构造函数：</h3><pre><code>原型：在构造函数的原型上面挂载属性和方法；可以让每一个构造函数的实例来调用； 
+
+书写：原型.属性； 
+
+例：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fn(name,age)&#123;</div><div class="line">	this.name = name;</div><div class="line">	this.age = age;</div><div class="line">&#125;</div><div class="line">//相同的属性和方法挂在原型上，表现形式和调用的方法不变；</div><div class="line">fn.prototype.class = &quot;四组&quot;;</div><div class="line">var a = new fn(&quot;张三&quot;,18);</div><div class="line">a.class;//就可以调用；</div></pre></td></tr></table></figure>
+<h3 id="json："><a href="#json：" class="headerlink" title="json："></a>json：</h3><pre><code>轻量级的数据交换格式，主要用于跟服务器进行交换数据；(json对象)； 
+
+书写方式：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.var myJson = &#123;</div><div class="line">	&quot;name&quot;:&quot;张三&quot;</div><div class="line">&#125;</div><div class="line">console.log(myJson.name);//张三；</div></pre></td></tr></table></figure>
+<pre><code>* json格式的字符串：var a = &quot;{}&quot;; 
+
+
+* 把json的对象转换为字符串： 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var myJsonStr = JSON.stringify(myJson);</div><div class="line">	</div><div class="line">console.log(myJsonStr); // &#123;&quot;name&quot;:&quot;张三&quot;&#125;;</div><div class="line"></div><div class="line">console.log(typeof myJsonStr); // string;</div></pre></td></tr></table></figure>
+<pre><code>* 把json字符串转换为json对象： 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var myJson1 = JSON.parse(myJsonStr);</div><div class="line"></div><div class="line">console.log(myJson1); // &#123;&quot;name&quot;:&quot;张三&quot;&#125;;</div><div class="line"></div><div class="line">console.log(typeof myJson1); // object;</div></pre></td></tr></table></figure>
+<h3 id="对象的浅拷贝："><a href="#对象的浅拷贝：" class="headerlink" title="对象的浅拷贝："></a>对象的浅拷贝：</h3><pre><code>对象用for in循环；数组用for循环； 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var a = &#123;</div><div class="line">	name:&quot;张三&quot;,</div><div class="line">	age:18,</div><div class="line">	sex:&quot;男&quot;</div><div class="line">&#125;</div><div class="line">var b = &#123;&#125;;</div><div class="line">for(var x in a)&#123;</div><div class="line">	b[x] = a[x];</div><div class="line">&#125;</div><div class="line">console.log(b==a); // false;</div><div class="line">console.log(b===a); // false; // 全等：值、数据类型、地址；</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">//封装一个深拷贝的方法；</div><div class="line"></div><div class="line">		//如果用户输入的不是一个对象，我们把用户输入的东西返回去；</div><div class="line"></div><div class="line">		//如果用户输入的是一个对象：</div><div class="line">			</div><div class="line">			判断：</div><div class="line">				数组：拷贝数组，返回回去一个新的数组；</div><div class="line"></div><div class="line">				对象：拷贝对象，返回回去一个新的数组；</div><div class="line"></div><div class="line">	var obj = &#123;</div><div class="line">		name:&quot;张三&quot;,</div><div class="line">		age:18,</div><div class="line">		sc:&#123;</div><div class="line">			height:180,</div><div class="line">			weight:&quot;50kg&quot;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	</div><div class="line">	//clone函数有一个参数：你要拷贝的对象；</div><div class="line">	</div><div class="line">	function clone(a)&#123;</div><div class="line">		if(typeof a == &quot;Object&quot;)&#123;</div><div class="line">			if(a instanceof Array)&#123; // obj是Array的一个实例；</div><div class="line">				var arr = [];</div><div class="line"></div><div class="line">				for(var i = 0;i &lt; arr.length;i++)&#123;</div><div class="line"></div><div class="line">					arr[i] = a[i];</div><div class="line">				&#125;</div><div class="line"></div><div class="line">				return arr;</div><div class="line">			&#125;else&#123;</div><div class="line"></div><div class="line">				var obj = &#123;&#125;;</div><div class="line"></div><div class="line">				for(var x in a)&#123;</div><div class="line"></div><div class="line">					obj[x] = a [x];</div><div class="line">				&#125;</div><div class="line">				return obj;</div><div class="line">			&#125;</div><div class="line">		&#125;else&#123;</div><div class="line">			return a;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	var obj1 = clone(obj);</div><div class="line">	console.log(obj1);</div></pre></td></tr></table></figure>
+<h3 id="对象的深拷贝："><a href="#对象的深拷贝：" class="headerlink" title="对象的深拷贝："></a>对象的深拷贝：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">//递归：自己调用自己；obj[x] = clone(a[x]);</div><div class="line"></div><div class="line">//方法：</div><div class="line">function clone(a)&#123;</div><div class="line">	if(typeof a == &quot;Object&quot;)&#123;</div><div class="line">		if(a instanceof Array)&#123; // obj是Array的一个实例；</div><div class="line">			var arr = [];</div><div class="line"></div><div class="line">			for(var i = 0;i &lt; a.length;i++)&#123;</div><div class="line"></div><div class="line">				arr[i] = clone(a[i]);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			return arr;</div><div class="line">		&#125;else&#123;</div><div class="line"></div><div class="line">			var obj = &#123;&#125;;</div><div class="line"></div><div class="line">			for(var x in a)&#123;</div><div class="line"></div><div class="line">				obj[x] = clone(a[x]);</div><div class="line">			&#125;</div><div class="line">			return obj;</div><div class="line">		&#125;</div><div class="line">	&#125;else&#123;</div><div class="line">		return a;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">var obj1 = clone(obj);</div><div class="line">console.log(obj1);</div></pre></td></tr></table></figure>
+<h3 id="深拷贝和浅拷贝到区别："><a href="#深拷贝和浅拷贝到区别：" class="headerlink" title="深拷贝和浅拷贝到区别："></a>深拷贝和浅拷贝到区别：</h3><pre><code>* 简单来说，浅拷贝只是拷贝一层对象的属性，而深拷贝则递归拷贝了所有的层级。
+</code></pre>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/构造函数-拷贝/">构造函数/拷贝</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-12-01T01:37:54.000Z"><a href="/2017/12/01/函数-对象-定时器/">2017-12-01</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/01/函数-对象-定时器/">函数/对象/定时器</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="函数："><a href="#函数：" class="headerlink" title="函数："></a>函数：</h3><pre><code>1. 定义：函数就是代码块，就是一个方法，就是一个完整的功能或者是某一个需求；
+
+2. 书写：function 函数名称(参数){代码逻辑}
+
+    a. 参数：就是你在函数中要用到的变量；【声明的参数就是形参，调用的参数就是实参】
+
+    b. 函数命名：最好是使用驼峰式命名；
+
+    c. 调用方法：函数名称();
+</code></pre><h3 id="自调用函数："><a href="#自调用函数：" class="headerlink" title="自调用函数："></a>自调用函数：</h3><pre><code>1. 自己调用自己；是一个匿名函数（没有函数名称）；
+
+    例：(function (){})();
+
+2. 自调用函数可以实现模块化开发；
+
+3. 传参：
+
+    (function (a,b){   //形参；
+        console.log(a+b);  
+    })(5,8);  //实参；
+
+4. 在写自调用函数时通常使用的方法：【开头用&quot;!&quot;或者是&quot;;&quot;】
+
+    a. !(function(){})();
+
+    b. ;(function(){})();
+</code></pre><h3 id="带有返回值的函数："><a href="#带有返回值的函数：" class="headerlink" title="带有返回值的函数："></a>带有返回值的函数：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var fn = function()&#123;</div><div class="line">	return a;  //你如果想要什么就return什么，和你上面的代码并不一定需要有什么关系</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h3><pre><code>创建对象：
+    1. var a = {};  //字面量形式；
+
+    2. var b = new Object();
+
+       b.name = &quot;&quot;;   //构造函数方法；
+</code></pre><h3 id="类的创建："><a href="#类的创建：" class="headerlink" title="类的创建："></a>类的创建：</h3><pre><code>自定义一个构造函数/自己来进行分类；
+
+1. 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function fn(name)&#123; //任何对象都是由函数创建出来的；</div><div class="line">	// this name; //这个地方的this就是你要创建的对象或者就是你创建的对象；</div><div class="line"></div><div class="line">	this.name = name;//第一个name：自定义的属性；第二个name：参数；</div><div class="line"></div><div class="line">	var a = new fn(&quot;张三&quot;);</div><div class="line"></div><div class="line">	console.log(a); //&#123;name:&quot;张三&quot;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>2. 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fn(name)&#123;</div><div class="line">	this.sayHi = function ()&#123;</div><div class="line">		this.name = name;</div><div class="line">		console.log(&quot;1&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">var a = fn(&quot;张三&quot;);</div><div class="line">a.sayHi();</div></pre></td></tr></table></figure>
+<h3 id="window和变量："><a href="#window和变量：" class="headerlink" title="window和变量："></a>window和变量：</h3><pre><code>window是一个对象【在BOM中是一个顶尖对象】
+
+只有在全局中var a = 1; == window.a = 1;
+
+例：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line"></div><div class="line">console.log(a);  //1</div><div class="line"></div><div class="line">console.log(window);  //a:1;.....</div><div class="line"></div><div class="line">console.log(window.a); // 1</div></pre></td></tr></table></figure>
+<h2 id="this指向：重点，常问；"><a href="#this指向：重点，常问；" class="headerlink" title="this指向：重点，常问；"></a>this指向：重点，常问；</h2><pre><code>1. 在全局作用域中的this指向的是window；
+
+    例：
+        this.a = 5;
+        console.log(this);// window{a = 5,....}
+
+2. 在普通函数调用时里面的this就是代表window；
+
+    例：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  function fn(a,b)&#123;</div><div class="line">this.name = a;</div><div class="line">this.age = b;</div><div class="line">console.log(this);</div><div class="line">  &#125;</div><div class="line">  fn(&quot;张三&quot;,&quot;18&quot;);//fn函数就是一个普通函数；此时this指向window；</div></pre></td></tr></table></figure>
+<pre><code>3. 在构造函数中的this指向该构造函数的实例（创建的对象）；
+
+    例：
+       var m = new fn(&quot;李四&quot;,&quot;19&quot;);//该函数就是调用函数；此时的this指向m（对象）
+
+4. 对象的方法中的this指向调用该方法的对象；（函数被当做对象的方法被调用时，this指向调用该方法的对象）
+
+    例：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  var x = &#123;</div><div class="line">name:&quot;张三&quot;;</div><div class="line">sayHi:function()&#123;</div><div class="line">	console.log(this);  //&#123;&#125;</div><div class="line">	console.log(this.name); //张三；</div><div class="line">&#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="定时器："><a href="#定时器：" class="headerlink" title="定时器："></a>定时器：</h3><pre><code>1. 延迟定时器：（只会执行一次）；
+
+    var a = setTimeout(函数,时间);//时间单位：毫秒；
+
+清除定时器：clearTimeout(a);//a：是定时器的id；
+
+2. 间隔定时器：（循环执行）
+
+    var b = setInterval(函数,时间)；
+
+清除定时器：clearInterval(b);
+</code></pre>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/函数-对象-定时器/">函数/对象/定时器</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
   <article class="post">
   
   <div class="post-content">
@@ -444,99 +625,6 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
-<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
-</li>
-<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
-</li>
-<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
-</li>
-<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
-</li>
-<li><p>步骤：</p>
-<p> A： 获取canvas标签 a；</p>
-<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
-<p> C： 绘制矩形：</p>
-<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
-b：ctx.strokeRect();           //空心矩形；
-c：ctx.clearRect(x,y,width,height);           //清空区域；
-</code></pre><p> D：路径绘制：</p>
-<pre><code>a：ctx.beginPath();      //开始绘画；
-b：ctx.moveTo(x,y);       //画笔的位置；
-c：ctx.lineTo(x,y);        //起始位置；
-    .
-    .
-    .
-d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
-e：ctx.fill();           //填充颜色(默认为黑色)；
-</code></pre></li>
-</ol>
-<pre><code>自动闭合(没有终止位置时)：
-
-    a：ctx.moveTo(x,y);
-    b：ctx.lineTo(x,y);
-        .
-        .
-        .
-    c：ctx.closePath();       //自动闭合；
-    d：ctx.stroke();
-
-E：绘制圆/圆弧：
-
-    a：ctx.beginPath();
-    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
-                        start：开始位置，end：结束位置(以x轴为基准)      
-                                 方向：true逆时针，false顺时针(默认false)；
-    c：ctx.fill();
-</code></pre><ol>
-<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
-</ol>
-<ol>
-<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
-</code></pre></li>
-</ol>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/canvas画图/">canvas画图</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas_wd/">2017-11-21</a></time>
       
       
@@ -616,6 +704,99 @@ E：绘制圆/圆弧：
   
   <div class="tags">
     <a href="/tags/canvas使用/">canvas使用</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
+<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
+</li>
+<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
+</li>
+<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
+</li>
+<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
+</li>
+<li><p>步骤：</p>
+<p> A： 获取canvas标签 a；</p>
+<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
+<p> C： 绘制矩形：</p>
+<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
+b：ctx.strokeRect();           //空心矩形；
+c：ctx.clearRect(x,y,width,height);           //清空区域；
+</code></pre><p> D：路径绘制：</p>
+<pre><code>a：ctx.beginPath();      //开始绘画；
+b：ctx.moveTo(x,y);       //画笔的位置；
+c：ctx.lineTo(x,y);        //起始位置；
+    .
+    .
+    .
+d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
+e：ctx.fill();           //填充颜色(默认为黑色)；
+</code></pre></li>
+</ol>
+<pre><code>自动闭合(没有终止位置时)：
+
+    a：ctx.moveTo(x,y);
+    b：ctx.lineTo(x,y);
+        .
+        .
+        .
+    c：ctx.closePath();       //自动闭合；
+    d：ctx.stroke();
+
+E：绘制圆/圆弧：
+
+    a：ctx.beginPath();
+    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
+                        start：开始位置，end：结束位置(以x轴为基准)      
+                                 方向：true逆时针，false顺时针(默认false)；
+    c：ctx.fill();
+</code></pre><ol>
+<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
+</ol>
+<ol>
+<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/canvas画图/">canvas画图</a>
   </div>
 
         <!-- partial('post/share') -->
@@ -773,152 +954,11 @@ E：绘制圆/圆弧：
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-13T08:50:33.000Z"><a href="/2017/11/13/juzhong/">2017-11-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/13/juzhong/">完美居中盒子以及文字</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h4 id="已知元素的宽高"><a href="#已知元素的宽高" class="headerlink" title="已知元素的宽高:"></a>已知元素的宽高:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.a &#123;</div><div class="line">width: 500px;</div><div class="line">height: 500px;</div><div class="line">background: red;</div><div class="line">position: relative;</div><div class="line">&#125;</div><div class="line">.b &#123;</div><div class="line">width: 200px;</div><div class="line">height: 200px;</div><div class="line">background: blue;</div><div class="line">position: absolute;</div><div class="line">top: 50%;</div><div class="line">left: 50%;</div><div class="line">margin-top: -100px;</div><div class="line">margin-left: -100px;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;a&quot;&gt;</div><div class="line">&lt;div class=&quot;b&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<h4 id="未知元素的宽高"><a href="#未知元素的宽高" class="headerlink" title="未知元素的宽高:"></a>未知元素的宽高:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.a &#123;</div><div class="line">width: 500px;</div><div class="line">height: 500px;</div><div class="line">background: red;</div><div class="line">position: relative;</div><div class="line">&#125;</div><div class="line">.b &#123;</div><div class="line">position: absolute;</div><div class="line">margin: auto;</div><div class="line">top: 0;</div><div class="line">right: 0;</div><div class="line">bottom: 0;</div><div class="line">left: 0;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;a&quot;&gt;</div><div class="line">&lt;div class=&quot;b&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<h4 id="将行内元素进行居中"><a href="#将行内元素进行居中" class="headerlink" title="将行内元素进行居中:"></a>将行内元素进行居中:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;行内元素居中&lt;/title&gt;</div><div class="line">&lt;style&gt;</div><div class="line">div &#123;</div><div class="line">width: 600px;</div><div class="line">height: 600px;</div><div class="line">background: red;</div><div class="line">text-align: center;</div><div class="line">line-height: 600px;</div><div class="line">&#125;</div><div class="line">img &#123;</div><div class="line">/* 垂直对齐方式*/</div><div class="line">vertical-align: text-top;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div&gt;</div><div class="line">凄凄切切群群群</div><div class="line">&lt;img src=&quot;img/qrcode-wx.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;img src=&quot;img/qrcode-wx.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/居中/">居中</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-03T01:43:32.000Z"><a href="/2017/11/03/JS/">2017-11-03</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/03/JS/">JS</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="JS笔记"><a href="#JS笔记" class="headerlink" title="JS笔记"></a>JS笔记</h1><h3 id="1-点击事件"><a href="#1-点击事件" class="headerlink" title="1. 点击事件:"></a>1. 点击事件:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;alert(&apos;welcome&apos;)&quot;&gt;</div><div class="line">点击</div><div class="line">&lt;/button&gt;</div></pre></td></tr></table></figure>
-<p>onclick :  点击<br>alert :  弹框输出</p>
-<h3 id="2-数据类型"><a href="#2-数据类型" class="headerlink" title="2.数据类型:"></a>2.数据类型:</h3><p>Number、String、Boolean、Object(object、数组)、Undefined、Null</p>
-<h3 id="3-输出方式"><a href="#3-输出方式" class="headerlink" title="3.输出方式:"></a>3.输出方式:</h3><p>1) alert();<br>2) .innerHTML = ;<br>3) console.log();  </p>
-<h3 id="4-改变HTML内容"><a href="#4-改变HTML内容" class="headerlink" title="4.改变HTML内容:"></a>4.改变HTML内容:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;demo&quot;&gt;123&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFunction()</div><div class="line">&#123;</div><div class="line">var x = document.getElementById(&quot;demo&quot;);</div><div class="line">x.innerHTML = &quot;hello JavaScript!&quot;;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;</div><div class="line">点击这里</div><div class="line">&lt;/button&gt;</div></pre></td></tr></table></figure>
-<h3 id="5-改变HTML图像"><a href="#5-改变HTML图像" class="headerlink" title="5.改变HTML图像:"></a>5.改变HTML图像:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">function changeImage()</div><div class="line">&#123;</div><div class="line">var element = document.getElementById(&quot;myimage&quot;);</div><div class="line">if(element.src.match(&quot;bulbon&quot;))</div><div class="line">&#123;</div><div class="line">element.src = &quot;i/eg_bulboff.gif&quot;;</div><div class="line">&#125;else&#123;</div><div class="line">element.src = &quot;i/eg_bulbon.gif&quot;;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;img id=&quot;myimage&quot; onclick=&quot;changeImage()&quot; src=&quot;i/eg_bulboff.gif&quot;&gt;</div><div class="line">&lt;p&gt;点击变换HTML图像&lt;/p&gt;</div></pre></td></tr></table></figure>
-<h3 id="6-变换HTML样式"><a href="#6-变换HTML样式" class="headerlink" title="6.变换HTML样式:"></a>6.变换HTML样式:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x = document.getElementById(&quot;demo&quot;);</div><div class="line">x.style.color = &quot;#ff0000&quot;;</div></pre></td></tr></table></figure>
-<h3 id="7-验证输入"><a href="#7-验证输入" class="headerlink" title="7. 验证输入:"></a>7. 验证输入:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;我的第一段 JavaScript&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;p&gt;请输入数字。如果输入值不是数字，浏览器会弹出提示框。&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;input id=&quot;demo&quot; type=&quot;text&quot;&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">function myFunction()</div><div class="line">&#123;</div><div class="line">var x=document.getElementById(&quot;demo&quot;).value;</div><div class="line">if(x==&quot;&quot;||isNaN(x))</div><div class="line">	&#123;</div><div class="line">	alert(&quot;Not Numeric&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;button type=&quot;button&quot; onclick=&quot;myFunction()&quot;&gt;点击这里&lt;/button&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="8-获取节点"><a href="#8-获取节点" class="headerlink" title="8.获取节点:"></a>8.获取节点:</h3><p>1) 通过ID进行获取:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var x = document.getElementById(&quot;demo&quot;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>2) 通过claaa进行获取:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p class=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var x = document.getElementsByClassName(&quot;demo&quot;)[0];</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>3) 通过name进行获取:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p class=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var x =  document.getElementsByName(&quot;demo&quot;)[0];</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>4) 通过标签进行获取:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p class=&quot;demo&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var x =  document.getElementsByTagName(&quot;demo&quot;)[0];</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="9-运算与符号"><a href="#9-运算与符号" class="headerlink" title="9. 运算与符号:"></a>9. 运算与符号:</h3><p>1) 算术运算符 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = 10;</div><div class="line">console.log(a++);//10;    +1;</div><div class="line">console.log(++a);//+1;    12;</div><div class="line">console.log(a--);//10;    -1;</div><div class="line">console.log(--a);//-1;    8;</div></pre></td></tr></table></figure></p>
-<p>注：a++：先使用(运算)后赋值；<br>&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp ++a：先复制后使用(运算)； </p>
-<p>2) 比较:  </p>
-<ul>
-<li>==: 判断两个变量的值是否相等；  </li>
-<li>===: 判断变量的值和数据类型是否相等；  </li>
-<li>!=(不等于): 代表是否两个变量值不相等；  </li>
-<li>!==(不全等): 代表两个变量的值和数据类型有一个不相等；  </li>
-</ul>
-<p>3) 三目运算符(三元运算符)：  </p>
-<p>表达式?语句1:语句2;</p>
-<p>A: 表达式为true时，执行语句1;<br>B: 表达式为false时，执行语句2;  </p>
-<h3 id="10-数据类型以及进制之间的转换"><a href="#10-数据类型以及进制之间的转换" class="headerlink" title="10. 数据类型以及进制之间的转换:"></a>10. 数据类型以及进制之间的转换:</h3><p>1) 转换Number类型:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = &quot;1&quot;;</div><div class="line">var newNum = Number(num);</div></pre></td></tr></table></figure></p>
-<p>2) 转换String类型:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = 1;</div><div class="line">var newNum = String(num);</div></pre></td></tr></table></figure></p>
-<p>3) 转换Boolean类型:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = 1;</div><div class="line">var newNum = Boolean(num);</div></pre></td></tr></table></figure></p>
-<p>4) toString(); 十进制转换为某一进制:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = 1;</div><div class="line">var newNum = num.toString();</div></pre></td></tr></table></figure></p>
-<p>注：toString()多用于进制之间的转化，括号里面为转换的某个进制;  </p>
-<p>5) parseInt(); 某一进制转换为十进制:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num = 1;</div><div class="line">var newNum = parseInt(num,16);</div></pre></td></tr></table></figure></p>
-<h3 id="11-toUpperCase-大写"><a href="#11-toUpperCase-大写" class="headerlink" title="11. toUpperCase(); 大写:"></a>11. toUpperCase(); 大写:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = &quot;hello world&quot;;</div><div class="line">var newA = a.toUpperCase();</div></pre></td></tr></table></figure>
-<h3 id="12-全局变量"><a href="#12-全局变量" class="headerlink" title="12.全局变量:"></a>12.全局变量:</h3><p>1) 在任何作用于中，没有声明变量就赋值就可以是全局变量;<br>2) 在所有的作用域中可以使用的变量为全局变量;</p>
-<h3 id="13-局部变量"><a href="#13-局部变量" class="headerlink" title="13.局部变量:"></a>13.局部变量:</h3><p>只能在当前的作用域中使用，作用域外部无法调用局部变量。</p>
-<h3 id="14-声明变量提升"><a href="#14-声明变量提升" class="headerlink" title="14.声明变量提升:"></a>14.声明变量提升:</h3><p>1) 在js执行过程中，会先把所有的var给提升到当前作用域的最上面，然后再执行语句;<br>2) 在js中，内部可以访问外部的变量，外部不可以访问内部的变量;</p>
-<h3 id="15-js查找机制"><a href="#15-js查找机制" class="headerlink" title="15.js查找机制:"></a>15.js查找机制:</h3><p>会在当前作用域中进行查找使用，没有就访问上一级作用域中进行查找;</p>
-<h3 id="16-”-”字符"><a href="#16-”-”字符" class="headerlink" title="16.”+”字符:"></a>16.”+”字符:</h3><p>如果变量之间有一个是字符串，那么使用”+”就是拼接作用(逗逗加加法则);  </p>
-<h3 id="17-switch语句、if语句、for循环"><a href="#17-switch语句、if语句、for循环" class="headerlink" title="17.switch语句、if语句、for循环:"></a>17.switch语句、if语句、for循环:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">switch()&#123;</div><div class="line">case1:语句1;break;</div><div class="line">case2:语句2;break;</div><div class="line">case3:语句3;break;</div><div class="line">default:语句3;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if(表达式)&#123;</div><div class="line">执行语句1;</div><div class="line">&#125;else if(表达式)&#123;</div><div class="line">执行语句2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for(初始值;循环条件;变量)&#123;</div><div class="line">执行语句;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="18-定时器"><a href="#18-定时器" class="headerlink" title="18.定时器:"></a>18.定时器:</h3><ul>
-<li>setTimeout(function(){执行语句},1000);<br>注: 1000代表1秒，可以改变，只执行一次;  </li>
-<li>setInterval(function(){执行语句},1000);<br>注: 1000代表1秒，可以改变，循环执行;  </li>
-<li>清除定时器:<br>clearTimeout();<br>clearInterval();  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var timer = setInterval();  </div><div class="line">clearInterval(timer);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="19-事件"><a href="#19-事件" class="headerlink" title="19.事件:"></a>19.事件:</h3><ul>
-<li><p>onclick();点击事件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;button onclick=&quot;myFun()&quot;&gt;按钮&lt;/button&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function myFun()&#123;</div><div class="line">alert(&quot;点击&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>键盘事件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">document.onkeydown = function(event)&#123;</div><div class="line">var e = event||window.event||arguments.callee.caller.arguments[0];</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>注: “var e”解决了一些兼容性的问题;</p>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/js笔记/">js笔记</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; Vorherige Seite</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Nächste Seite &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </nav>
@@ -926,7 +966,7 @@ E：绘制圆/圆弧：
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -935,8 +975,16 @@ E：绘制圆/圆弧：
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/12/19/JQuery1/">JQuery1</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/19/闭包/">闭包</a>
+      </li>
     
       <li>
         <a href="/2017/12/14/AJAX、跨域/">AJAX、跨域</a>
@@ -948,14 +996,6 @@ E：绘制圆/圆弧：
     
       <li>
         <a href="/2017/12/11/BOM/">BOM</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/07/事件冒泡-捕获/">事件冒泡/捕获</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/07/DOM-事件/">DOM/事件</a>
       </li>
     
   </ul>
@@ -1015,7 +1055,7 @@ E：绘制圆/圆弧：
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag-Cloud</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
     <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a>
   </div>
