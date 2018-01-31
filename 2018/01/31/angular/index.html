@@ -3,16 +3,22 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>onload | LTT</title>
+  <title>angular | LTT</title>
   <meta name="author" content="LTT" />
 
+  
+  <meta name="description" content="angular :
+angular通过指令扩展了html，通过表达式绑定数据到html; 
+angular 的核心特点之一: 双向数据绑定（当视图模型发生改变的时候了，数据模型同样也会改变；当数据模型发生改变后，视图模型也会发生改变）
+angular 是一个javascript 框架。
+angula" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="angular" />
   <meta property="og:site_name" content="LTT" />
 
   
@@ -55,25 +61,125 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">onload</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-01-31T01:57:35.000Z"><a href="/2018/01/31/angular/">2018-01-31</a></time>
+      
+      
+  
+    <h1 class="title">angular</h1>
+  
 
-
-  <div class="archive">
+    </header>
+    <div class="entry">
+      
+        <h1 id="angular"><a href="#angular" class="headerlink" title="angular :"></a>angular :</h1><ul>
+<li>angular通过指令扩展了html，通过表达式绑定数据到html; </li>
+<li>angular 的核心特点之一: 双向数据绑定（当视图模型发生改变的时候了，数据模型同样也会改变；当数据模型发生改变后，视图模型也会发生改变）</li>
+<li>angular 是一个javascript 框架。</li>
+<li>angular  是一个基于数据渲染的框架</li>
+<li><p>angular 是一个 MVC 型框架:</p>
+<ul>
+<li>M : 数据模型</li>
+<li>V : 视图模型  （html）</li>
+<li><p>C : 控制器 （它的作用是控制model与view之间的交互，是他们交互的桥梁/纽带） </p>
+<blockquote>
+<p>也有人认为 angular 是一个mvvm 型框架  </p>
+<ol>
+<li>M - Model 数据：它是与应用程序的业务逻辑相关的数据的封装载体  </li>
+<li>V - View 视图：它专注于界面的显示和渲染  </li>
+<li>VM - ViewModel 视图-数据：它是View和Model的粘合体，负责View和Model的交互和协作<br>因为在angular中$scope对象充当了这个ViewModel的角色；controller负责ViewModel对象的初始化，它将组合一个或者多个service来获取业务领域Model放在ViewModel对象上，使得应用界面在启动加载的时候达到一种可用的状态</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li>ng-app<ul>
+<li>初始化一个应用程序（一个HTML文档只出现一次，如出现多次也只有第一个起作用；）</li>
+</ul>
+</li>
+<li>ng-controller<ul>
+<li><strong>绑定</strong>一个控制器</li>
+</ul>
+</li>
+<li>ng-model<ul>
+<li>给元素绑定一个数据（  只能用于带有value的标签（表单元素）） </li>
+</ul>
+</li>
+<li>ng-bind<ul>
+<li>给元素绑定一个数据,如果是input以外的标签绑定数据时用bind，他<strong>完全</strong>代表元素中的内容；</li>
+</ul>
+</li>
+<li>ng-init<ul>
+<li>初始化数据 </li>
+</ul>
+</li>
+<li>ng-repeat：循环数据  <code>ng-repeat=&#39;x  in  data&#39;</code><ul>
+<li>对象 : x  代表的是对象中的属性值，循环对象中属性的个数</li>
+<li>数组 : x  代表 数组中的每一项，循环数组的长度 次 ，如果是数组包含对象，可以通过 x.属性名称拿到属性值     </li>
+</ul>
+</li>
+<li>ng-hide<ul>
+<li>隐藏元素，当ng-hide 所对应的数据的结果为true， 那么就会隐藏这个元素，如果是false，就不会隐藏</li>
+</ul>
+</li>
+<li><p>ng-show </p>
+<ul>
+<li>显示元素，当ng-show 所对应的数据的结果为true， 那么就会显示这个元素，如果是false，就不会显示     </li>
+</ul>
+</li>
+<li><p>自定义指令  </p>
+<blockquote>
+<p>使用 .directive 函数来添加自定义的指令。<br>可以通过4中方法调用自定义指令</p>
+<ol>
+<li>元素  （E）</li>
+<li>类名   (C)  </li>
+<li>注释   (M)  </li>
+<li>属性   (A) <ul>
+<li>代码：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*  </span></div><div class="line"><span class="comment">    .directive 有两个参数。</span></div><div class="line"><span class="comment">           第一个:自定义指令名称( 要使用驼峰命名法，使用的时候把大写字符改成小写字符，前面加- )</span></div><div class="line"><span class="comment">           第二个： 是一个函数，函数中要返回一个对象；</span></div><div class="line"><span class="comment">                            </span></div><div class="line"><span class="comment">*/</span></div><div class="line">myApp.directive(<span class="string">"myDirective"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      </div><div class="line">       <span class="keyword">return</span> &#123;</div><div class="line">           templateUrl:<span class="string">"&lt;h1&gt;我是自定义指令创建出来的&lt;/h1&gt;"</span>,   <span class="comment">// 渲染到页面的结构代码</span></div><div class="line">           restrict:<span class="string">"ECMA"</span>,        <span class="comment">//  支持调用的方式，默认是EA</span></div><div class="line">           replace:<span class="literal">true</span>,           <span class="comment">// 决定了是在元素的内部使用templat 还是直接替换掉使用自定义指令的元素</span></div><div class="line">       &#125;</div><div class="line">      </div><div class="line">   &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h2 id="scope的作用域"><a href="#scope的作用域" class="headerlink" title="$scope的作用域"></a>$scope的作用域</h2><blockquote>
+<p> $scope 的作用域 取决与 他所属控制器的控制范围</p>
+</blockquote>
+<h2 id="rootScope-代表全局-scope"><a href="#rootScope-代表全局-scope" class="headerlink" title="$rootScope : 代表全局$scope"></a>$rootScope : 代表全局$scope</h2><h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器:"></a>过滤器:</h2><blockquote>
+<p>过滤器可以使用一个管道字符（|）添加到表达式和指令中。</p>
+</blockquote>
+<h2 id="路由：-路往哪里走"><a href="#路由：-路往哪里走" class="headerlink" title="路由： 路往哪里走"></a>路由： 路往哪里走</h2>
+      
+    </div>
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-11-24T01:39:33.000Z"><a href="/2017/11/24/js-onload/">2017-11-24</a></time>
-            
-              <h1 class="title"><a href="/2017/11/24/js-onload/">js_onload</a></h1>
-            
-          </header>
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
-      </article>
-    
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Angular-JS/">Angular JS</a>
   </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">

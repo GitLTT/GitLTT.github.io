@@ -3,16 +3,25 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>onload | LTT</title>
+  <title>angular2 | LTT</title>
   <meta name="author" content="LTT" />
 
+  
+  <meta name="description" content="angular JS 过滤器：
+过滤器可以使用管道字符（|）添加到表达式和指令中
+
+|currency：格式化数字为货币格式（更换为人民币标志：后面添加:’￥’）
+
+|date：格式化时间，以毫秒进行计算的（更改格式：’yyyy-MM-dd hh:mm:ss EEEEs’）
+
+|lowercase：" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="angular2" />
   <meta property="og:site_name" content="LTT" />
 
   
@@ -55,25 +64,104 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">onload</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-01-31T01:54:29.000Z"><a href="/2018/01/31/angular2/">2018-01-31</a></time>
+      
+      
+  
+    <h1 class="title">angular2</h1>
+  
 
+    </header>
+    <div class="entry">
+      
+        <h3 id="angular-JS-过滤器："><a href="#angular-JS-过滤器：" class="headerlink" title="angular JS 过滤器："></a>angular JS 过滤器：</h3><ul>
+<li><p>过滤器可以使用管道字符（|）添加到表达式和指令中</p>
+</li>
+<li><p>|currency：格式化数字为货币格式（更换为人民币标志：后面添加:’￥’）</p>
+</li>
+<li><p>|date：格式化时间，以毫秒进行计算的（更改格式：’yyyy-MM-dd hh:mm:ss EEEEs’）</p>
+</li>
+<li><p>|lowercase：将字符串格式为小写</p>
+</li>
+<li><p>|filter：从数组项中选择一个子集（在数组中查找信息）</p>
+</li>
+</ul>
+<h3 id="自定义过滤器："><a href="#自定义过滤器：" class="headerlink" title="自定义过滤器："></a>自定义过滤器：</h3><ul>
+<li><p>方法：filter()：两个参数</p>
+</li>
+<li><p>第一个：过滤器名称；</p>
+</li>
+<li><p>第二个：函数  （函数要返回一个函数，返回函数中有一个参数为input，这个参数是我们要操作的数据或目标）</p>
+<pre><code>input 就代表的是我们在使用这个自定义过滤器是 （|） 管道字符前面的数据
+</code></pre></li>
+</ul>
+<h3 id="angular-JS服务（service）"><a href="#angular-JS服务（service）" class="headerlink" title="angular JS服务（service）"></a>angular JS服务（service）</h3><ul>
+<li><p>在Angular JS中，服务就是一个函数或对象</p>
+</li>
+<li><p>$location:返回当前页面的URL</p>
+<ul>
+<li>使用时需要在控制器函数中传$location:这个参数</li>
+</ul>
+</li>
+</ul>
+<h3 id="自定义服务：service"><a href="#自定义服务：service" class="headerlink" title="自定义服务：service()"></a>自定义服务：service()</h3><ul>
+<li><p>第一个参数：服务名称（可以理解为构造函数的实例）</p>
+</li>
+<li><p>第二个参数：函数（我们可以把它理解为构造函数）</p>
+</li>
+</ul>
+<h3 id="angular-JS路由：（单一页面）"><a href="#angular-JS路由：（单一页面）" class="headerlink" title="angular JS路由：（单一页面）"></a>angular JS路由：（单一页面）</h3><ul>
+<li><p>步骤：</p>
+<ul>
+<li><p>先引入angular.js，然后引入angular-route.js</p>
+</li>
+<li><p>var myApp = angular.module(“myApp”,[‘ngRoute’])</p>
+</li>
+<li><p>配置路由（设置路由）</p>
+<ul>
+<li>myApp.config(function($routeProvider){ $routeProvider.when(“井号后的路径”,{template:}) })</li>
+</ul>
+</li>
+<li><p>注：如果需要连接到其他页面 when 后的对象中的属性就为：templateUrl</p>
+<ul>
+<li>otherwise（{redirectTo:’/‘}）——–路径不正确的时候默认的路径为 / </li>
+</ul>
+</li>
+<li><p>需要在放置页面的div中添加 ng-view 属性</p>
+</li>
+</ul>
+</li>
+</ul>
 
-  <div class="archive">
+      
+    </div>
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-11-24T01:39:33.000Z"><a href="/2017/11/24/js-onload/">2017-11-24</a></time>
-            
-              <h1 class="title"><a href="/2017/11/24/js-onload/">js_onload</a></h1>
-            
-          </header>
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
-      </article>
-    
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Angular-JS/">Angular JS</a>
   </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">

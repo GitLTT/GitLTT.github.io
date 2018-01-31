@@ -62,6 +62,303 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-12-07T08:39:59.000Z"><a href="/2017/12/07/事件冒泡-捕获/">2017-12-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/07/事件冒泡-捕获/">事件冒泡/捕获</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="event对象：代表事件的状态"><a href="#event对象：代表事件的状态" class="headerlink" title="event对象：代表事件的状态"></a>event对象：代表事件的状态</h3><pre><code>鼠标 / 键盘属性：
+
+    clientX：返回当事件被触发时，鼠标指针的水平坐标。
+
+    clientY：返回当事件被触发时，鼠标指针的垂直坐标。
+
+    screenX：返回当某个事件被触发时，鼠标指针的水平坐标。
+
+    screenY：返回当某个事件被触发时，鼠标指针的垂直坐标。
+
+注：
+    screen 事件属性可返回事件发生时鼠标指针相对于屏幕的水平坐标。
+
+    client 事件属性返回当事件被触发时鼠标指针向对于浏览器页面（或客户区）的水平坐标。
+</code></pre><h3 id="事件由什么组成："><a href="#事件由什么组成：" class="headerlink" title="事件由什么组成："></a>事件由什么组成：</h3><pre><code>    三要素:
+
+ 1. 事件源：事件目标/给谁绑定事件
+
+ 2. 事件驱动： 什么事件/
+
+ 3. 事件程序：干什么/
+
+普通事件  ：  监视某个动作/ 监视某个元素的某个动作  
+
+同一个元素,同一个事件驱动,只能绑定一个;如果绑定两个,下面的会覆盖上面的;
+</code></pre><h3 id="事件冒泡："><a href="#事件冒泡：" class="headerlink" title="事件冒泡："></a>事件冒泡：</h3><pre><code>普通事件  :一个元素如果给他绑定两个相同的事件会被覆盖,会指向下面的事件
+
+事件监听函数 addEventListener();
+
+        有三个参数:
+
+                   第一个参数：是你要绑定的事件句柄;但是要去掉 on；其参数是一个字符串类型
+
+                   第二个参数： 你要干什么?  你要执行的代码；是一个函数
+
+                    第三个: 绑定事件的位置:   布尔值
+
+                                true:    捕获阶段
+
+                                false:    冒泡阶段 (默认是false)
+</code></pre><ul>
+<li><p>捕获阶段:</p>
+<ul>
+<li><p>当事件被触发后,会从dom文档的根标签(html)开始往下级查找,直到找到事件目标位置.</p>
+</li>
+<li><p>在查找的过程中.如果有元素在捕获阶段绑定了相同的事件,那么就会被触发</p>
+</li>
+</ul>
+</li>
+<li><p>事件目标阶段:</p>
+<ul>
+<li>当事件捕获阶段完成后,进入到事件目标阶段时,按照我们写代码的先后顺序来执行事件目标阶段的事件;</li>
+</ul>
+</li>
+<li><p>事件冒泡:</p>
+<ul>
+<li><p>当事件目标阶段完成以后,事件开始冒泡,一直冒泡到我们的dom文档的根标签,</p>
+</li>
+<li><p>在这个过程中,如果有元素在冒泡阶段绑定了相同的事件,那么这个事件就会被执行;</p>
+<p>阻止冒泡：event.stopPropagation();</p>
+<p>阻止捕获：将事件放在冒泡阶段上面就可以阻止捕获；</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/冒泡、捕获/">冒泡、捕获</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-12-07T01:27:45.000Z"><a href="/2017/12/07/DOM-事件/">2017-12-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/07/DOM-事件/">DOM/事件</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="节点之间的关系："><a href="#节点之间的关系：" class="headerlink" title="节点之间的关系："></a>节点之间的关系：</h3><pre><code>父子关系：嵌套关系
+
+兄弟关系：并列关系
+</code></pre><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><pre><code>通过选择器来获取节点：document.querySelectorAll();
+</code></pre><h3 id="获取属性："><a href="#获取属性：" class="headerlink" title="获取属性："></a>获取属性：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var div = document.querySelector(&quot;div&quot;);</div><div class="line"></div><div class="line">       console.log(div[&quot;id&quot;]); //id名称</div><div class="line"></div><div class="line">       console.log(div.className); //class名称</div><div class="line"></div><div class="line">       console.log(div.getAttribute(&quot;style&quot;)); //样式</div><div class="line"></div><div class="line">       div.setAttribute(&quot;class&quot;, &quot;c&quot;); //设置属性或样式，并且完全被替换</div><div class="line"></div><div class="line">       div.removeAttribute(&quot;id&quot;); //删除id，并且完全会被删除；</div></pre></td></tr></table></figure>
+<h3 id="查看节点类型："><a href="#查看节点类型：" class="headerlink" title="查看节点类型："></a>查看节点类型：</h3><ul>
+<li><p>nodeType 返回以数字值返回指定节点的节点类型。 如果节点是元素节点，则返回 1。如果节点是属性节点，则返回 2。</p>
+</li>
+<li><p>nodeName 返回节点名称（大写的标签名）</p>
+</li>
+<li><p>nodeValue 文本节点返回文本内容，其他节点返回null</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var  p=document.getElementById(&quot;text&quot;);</div><div class="line"></div><div class="line">   var nodetypeNum=p.nodeType;   //查看获取节点类型;</div><div class="line">       </div><div class="line">   console.log(nodetypeNum); // 1</div><div class="line">       </div><div class="line">   var nodeName=p.nodeName;</div><div class="line">       </div><div class="line">   console.log(nodeName); // p</div><div class="line">       </div><div class="line">   var  nodeValue=p.nodeValue;</div><div class="line">       </div><div class="line">   var  a=p.getAttributeNode(&quot;id&quot;);</div><div class="line"></div><div class="line">   console.log(a); // id=&quot;text&quot;</div><div class="line">       </div><div class="line">   console.log(a.nodeType); // 2</div><div class="line">       </div><div class="line">   console.log(a.nodeValue);  // text</div><div class="line">       </div><div class="line">   console.log(a.nodeName); // id</div></pre></td></tr></table></figure>
+<h3 id="创建节点：（从后进行添加）"><a href="#创建节点：（从后进行添加）" class="headerlink" title="创建节点：（从后进行添加）"></a>创建节点：（从后进行添加）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var li = document.createElement(&quot;li&quot;);//创建的元素节点</div><div class="line"></div><div class="line">       var text = document.createTextNode(i + 1);//创建的文本节点</div><div class="line"></div><div class="line">       li.appendChild(text);//把文本放在创建的li里面</div><div class="line"></div><div class="line">       list.appendChild(li);//把创建的li放在ul里面</div></pre></td></tr></table></figure>
+<h3 id="节点操作："><a href="#节点操作：" class="headerlink" title="节点操作："></a>节点操作：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">insertBefore(a,b) :在指定的已有子节点之前插入新的子节点,a是新节点，b是旧节点</div><div class="line"></div><div class="line">appendChild 在DOM子集最后添加子节点</div><div class="line"></div><div class="line">removeChild 删除一个节点</div><div class="line"></div><div class="line">replaceChild(a,b) 替换节点;a是新节点，b是旧节点</div></pre></td></tr></table></figure>
+<h3 id="节点查找："><a href="#节点查找：" class="headerlink" title="节点查找："></a>节点查找：</h3><pre><code>获取下级节点：
+
+1. children：子节点，不包含空节点
+
+2. childNodes：子节点，包含空节点
+
+3. firstChild：第一个子节点，包含空节点
+
+4. firstElementChild：第一个子节点，不包含空节点
+
+5. lastChild：最后一个子节点，包含空节点
+
+6. lastElementChild：最后一个子节点，不包含空节点
+
+获取兄弟节点：
+
+1. nextSibling：下一个兄弟节点，包含空节点
+
+2. nextElementSibling：下一个兄弟节点，不包含空节点
+
+3. previousSibling：前一个兄弟节点，包含空节点
+
+4. previousElementSibling：前一个兄弟节点，不包含空节点
+
+获取父级节点：
+
+1. parentNode：父节点
+
+2. offsetParent：第一个有定位属性的父节点，如果没有，则返回body
+</code></pre><h3 id="事件："><a href="#事件：" class="headerlink" title="事件："></a>事件：</h3><pre><code>普通事件：a.onclick = function(){};
+
+    同一个元素，同一个事件驱动只能绑定一个，如果绑定两个，下面的事件会替换上面的；
+
+1. onload 图片或页面加载完成
+
+2. 焦点事件:onfocus/onblur 获得焦点/失去焦点
+
+3. onchange 表单内容发送改变
+
+4. onclick 点击
+
+5. ondblclick 点击两次
+
+6. onkeydown 键盘按下
+
+7. onkeyup 键盘抬起
+</code></pre><h3 id="获取对象-、-兼容处理："><a href="#获取对象-、-兼容处理：" class="headerlink" title="获取对象 、 兼容处理："></a>获取对象 、 兼容处理：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> document.onkeydown = function(ev)&#123;</div><div class="line"></div><div class="line"> 	var ev = ev || window.event;</div><div class="line"></div><div class="line">//获取事件对象兼容处理，一般浏览器直接在function参</div><div class="line"></div><div class="line">//数ev获取,ie浏览器通过window.event获取</div><div class="line"></div><div class="line">	document.write(ev.keyCode);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="键盘event对象属性-keyCode"><a href="#键盘event对象属性-keyCode" class="headerlink" title="键盘event对象属性 keyCode"></a>键盘event对象属性 keyCode</h3><pre><code>1. onmousedown 鼠标按下
+
+2. onmouseup 鼠标抬起
+
+3. onmousemove 鼠标移动
+
+4. onmouseover 移到对象上
+
+5. onmouseout 鼠标离开
+
+6. 鼠标event对象属性 clientX clientY
+
+7. onselect 在文本框中的文本被选中时发生,支持&lt;input type=&quot;text&quot;&gt;, &lt;textarea&gt;
+
+8. onsubmit 在表单中的提交按钮被点击时触发
+
+9. onreset 在表单中的重置按钮被点击时触发
+
+10. onerror 在文档或图像加载过程中发生错误时被触发
+
+11. 阻止默认事件preventDefault() 或者 return false；
+</code></pre><h3 id="事件委托："><a href="#事件委托：" class="headerlink" title="事件委托："></a>事件委托：</h3><pre><code>通过e.target
+
+就是把子元素的事件交给父元素进行管理，然后再执行的时候再通知具体某个元素执行；
+
+e.target: 触发这个事件的具体某个元素
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">list.onclick = function(e) &#123;</div><div class="line">    var e = e || window.event;</div><div class="line">    alert(e.target.innerHTML); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/事件/">事件</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-12-05T08:35:12.000Z"><a href="/2017/12/05/Math对象/">2017-12-05</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/05/Math对象/">Math对象</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="Math-对象："><a href="#Math-对象：" class="headerlink" title="Math();对象："></a>Math();对象：</h3><pre><code>1. abs(x)返回数的绝对值
+
+2. ceil(x)对数进行上取整
+
+3. floor(x)对数进行下取整
+
+4. max(x,y)返回 x 和 y 中的最高值
+
+5. min(x,y)返回 x 和 y 中的最低值
+
+6. round(x)把数四舍五入为最接近的整数
+
+7. pow(x,y)返回 x 的 y 次幂
+
+8. random()返回 0 ~ 1 之间的随机数
+
+9. sqrt(x)返回数的平方根
+</code></pre>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Math对象/">Math对象</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-12-05T01:38:22.000Z"><a href="/2017/12/05/原型链/">2017-12-05</a></time>
       
       
@@ -770,257 +1067,6 @@ var arr = [[[],[],[]],[[],[]]]];//三维数组；
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-24T01:39:33.000Z"><a href="/2017/11/24/js-onload/">2017-11-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/24/js-onload/">js_onload</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><p>事件组成：</p>
-<ul>
-<li>事件源：节点</li>
-<li>事件驱动：onclick。。。。</li>
-<li>事件程序：console.log</li>
-</ul>
-</li>
-</ul>
-<h5 id="如果script标签写在head标签里面时-必须要写window-onload-入口函数-；"><a href="#如果script标签写在head标签里面时-必须要写window-onload-入口函数-；" class="headerlink" title="如果script标签写在head标签里面时  必须要写window.onload   (入口函数)；"></a>如果script标签写在head标签里面时  必须要写window.onload   (入口函数)；</h5><h5 id="window-onload-function-是在页面的和外部的所有文件、图片加载完毕之后再进行执行里面的内容"><a href="#window-onload-function-是在页面的和外部的所有文件、图片加载完毕之后再进行执行里面的内容" class="headerlink" title="window.onload = function (){};是在页面的和外部的所有文件、图片加载完毕之后再进行执行里面的内容"></a>window.onload = function (){};是在页面的和外部的所有文件、图片加载完毕之后再进行执行里面的内容</h5><h5 id="数组中的length属性：代表数组中元素或数据的个数；"><a href="#数组中的length属性：代表数组中元素或数据的个数；" class="headerlink" title="数组中的length属性：代表数组中元素或数据的个数；"></a>数组中的length属性：代表数组中元素或数据的个数；</h5><ul>
-<li><p>const声明常量：</p>
-<ul>
-<li><p>const a = 5；(定义一个常量)</p>
-</li>
-<li><p>a = 6；(不可以，会报错)</p>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/onload/">onload</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas_wd/">2017-11-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/21/canvas_wd/">canvas用法</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><blockquote>
-<p><code>&lt;canvas&gt;</code> 是 HTML5 新增的元素，可用于通过使用JavaScript中的脚本来绘制图形。例如，它可以用于绘制图形，制作照片，创建动画，甚至可以进行实时视频处理或渲染。</p>
-</blockquote>
-<h2 id="基本用法："><a href="#基本用法：" class="headerlink" title="基本用法："></a>基本用法：</h2><ul>
-<li><p>创建canvas html上下文对象</p>
-<ul>
-<li>canvas对象只有两个属性,<strong>width</strong>和<strong>height</strong>,并且者两个属性都是可选属性,当不设置的话默认是:300*150的大小<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"tutorial"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>canvas 标签起初是空白的我们要向渲染(绘制),就得通过脚本(js)进行获取,通过 <code>.getContext</code>的方法获取上下文</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"tutorial"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">       var canvas = document.getElementById('tutorial');</span></div><div class="line"><span class="undefined">       var ctx = canvas.getContext('2d');</span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">```   </div><div class="line">## 绘制图形</div><div class="line">* canvas 中的坐标</div><div class="line">    * canvas 中的坐标是从左上角开始的一个栅格,一般一个栅格就代表一个像素点</div><div class="line">* 绘制矩形: </div><div class="line">    * 实心矩形:`fillRect(x, y, width, height)`</div><div class="line">    * 空心矩形:`strokeRect(x, y, width, height)`</div><div class="line">    * 清空矩形: `clearRect(x, y, width, height)`</div><div class="line">    &gt; x 和 y 代表要绘制的起点开始坐标,width和height代表要绘制的大小    </div><div class="line">* 绘制路径:</div><div class="line">    &gt; 图形的基本元素是路径。路径是通过不同颜色和宽度的线段或曲线相连形成的不同形状的点的集合。    </div><div class="line">    * 开始绘制/初始化: `beginPath()`</div><div class="line">    * 移动触笔: `moveTo()`</div><div class="line">    * 绘制直线: `lineTo()`  </div><div class="line">    * 填充区域: `fill()`</div><div class="line">    * 空心填充区域: `stroke()`</div><div class="line">    * 闭合路径: `closePath()`</div><div class="line">    </div><div class="line">* 绘制圆弧/圆</div><div class="line">```javascript</div><div class="line">arc(x, y, radius, startAngle, endAngle, anticlockwise)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。</p>
-</blockquote>
-<ul>
-<li>绘制贝塞尔曲线:<code>quadraticCurveTo()</code><blockquote>
-<p>quadraticCurveTo(cp1x, cp1y, x, y)<br>绘制二次贝塞尔曲线，cp1x,cp1y为一个控制点，x,y为结束点。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="添加样式和颜色"><a href="#添加样式和颜色" class="headerlink" title="添加样式和颜色"></a>添加样式和颜色</h2><ul>
-<li>添加填充色: <code>fillStyle</code></li>
-<li>添加轮廓色: <code>strokeStyle</code><h3 id="线性"><a href="#线性" class="headerlink" title="线性:"></a>线性:</h3></li>
-<li>lineWidth = value<blockquote>
-<p> 设置线条宽度。</p>
-</blockquote>
-</li>
-<li>lineCap = type<blockquote>
-<p> 设置线条末端样式。</p>
-</blockquote>
-</li>
-<li>lineJoin = type<blockquote>
-<p> 设定线条与线条间接合处的样式。</p>
-</blockquote>
-</li>
-<li>miterLimit = value<blockquote>
-<p> 限制当两条线相交时交接处最大长度；所谓交接处长度（斜接长度）是指线条交接处内角顶点到外角顶点的长度。</p>
-</blockquote>
-</li>
-<li>getLineDash()<blockquote>
-<p> 返回一个包含当前虚线样式，长度为非负偶数的数组。</p>
-</blockquote>
-</li>
-<li>setLineDash(segments)<blockquote>
-<p> 设置当前虚线样式。</p>
-</blockquote>
-</li>
-<li>lineDashOffset = value<blockquote>
-<p> 设置虚线样式的起始偏移量。</p>
-</blockquote>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/canvas使用/">canvas使用</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-11-21T08:46:23.000Z"><a href="/2017/11/21/canvas/">2017-11-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/11/21/canvas/">canvas</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h5 id="canvas-H5标签，画布-："><a href="#canvas-H5标签，画布-：" class="headerlink" title="canvas(H5标签，画布)："></a>canvas(H5标签，画布)：</h5><h5 id="H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"><a href="#H5兼容性：html5shif-js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；" class="headerlink" title="H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；"></a>H5兼容性：html5shif.js文件能够解决一些浏览器可以识别H5标签，但是canvas标签除外；</h5><h5 id="canvas只有width、height两个属性；"><a href="#canvas只有width、height两个属性；" class="headerlink" title="canvas只有width、height两个属性；"></a>canvas只有width、height两个属性；</h5><ol>
-<li><p>如果不给canvas宽高，那么他的默认宽高为300 * 150，背景为透明色；</p>
-</li>
-<li><p>margin：0 auto；不可以使用，但是定位可以；</p>
-</li>
-<li><p>如果在canvas标签中直接写内容，若浏览器支持canvas这个标签则不会显示内容，若不支持则显示；</p>
-</li>
-<li><p>canvas是通过js来进行绘制图形、制作照片等的；</p>
-</li>
-<li><p>步骤：</p>
-<p> A： 获取canvas标签 a；</p>
-<p> B： var ctx = a.getContex(“2d”)；         //用来获取上下文(连接上下文的)，绘制一个2d图形；</p>
-<p> C： 绘制矩形：</p>
-<pre><code>a：ctx.fillRect(x,y,width,height);       //从左向右绘制,填充矩形；
-b：ctx.strokeRect();           //空心矩形；
-c：ctx.clearRect(x,y,width,height);           //清空区域；
-</code></pre><p> D：路径绘制：</p>
-<pre><code>a：ctx.beginPath();      //开始绘画；
-b：ctx.moveTo(x,y);       //画笔的位置；
-c：ctx.lineTo(x,y);        //起始位置；
-    .
-    .
-    .
-d：ctx.lineTo(x,y);         //终止位置；(必须和起始位置一至)；
-e：ctx.fill();           //填充颜色(默认为黑色)；
-</code></pre></li>
-</ol>
-<pre><code>自动闭合(没有终止位置时)：
-
-    a：ctx.moveTo(x,y);
-    b：ctx.lineTo(x,y);
-        .
-        .
-        .
-    c：ctx.closePath();       //自动闭合；
-    d：ctx.stroke();
-
-E：绘制圆/圆弧：
-
-    a：ctx.beginPath();
-    b：ctx.arc(x,y,r,start,end,方向)；//x，y:圆心  /  r：半径   
-                        start：开始位置，end：结束位置(以x轴为基准)      
-                                 方向：true逆时针，false顺时针(默认false)；
-    c：ctx.fill();
-</code></pre><ol>
-<li>填充颜色：ctx.fillStyle=”#aaa”;         //在开始画之前进行填充；</li>
-</ol>
-<ol>
-<li>贝塞尔曲线(二次)：<pre><code>ctx.quadraticCurveTo(x,y,x1,y1);    //x,y:控制点    /   x1,y1: 终止点；
-</code></pre></li>
-</ol>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/canvas画图/">canvas画图</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -1046,23 +1092,23 @@ E：绘制圆/圆弧：
   <ul class="entry">
     
       <li>
+        <a href="/2018/01/31/angular/">angular</a>
+      </li>
+    
+      <li>
+        <a href="/2018/01/31/angular2/">angular2</a>
+      </li>
+    
+      <li>
+        <a href="/2018/01/31/angular1/">angular</a>
+      </li>
+    
+      <li>
         <a href="/2017/12/19/JQuery2/">JQurey2</a>
       </li>
     
       <li>
         <a href="/2017/12/19/demo/">demo</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/19/JQuery1/">JQuery1</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/19/闭包/">闭包</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/14/AJAX、跨域/">AJAX、跨域</a>
       </li>
     
   </ul>
@@ -1075,6 +1121,8 @@ E：绘制圆/圆弧：
   <ul class="entry">
   
     <li><a href="/tags/AJAX、跨域/">AJAX、跨域</a><small>1</small></li>
+  
+    <li><a href="/tags/Angular-JS/">Angular JS</a><small>3</small></li>
   
     <li><a href="/tags/BOM/">BOM</a><small>1</small></li>
   
@@ -1130,7 +1178,7 @@ E：绘制圆/圆弧：
 <div class="widget tagcloud">
   <h3 class="title">Tag-Cloud</h3>
   <div class="entry">
-    <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+    <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/Angular-JS/" style="font-size: 20px;">Angular JS</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
   </div>
 </div>
 
@@ -1140,7 +1188,7 @@ E：绘制圆/圆弧：
   <footer id="footer" class="inner"><div class="alignleft">
   <p>
   
-  &copy; 2017 LTT
+  &copy; 2018 LTT
   
   All rights reserved.</p>
   <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>

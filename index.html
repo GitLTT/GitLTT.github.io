@@ -62,6 +62,382 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2018-01-31T01:57:35.000Z"><a href="/2018/01/31/angular/">2018-01-31</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/01/31/angular/">angular</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="angular"><a href="#angular" class="headerlink" title="angular :"></a>angular :</h1><ul>
+<li>angular通过指令扩展了html，通过表达式绑定数据到html; </li>
+<li>angular 的核心特点之一: 双向数据绑定（当视图模型发生改变的时候了，数据模型同样也会改变；当数据模型发生改变后，视图模型也会发生改变）</li>
+<li>angular 是一个javascript 框架。</li>
+<li>angular  是一个基于数据渲染的框架</li>
+<li><p>angular 是一个 MVC 型框架:</p>
+<ul>
+<li>M : 数据模型</li>
+<li>V : 视图模型  （html）</li>
+<li><p>C : 控制器 （它的作用是控制model与view之间的交互，是他们交互的桥梁/纽带） </p>
+<blockquote>
+<p>也有人认为 angular 是一个mvvm 型框架  </p>
+<ol>
+<li>M - Model 数据：它是与应用程序的业务逻辑相关的数据的封装载体  </li>
+<li>V - View 视图：它专注于界面的显示和渲染  </li>
+<li>VM - ViewModel 视图-数据：它是View和Model的粘合体，负责View和Model的交互和协作<br>因为在angular中$scope对象充当了这个ViewModel的角色；controller负责ViewModel对象的初始化，它将组合一个或者多个service来获取业务领域Model放在ViewModel对象上，使得应用界面在启动加载的时候达到一种可用的状态</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li>ng-app<ul>
+<li>初始化一个应用程序（一个HTML文档只出现一次，如出现多次也只有第一个起作用；）</li>
+</ul>
+</li>
+<li>ng-controller<ul>
+<li><strong>绑定</strong>一个控制器</li>
+</ul>
+</li>
+<li>ng-model<ul>
+<li>给元素绑定一个数据（  只能用于带有value的标签（表单元素）） </li>
+</ul>
+</li>
+<li>ng-bind<ul>
+<li>给元素绑定一个数据,如果是input以外的标签绑定数据时用bind，他<strong>完全</strong>代表元素中的内容；</li>
+</ul>
+</li>
+<li>ng-init<ul>
+<li>初始化数据 </li>
+</ul>
+</li>
+<li>ng-repeat：循环数据  <code>ng-repeat=&#39;x  in  data&#39;</code><ul>
+<li>对象 : x  代表的是对象中的属性值，循环对象中属性的个数</li>
+<li>数组 : x  代表 数组中的每一项，循环数组的长度 次 ，如果是数组包含对象，可以通过 x.属性名称拿到属性值     </li>
+</ul>
+</li>
+<li>ng-hide<ul>
+<li>隐藏元素，当ng-hide 所对应的数据的结果为true， 那么就会隐藏这个元素，如果是false，就不会隐藏</li>
+</ul>
+</li>
+<li><p>ng-show </p>
+<ul>
+<li>显示元素，当ng-show 所对应的数据的结果为true， 那么就会显示这个元素，如果是false，就不会显示     </li>
+</ul>
+</li>
+<li><p>自定义指令  </p>
+<blockquote>
+<p>使用 .directive 函数来添加自定义的指令。<br>可以通过4中方法调用自定义指令</p>
+<ol>
+<li>元素  （E）</li>
+<li>类名   (C)  </li>
+<li>注释   (M)  </li>
+<li>属性   (A) <ul>
+<li>代码：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*  </span></div><div class="line"><span class="comment">    .directive 有两个参数。</span></div><div class="line"><span class="comment">           第一个:自定义指令名称( 要使用驼峰命名法，使用的时候把大写字符改成小写字符，前面加- )</span></div><div class="line"><span class="comment">           第二个： 是一个函数，函数中要返回一个对象；</span></div><div class="line"><span class="comment">                            </span></div><div class="line"><span class="comment">*/</span></div><div class="line">myApp.directive(<span class="string">"myDirective"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      </div><div class="line">       <span class="keyword">return</span> &#123;</div><div class="line">           templateUrl:<span class="string">"&lt;h1&gt;我是自定义指令创建出来的&lt;/h1&gt;"</span>,   <span class="comment">// 渲染到页面的结构代码</span></div><div class="line">           restrict:<span class="string">"ECMA"</span>,        <span class="comment">//  支持调用的方式，默认是EA</span></div><div class="line">           replace:<span class="literal">true</span>,           <span class="comment">// 决定了是在元素的内部使用templat 还是直接替换掉使用自定义指令的元素</span></div><div class="line">       &#125;</div><div class="line">      </div><div class="line">   &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h2 id="scope的作用域"><a href="#scope的作用域" class="headerlink" title="$scope的作用域"></a>$scope的作用域</h2><blockquote>
+<p> $scope 的作用域 取决与 他所属控制器的控制范围</p>
+</blockquote>
+<h2 id="rootScope-代表全局-scope"><a href="#rootScope-代表全局-scope" class="headerlink" title="$rootScope : 代表全局$scope"></a>$rootScope : 代表全局$scope</h2><h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器:"></a>过滤器:</h2><blockquote>
+<p>过滤器可以使用一个管道字符（|）添加到表达式和指令中。</p>
+</blockquote>
+<h2 id="路由：-路往哪里走"><a href="#路由：-路往哪里走" class="headerlink" title="路由： 路往哪里走"></a>路由： 路往哪里走</h2>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Angular-JS/">Angular JS</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-01-31T01:54:29.000Z"><a href="/2018/01/31/angular2/">2018-01-31</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/01/31/angular2/">angular2</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="angular-JS-过滤器："><a href="#angular-JS-过滤器：" class="headerlink" title="angular JS 过滤器："></a>angular JS 过滤器：</h3><ul>
+<li><p>过滤器可以使用管道字符（|）添加到表达式和指令中</p>
+</li>
+<li><p>|currency：格式化数字为货币格式（更换为人民币标志：后面添加:’￥’）</p>
+</li>
+<li><p>|date：格式化时间，以毫秒进行计算的（更改格式：’yyyy-MM-dd hh:mm:ss EEEEs’）</p>
+</li>
+<li><p>|lowercase：将字符串格式为小写</p>
+</li>
+<li><p>|filter：从数组项中选择一个子集（在数组中查找信息）</p>
+</li>
+</ul>
+<h3 id="自定义过滤器："><a href="#自定义过滤器：" class="headerlink" title="自定义过滤器："></a>自定义过滤器：</h3><ul>
+<li><p>方法：filter()：两个参数</p>
+</li>
+<li><p>第一个：过滤器名称；</p>
+</li>
+<li><p>第二个：函数  （函数要返回一个函数，返回函数中有一个参数为input，这个参数是我们要操作的数据或目标）</p>
+<pre><code>input 就代表的是我们在使用这个自定义过滤器是 （|） 管道字符前面的数据
+</code></pre></li>
+</ul>
+<h3 id="angular-JS服务（service）"><a href="#angular-JS服务（service）" class="headerlink" title="angular JS服务（service）"></a>angular JS服务（service）</h3><ul>
+<li><p>在Angular JS中，服务就是一个函数或对象</p>
+</li>
+<li><p>$location:返回当前页面的URL</p>
+<ul>
+<li>使用时需要在控制器函数中传$location:这个参数</li>
+</ul>
+</li>
+</ul>
+<h3 id="自定义服务：service"><a href="#自定义服务：service" class="headerlink" title="自定义服务：service()"></a>自定义服务：service()</h3><ul>
+<li><p>第一个参数：服务名称（可以理解为构造函数的实例）</p>
+</li>
+<li><p>第二个参数：函数（我们可以把它理解为构造函数）</p>
+</li>
+</ul>
+<h3 id="angular-JS路由：（单一页面）"><a href="#angular-JS路由：（单一页面）" class="headerlink" title="angular JS路由：（单一页面）"></a>angular JS路由：（单一页面）</h3><ul>
+<li><p>步骤：</p>
+<ul>
+<li><p>先引入angular.js，然后引入angular-route.js</p>
+</li>
+<li><p>var myApp = angular.module(“myApp”,[‘ngRoute’])</p>
+</li>
+<li><p>配置路由（设置路由）</p>
+<ul>
+<li>myApp.config(function($routeProvider){ $routeProvider.when(“井号后的路径”,{template:}) })</li>
+</ul>
+</li>
+<li><p>注：如果需要连接到其他页面 when 后的对象中的属性就为：templateUrl</p>
+<ul>
+<li>otherwise（{redirectTo:’/‘}）——–路径不正确的时候默认的路径为 / </li>
+</ul>
+</li>
+<li><p>需要在放置页面的div中添加 ng-view 属性</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Angular-JS/">Angular JS</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-01-31T01:44:58.000Z"><a href="/2018/01/31/angular1/">2018-01-31</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/01/31/angular1/">angular</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="单一页面应用程序：页面内容发生改变，但是地址不变"><a href="#单一页面应用程序：页面内容发生改变，但是地址不变" class="headerlink" title="单一页面应用程序：页面内容发生改变，但是地址不变"></a>单一页面应用程序：页面内容发生改变，但是地址不变</h3><ul>
+<li>缺点：页面打开时间慢，代码过多不利于页面维护和开发</li>
+</ul>
+<h3 id="优缺点考虑方面："><a href="#优缺点考虑方面：" class="headerlink" title="优缺点考虑方面："></a>优缺点考虑方面：</h3><ul>
+<li><p>后期维护</p>
+</li>
+<li><p>减少服务器压力</p>
+</li>
+<li><p>对用户的友好程度（加载）</p>
+</li>
+</ul>
+<h4 id="angular-JS通过新的属性和表达式扩展了HTML"><a href="#angular-JS通过新的属性和表达式扩展了HTML" class="headerlink" title="angular JS通过新的属性和表达式扩展了HTML"></a>angular JS通过新的属性和表达式扩展了HTML</h4><h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><ul>
+<li><p>angular JS 通过指令（属性）扩展了HTML，且通过表达式（）绑定数据到HTML</p>
+</li>
+<li><p>angular核心特点之一：</p>
+<ul>
+<li>双向数据绑定（当视图模型发生改变的时候，数据模型同样也会改变，当数据模型发生改变后视图模型也会发生过改变）</li>
+</ul>
+</li>
+<li><p>angular 是一个js框架</p>
+</li>
+<li><p>angular 是一个基于数据渲染的框架</p>
+</li>
+<li><p>angular 是一个 MVC 型框架</p>
+<ul>
+<li><p>M: 数据模型</p>
+</li>
+<li><p>V：视图模型</p>
+</li>
+<li><p>C：控制器 （它的作用是model和view之间的交互，是他们交互之间的桥梁纽带）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Angular-指令："><a href="#Angular-指令：" class="headerlink" title="Angular 指令："></a>Angular 指令：</h3><ul>
+<li><p>ng-app：初始化一个应用程序（在html或body标签里面写：ng-app=”myApp”），一个html文档只出现一次，如果出现多次也只有一个起作用；</p>
+</li>
+<li><p>ng-model：绑定数据（只能绑定input标签的value）</p>
+</li>
+<li><p>angular.module():（参数必填）</p>
+<ul>
+<li>有两个参数；第一个：项目名称；第二个：数组（依赖注入）</li>
+</ul>
+</li>
+<li><p>controller()：控制器(在需要被管理部分标签添加ng-controller=”控制器名称”)</p>
+<ul>
+<li><p>第一个参数：控制器名称</p>
+</li>
+<li><p>第二个参数：函数（参数：$scope）</p>
+<ul>
+<li>创建的数据都是$scope的属性；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>初始化一个数据：</p>
+<ul>
+<li>ng-init(必须放在要被初始化数据的上方，多个数据初始化用分号隔开)</li>
+</ul>
+</li>
+<li><p>ng-bind：</p>
+<ul>
+<li>给元素绑定一个数据，如果是input以外的标签绑定数据时用bind，但是它完全代表元素中的内容（完全替换元素中的内容）</li>
+</ul>
+</li>
+<li><p>ng-repeat：循环数据（ng-repeat=”x in data”）</p>
+<ul>
+<li><p>对象：x 代表对象中的属性值，循环对象中属性的个数</p>
+</li>
+<li><p>数组：x 代表数组中的每一项，循环数组的长度，如果是数组包含对象，可以通过x.属性名称拿到属性值</p>
+</li>
+</ul>
+</li>
+<li><p>ng-show:显示元素</p>
+<ul>
+<li>当ng-show 所对应的数据的结果为true，那么就会显示这个元素；如果是false，那么就不会显示这个元素</li>
+</ul>
+</li>
+<li><p>ng-hide:隐藏元素</p>
+<ul>
+<li>当ng-hide 所对应的数据的结果为true，那么就会隐藏这个元素；如果是false，那么就不会隐藏这个元素</li>
+</ul>
+</li>
+</ul>
+<h3 id="自定义指令："><a href="#自定义指令：" class="headerlink" title="自定义指令："></a>自定义指令：</h3><ul>
+<li><p>directive(“myDirective”)：有两个参数</p>
+</li>
+<li><p>第一个：指令名称（驼峰式命名）</p>
+</li>
+<li><p>第二个：函数（函数中需要写return对象，将所有的需求都写在对象里面</p>
+<ul>
+<li>return的属性有：template、restrict(这个属性的值是ECMA，用来判断调用方法,默认为E,A)）</li>
+</ul>
+</li>
+<li><p>调用方法：<my-directive></my-directive>   (元素名称)</p>
+<ul>
+<li><p><code>&lt;div my-directive&gt;&lt;/div&gt;</code> (属性)</p>
+</li>
+<li><p><code>&lt;div class=&quot;my-directive&quot;&gt;&lt;/div&gt;</code></p>
+</li>
+<li><p><code>&lt;!-- directive: my-directive --&gt;</code>(需要在return对象里面添加replace:true，决定了是在元素内部使用template，还是直接替换掉使用自定义指令中的元素)</p>
+</li>
+<li><p>注：通过注释调用该指令必须严格按照规定的样式书写</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="scope作用域："><a href="#scope作用域：" class="headerlink" title="scope作用域："></a>scope作用域：</h3><ul>
+<li><p>$scope的作用域取决于他所属控制器的控制范围</p>
+</li>
+<li><p>$rootScope：代表全局$scope</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Angular-JS/">Angular JS</a>
+  </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-12-19T08:59:51.000Z"><a href="/2017/12/19/JQuery2/">2017-12-19</a></time>
       
       
@@ -1019,303 +1395,6 @@ data = 4（完成）响应内容解析完成，可以在客户端调用了
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-12-07T08:39:59.000Z"><a href="/2017/12/07/事件冒泡-捕获/">2017-12-07</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/12/07/事件冒泡-捕获/">事件冒泡/捕获</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="event对象：代表事件的状态"><a href="#event对象：代表事件的状态" class="headerlink" title="event对象：代表事件的状态"></a>event对象：代表事件的状态</h3><pre><code>鼠标 / 键盘属性：
-
-    clientX：返回当事件被触发时，鼠标指针的水平坐标。
-
-    clientY：返回当事件被触发时，鼠标指针的垂直坐标。
-
-    screenX：返回当某个事件被触发时，鼠标指针的水平坐标。
-
-    screenY：返回当某个事件被触发时，鼠标指针的垂直坐标。
-
-注：
-    screen 事件属性可返回事件发生时鼠标指针相对于屏幕的水平坐标。
-
-    client 事件属性返回当事件被触发时鼠标指针向对于浏览器页面（或客户区）的水平坐标。
-</code></pre><h3 id="事件由什么组成："><a href="#事件由什么组成：" class="headerlink" title="事件由什么组成："></a>事件由什么组成：</h3><pre><code>    三要素:
-
- 1. 事件源：事件目标/给谁绑定事件
-
- 2. 事件驱动： 什么事件/
-
- 3. 事件程序：干什么/
-
-普通事件  ：  监视某个动作/ 监视某个元素的某个动作  
-
-同一个元素,同一个事件驱动,只能绑定一个;如果绑定两个,下面的会覆盖上面的;
-</code></pre><h3 id="事件冒泡："><a href="#事件冒泡：" class="headerlink" title="事件冒泡："></a>事件冒泡：</h3><pre><code>普通事件  :一个元素如果给他绑定两个相同的事件会被覆盖,会指向下面的事件
-
-事件监听函数 addEventListener();
-
-        有三个参数:
-
-                   第一个参数：是你要绑定的事件句柄;但是要去掉 on；其参数是一个字符串类型
-
-                   第二个参数： 你要干什么?  你要执行的代码；是一个函数
-
-                    第三个: 绑定事件的位置:   布尔值
-
-                                true:    捕获阶段
-
-                                false:    冒泡阶段 (默认是false)
-</code></pre><ul>
-<li><p>捕获阶段:</p>
-<ul>
-<li><p>当事件被触发后,会从dom文档的根标签(html)开始往下级查找,直到找到事件目标位置.</p>
-</li>
-<li><p>在查找的过程中.如果有元素在捕获阶段绑定了相同的事件,那么就会被触发</p>
-</li>
-</ul>
-</li>
-<li><p>事件目标阶段:</p>
-<ul>
-<li>当事件捕获阶段完成后,进入到事件目标阶段时,按照我们写代码的先后顺序来执行事件目标阶段的事件;</li>
-</ul>
-</li>
-<li><p>事件冒泡:</p>
-<ul>
-<li><p>当事件目标阶段完成以后,事件开始冒泡,一直冒泡到我们的dom文档的根标签,</p>
-</li>
-<li><p>在这个过程中,如果有元素在冒泡阶段绑定了相同的事件,那么这个事件就会被执行;</p>
-<p>阻止冒泡：event.stopPropagation();</p>
-<p>阻止捕获：将事件放在冒泡阶段上面就可以阻止捕获；</p>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/冒泡、捕获/">冒泡、捕获</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-12-07T01:27:45.000Z"><a href="/2017/12/07/DOM-事件/">2017-12-07</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/12/07/DOM-事件/">DOM/事件</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="节点之间的关系："><a href="#节点之间的关系：" class="headerlink" title="节点之间的关系："></a>节点之间的关系：</h3><pre><code>父子关系：嵌套关系
-
-兄弟关系：并列关系
-</code></pre><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><pre><code>通过选择器来获取节点：document.querySelectorAll();
-</code></pre><h3 id="获取属性："><a href="#获取属性：" class="headerlink" title="获取属性："></a>获取属性：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var div = document.querySelector(&quot;div&quot;);</div><div class="line"></div><div class="line">       console.log(div[&quot;id&quot;]); //id名称</div><div class="line"></div><div class="line">       console.log(div.className); //class名称</div><div class="line"></div><div class="line">       console.log(div.getAttribute(&quot;style&quot;)); //样式</div><div class="line"></div><div class="line">       div.setAttribute(&quot;class&quot;, &quot;c&quot;); //设置属性或样式，并且完全被替换</div><div class="line"></div><div class="line">       div.removeAttribute(&quot;id&quot;); //删除id，并且完全会被删除；</div></pre></td></tr></table></figure>
-<h3 id="查看节点类型："><a href="#查看节点类型：" class="headerlink" title="查看节点类型："></a>查看节点类型：</h3><ul>
-<li><p>nodeType 返回以数字值返回指定节点的节点类型。 如果节点是元素节点，则返回 1。如果节点是属性节点，则返回 2。</p>
-</li>
-<li><p>nodeName 返回节点名称（大写的标签名）</p>
-</li>
-<li><p>nodeValue 文本节点返回文本内容，其他节点返回null</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var  p=document.getElementById(&quot;text&quot;);</div><div class="line"></div><div class="line">   var nodetypeNum=p.nodeType;   //查看获取节点类型;</div><div class="line">       </div><div class="line">   console.log(nodetypeNum); // 1</div><div class="line">       </div><div class="line">   var nodeName=p.nodeName;</div><div class="line">       </div><div class="line">   console.log(nodeName); // p</div><div class="line">       </div><div class="line">   var  nodeValue=p.nodeValue;</div><div class="line">       </div><div class="line">   var  a=p.getAttributeNode(&quot;id&quot;);</div><div class="line"></div><div class="line">   console.log(a); // id=&quot;text&quot;</div><div class="line">       </div><div class="line">   console.log(a.nodeType); // 2</div><div class="line">       </div><div class="line">   console.log(a.nodeValue);  // text</div><div class="line">       </div><div class="line">   console.log(a.nodeName); // id</div></pre></td></tr></table></figure>
-<h3 id="创建节点：（从后进行添加）"><a href="#创建节点：（从后进行添加）" class="headerlink" title="创建节点：（从后进行添加）"></a>创建节点：（从后进行添加）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var li = document.createElement(&quot;li&quot;);//创建的元素节点</div><div class="line"></div><div class="line">       var text = document.createTextNode(i + 1);//创建的文本节点</div><div class="line"></div><div class="line">       li.appendChild(text);//把文本放在创建的li里面</div><div class="line"></div><div class="line">       list.appendChild(li);//把创建的li放在ul里面</div></pre></td></tr></table></figure>
-<h3 id="节点操作："><a href="#节点操作：" class="headerlink" title="节点操作："></a>节点操作：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">insertBefore(a,b) :在指定的已有子节点之前插入新的子节点,a是新节点，b是旧节点</div><div class="line"></div><div class="line">appendChild 在DOM子集最后添加子节点</div><div class="line"></div><div class="line">removeChild 删除一个节点</div><div class="line"></div><div class="line">replaceChild(a,b) 替换节点;a是新节点，b是旧节点</div></pre></td></tr></table></figure>
-<h3 id="节点查找："><a href="#节点查找：" class="headerlink" title="节点查找："></a>节点查找：</h3><pre><code>获取下级节点：
-
-1. children：子节点，不包含空节点
-
-2. childNodes：子节点，包含空节点
-
-3. firstChild：第一个子节点，包含空节点
-
-4. firstElementChild：第一个子节点，不包含空节点
-
-5. lastChild：最后一个子节点，包含空节点
-
-6. lastElementChild：最后一个子节点，不包含空节点
-
-获取兄弟节点：
-
-1. nextSibling：下一个兄弟节点，包含空节点
-
-2. nextElementSibling：下一个兄弟节点，不包含空节点
-
-3. previousSibling：前一个兄弟节点，包含空节点
-
-4. previousElementSibling：前一个兄弟节点，不包含空节点
-
-获取父级节点：
-
-1. parentNode：父节点
-
-2. offsetParent：第一个有定位属性的父节点，如果没有，则返回body
-</code></pre><h3 id="事件："><a href="#事件：" class="headerlink" title="事件："></a>事件：</h3><pre><code>普通事件：a.onclick = function(){};
-
-    同一个元素，同一个事件驱动只能绑定一个，如果绑定两个，下面的事件会替换上面的；
-
-1. onload 图片或页面加载完成
-
-2. 焦点事件:onfocus/onblur 获得焦点/失去焦点
-
-3. onchange 表单内容发送改变
-
-4. onclick 点击
-
-5. ondblclick 点击两次
-
-6. onkeydown 键盘按下
-
-7. onkeyup 键盘抬起
-</code></pre><h3 id="获取对象-、-兼容处理："><a href="#获取对象-、-兼容处理：" class="headerlink" title="获取对象 、 兼容处理："></a>获取对象 、 兼容处理：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> document.onkeydown = function(ev)&#123;</div><div class="line"></div><div class="line"> 	var ev = ev || window.event;</div><div class="line"></div><div class="line">//获取事件对象兼容处理，一般浏览器直接在function参</div><div class="line"></div><div class="line">//数ev获取,ie浏览器通过window.event获取</div><div class="line"></div><div class="line">	document.write(ev.keyCode);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="键盘event对象属性-keyCode"><a href="#键盘event对象属性-keyCode" class="headerlink" title="键盘event对象属性 keyCode"></a>键盘event对象属性 keyCode</h3><pre><code>1. onmousedown 鼠标按下
-
-2. onmouseup 鼠标抬起
-
-3. onmousemove 鼠标移动
-
-4. onmouseover 移到对象上
-
-5. onmouseout 鼠标离开
-
-6. 鼠标event对象属性 clientX clientY
-
-7. onselect 在文本框中的文本被选中时发生,支持&lt;input type=&quot;text&quot;&gt;, &lt;textarea&gt;
-
-8. onsubmit 在表单中的提交按钮被点击时触发
-
-9. onreset 在表单中的重置按钮被点击时触发
-
-10. onerror 在文档或图像加载过程中发生错误时被触发
-
-11. 阻止默认事件preventDefault() 或者 return false；
-</code></pre><h3 id="事件委托："><a href="#事件委托：" class="headerlink" title="事件委托："></a>事件委托：</h3><pre><code>通过e.target
-
-就是把子元素的事件交给父元素进行管理，然后再执行的时候再通知具体某个元素执行；
-
-e.target: 触发这个事件的具体某个元素
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">list.onclick = function(e) &#123;</div><div class="line">    var e = e || window.event;</div><div class="line">    alert(e.target.innerHTML); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/事件/">事件</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-12-05T08:35:12.000Z"><a href="/2017/12/05/Math对象/">2017-12-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/12/05/Math对象/">Math对象</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="Math-对象："><a href="#Math-对象：" class="headerlink" title="Math();对象："></a>Math();对象：</h3><pre><code>1. abs(x)返回数的绝对值
-
-2. ceil(x)对数进行上取整
-
-3. floor(x)对数进行下取整
-
-4. max(x,y)返回 x 和 y 中的最高值
-
-5. min(x,y)返回 x 和 y 中的最低值
-
-6. round(x)把数四舍五入为最接近的整数
-
-7. pow(x,y)返回 x 的 y 次幂
-
-8. random()返回 0 ~ 1 之间的随机数
-
-9. sqrt(x)返回数的平方根
-</code></pre>
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/Math对象/">Math对象</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -1341,23 +1420,23 @@ e.target: 触发这个事件的具体某个元素
   <ul class="entry">
     
       <li>
+        <a href="/2018/01/31/angular/">angular</a>
+      </li>
+    
+      <li>
+        <a href="/2018/01/31/angular2/">angular2</a>
+      </li>
+    
+      <li>
+        <a href="/2018/01/31/angular1/">angular</a>
+      </li>
+    
+      <li>
         <a href="/2017/12/19/JQuery2/">JQurey2</a>
       </li>
     
       <li>
         <a href="/2017/12/19/demo/">demo</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/19/JQuery1/">JQuery1</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/19/闭包/">闭包</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/14/AJAX、跨域/">AJAX、跨域</a>
       </li>
     
   </ul>
@@ -1370,6 +1449,8 @@ e.target: 触发这个事件的具体某个元素
   <ul class="entry">
   
     <li><a href="/tags/AJAX、跨域/">AJAX、跨域</a><small>1</small></li>
+  
+    <li><a href="/tags/Angular-JS/">Angular JS</a><small>3</small></li>
   
     <li><a href="/tags/BOM/">BOM</a><small>1</small></li>
   
@@ -1425,7 +1506,7 @@ e.target: 触发这个事件的具体某个元素
 <div class="widget tagcloud">
   <h3 class="title">Tag-Cloud</h3>
   <div class="entry">
-    <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+    <a href="/tags/AJAX、跨域/" style="font-size: 10px;">AJAX、跨域</a> <a href="/tags/Angular-JS/" style="font-size: 20px;">Angular JS</a> <a href="/tags/BOM/" style="font-size: 10px;">BOM</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Math对象/" style="font-size: 10px;">Math对象</a> <a href="/tags/canvas使用/" style="font-size: 10px;">canvas使用</a> <a href="/tags/canvas画图/" style="font-size: 10px;">canvas画图</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/html-css/" style="font-size: 10px;">html/css</a> <a href="/tags/js实现全屏滚动/" style="font-size: 10px;">js实现全屏滚动</a> <a href="/tags/js笔记/" style="font-size: 10px;">js笔记</a> <a href="/tags/js语句/" style="font-size: 10px;">js语句</a> <a href="/tags/onload/" style="font-size: 10px;">onload</a> <a href="/tags/this-字符串-Date/" style="font-size: 10px;">this/字符串/Date</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/冒泡、捕获/" style="font-size: 10px;">冒泡、捕获</a> <a href="/tags/函数-对象-定时器/" style="font-size: 10px;">函数/对象/定时器</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/数组方法总结/" style="font-size: 10px;">数组方法总结</a> <a href="/tags/构造函数-拷贝/" style="font-size: 10px;">构造函数/拷贝</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
   </div>
 </div>
 
@@ -1435,7 +1516,7 @@ e.target: 触发这个事件的具体某个元素
   <footer id="footer" class="inner"><div class="alignleft">
   <p>
   
-  &copy; 2017 LTT
+  &copy; 2018 LTT
   
   All rights reserved.</p>
   <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>

@@ -3,16 +3,30 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>onload | LTT</title>
+  <title>angular | LTT</title>
   <meta name="author" content="LTT" />
 
+  
+  <meta name="description" content="单一页面应用程序：页面内容发生改变，但是地址不变
+缺点：页面打开时间慢，代码过多不利于页面维护和开发
+
+优缺点考虑方面：
+后期维护
+
+减少服务器压力
+
+对用户的友好程度（加载）
+
+
+angular JS通过新的属性和表达式扩展了HTML特点：
+angular JS 通过指令（属性）扩展了HTML，且" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="angular" />
   <meta property="og:site_name" content="LTT" />
 
   
@@ -55,25 +69,159 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">onload</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-01-31T01:44:58.000Z"><a href="/2018/01/31/angular1/">2018-01-31</a></time>
+      
+      
+  
+    <h1 class="title">angular</h1>
+  
 
+    </header>
+    <div class="entry">
+      
+        <h3 id="单一页面应用程序：页面内容发生改变，但是地址不变"><a href="#单一页面应用程序：页面内容发生改变，但是地址不变" class="headerlink" title="单一页面应用程序：页面内容发生改变，但是地址不变"></a>单一页面应用程序：页面内容发生改变，但是地址不变</h3><ul>
+<li>缺点：页面打开时间慢，代码过多不利于页面维护和开发</li>
+</ul>
+<h3 id="优缺点考虑方面："><a href="#优缺点考虑方面：" class="headerlink" title="优缺点考虑方面："></a>优缺点考虑方面：</h3><ul>
+<li><p>后期维护</p>
+</li>
+<li><p>减少服务器压力</p>
+</li>
+<li><p>对用户的友好程度（加载）</p>
+</li>
+</ul>
+<h4 id="angular-JS通过新的属性和表达式扩展了HTML"><a href="#angular-JS通过新的属性和表达式扩展了HTML" class="headerlink" title="angular JS通过新的属性和表达式扩展了HTML"></a>angular JS通过新的属性和表达式扩展了HTML</h4><h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><ul>
+<li><p>angular JS 通过指令（属性）扩展了HTML，且通过表达式（）绑定数据到HTML</p>
+</li>
+<li><p>angular核心特点之一：</p>
+<ul>
+<li>双向数据绑定（当视图模型发生改变的时候，数据模型同样也会改变，当数据模型发生改变后视图模型也会发生过改变）</li>
+</ul>
+</li>
+<li><p>angular 是一个js框架</p>
+</li>
+<li><p>angular 是一个基于数据渲染的框架</p>
+</li>
+<li><p>angular 是一个 MVC 型框架</p>
+<ul>
+<li><p>M: 数据模型</p>
+</li>
+<li><p>V：视图模型</p>
+</li>
+<li><p>C：控制器 （它的作用是model和view之间的交互，是他们交互之间的桥梁纽带）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Angular-指令："><a href="#Angular-指令：" class="headerlink" title="Angular 指令："></a>Angular 指令：</h3><ul>
+<li><p>ng-app：初始化一个应用程序（在html或body标签里面写：ng-app=”myApp”），一个html文档只出现一次，如果出现多次也只有一个起作用；</p>
+</li>
+<li><p>ng-model：绑定数据（只能绑定input标签的value）</p>
+</li>
+<li><p>angular.module():（参数必填）</p>
+<ul>
+<li>有两个参数；第一个：项目名称；第二个：数组（依赖注入）</li>
+</ul>
+</li>
+<li><p>controller()：控制器(在需要被管理部分标签添加ng-controller=”控制器名称”)</p>
+<ul>
+<li><p>第一个参数：控制器名称</p>
+</li>
+<li><p>第二个参数：函数（参数：$scope）</p>
+<ul>
+<li>创建的数据都是$scope的属性；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>初始化一个数据：</p>
+<ul>
+<li>ng-init(必须放在要被初始化数据的上方，多个数据初始化用分号隔开)</li>
+</ul>
+</li>
+<li><p>ng-bind：</p>
+<ul>
+<li>给元素绑定一个数据，如果是input以外的标签绑定数据时用bind，但是它完全代表元素中的内容（完全替换元素中的内容）</li>
+</ul>
+</li>
+<li><p>ng-repeat：循环数据（ng-repeat=”x in data”）</p>
+<ul>
+<li><p>对象：x 代表对象中的属性值，循环对象中属性的个数</p>
+</li>
+<li><p>数组：x 代表数组中的每一项，循环数组的长度，如果是数组包含对象，可以通过x.属性名称拿到属性值</p>
+</li>
+</ul>
+</li>
+<li><p>ng-show:显示元素</p>
+<ul>
+<li>当ng-show 所对应的数据的结果为true，那么就会显示这个元素；如果是false，那么就不会显示这个元素</li>
+</ul>
+</li>
+<li><p>ng-hide:隐藏元素</p>
+<ul>
+<li>当ng-hide 所对应的数据的结果为true，那么就会隐藏这个元素；如果是false，那么就不会隐藏这个元素</li>
+</ul>
+</li>
+</ul>
+<h3 id="自定义指令："><a href="#自定义指令：" class="headerlink" title="自定义指令："></a>自定义指令：</h3><ul>
+<li><p>directive(“myDirective”)：有两个参数</p>
+</li>
+<li><p>第一个：指令名称（驼峰式命名）</p>
+</li>
+<li><p>第二个：函数（函数中需要写return对象，将所有的需求都写在对象里面</p>
+<ul>
+<li>return的属性有：template、restrict(这个属性的值是ECMA，用来判断调用方法,默认为E,A)）</li>
+</ul>
+</li>
+<li><p>调用方法：<my-directive></my-directive>   (元素名称)</p>
+<ul>
+<li><p><code>&lt;div my-directive&gt;&lt;/div&gt;</code> (属性)</p>
+</li>
+<li><p><code>&lt;div class=&quot;my-directive&quot;&gt;&lt;/div&gt;</code></p>
+</li>
+<li><p><code>&lt;!-- directive: my-directive --&gt;</code>(需要在return对象里面添加replace:true，决定了是在元素内部使用template，还是直接替换掉使用自定义指令中的元素)</p>
+</li>
+<li><p>注：通过注释调用该指令必须严格按照规定的样式书写</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="scope作用域："><a href="#scope作用域：" class="headerlink" title="scope作用域："></a>scope作用域：</h3><ul>
+<li><p>$scope的作用域取决于他所属控制器的控制范围</p>
+</li>
+<li><p>$rootScope：代表全局$scope</p>
+</li>
+</ul>
 
-  <div class="archive">
+      
+    </div>
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-11-24T01:39:33.000Z"><a href="/2017/11/24/js-onload/">2017-11-24</a></time>
-            
-              <h1 class="title"><a href="/2017/11/24/js-onload/">js_onload</a></h1>
-            
-          </header>
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
-      </article>
-    
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Angular-JS/">Angular JS</a>
   </div>
+
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
